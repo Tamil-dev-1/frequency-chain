@@ -1,0 +1,9 @@
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+}
+
+.mobile-dropdown.open {
+  max-height: 300px;
+}
