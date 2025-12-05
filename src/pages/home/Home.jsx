@@ -4,6 +4,7 @@ import ComparisonSlider from '../../component/slider/ComparisonSlider';
 // import HeroSection from '../../component/hero/HeroSection'
 import Blog from '../../component/blog/Blog';
 import './Home.css';
+import Events from '../../component/event/Events';
 export default function Home() {
 
    
@@ -190,7 +191,7 @@ export default function Home() {
 
             <span className="eco-label mb-5">ACTIVITY</span>
 
-            <h2 className="eco-title mb-5">The strongest ecosystem</h2>
+            <h2 className="eco-title mb-5 hero-title">The strongest ecosystem</h2>
 
             <p className="eco-subtitle">
               Activity from all frecX networks
@@ -249,7 +250,7 @@ export default function Home() {
       <div className="col-lg-7 order-2 order-lg-1">
         <span className="learn-badge px-3 py-1">LEARN</span>
 
-        <h1 className="fw-bold display-5 mt-3">Understand FrecX</h1>
+        <h1 className="fw-bold display-5 mt-3 hero-title">Understand FrecX</h1>
 
         <p className="text-muted mt-2">
           Crypto can feel overwhelming. Don’t worry, these materials are designed
@@ -337,7 +338,7 @@ export default function Home() {
 
         {/* Main Heading */}
         <h1
-          className="fw-bold mt-3"
+          className="fw-bold mt-3 hero-title"
           style={{
             fontSize: "52px",
             lineHeight: "1.2",
@@ -361,7 +362,295 @@ export default function Home() {
     </section>
 
 <ComparisonSlider />
+
+                         {/* BUILD THE COMMUNITY */}
+
+     <section className="py-5">
+  <div className="container">
+    <div className="row align-items-center">
+
+      {/* LEFT CONTENT */}
+      <div className="col-lg-6 col-md-12">
+
+        {/* Tag */}
+        <span
+          className="px-3 py-1 rounded-pill fw-semibold d-inline-block"
+          style={{
+            background: "#f0e5ff",
+            fontSize: "12px",
+            color: "#7b44d6",
+          }}
+        >
+          FREQUENCYCHAIN.ORG COMMUNITY
+        </span>
+
+        <h1 className="fw-bold mt-3 hero-title"
+            style={{ fontSize: "clamp(28px, 4vw, 50px)" }}>
+          Built by the community
+        </h1>
+
+        <p className="text-muted mt-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos nemo dolor quas?
+        </p>
+
+        <p className="text-muted">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates velit, saepe deserunt voluptate ipsam aliquid.
+        </p>
+
+        <p className="text-muted mb-4">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, consectetur.
+        </p>
+
+        {/* BUTTONS RESPONSIVE WRAP */}
+        <div className="d-flex flex-wrap align-items-center gap-3">
+
+          <button
+            className="btn fw-semibold text-white"
+            style={{
+              background: "#7b44d6",
+              padding: "10px 22px",
+              borderRadius: "10px",
+            }}
+          >
+            More on frequencychain.org →
+          </button>
+
+          {/* Icon Buttons */}
+          <button
+            className="btn btn-light border shadow-sm d-flex align-items-center justify-content-center"
+            style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "10px",
+            }}
+          >
+            <i className="bi bi-discord" style={{ fontSize: "22px" }}></i>
+          </button>
+
+          <button
+            className="btn btn-light border shadow-sm d-flex align-items-center justify-content-center"
+            style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "10px",
+            }}
+          >
+            <i className="bi bi-github" style={{ fontSize: "22px" }}></i>
+          </button>
+
+        </div>
+
+        {/* NEXT CALLS CARD */}
+        <div
+          className="p-4 rounded-4 mt-5 shadow-sm w-100"
+          style={{
+            border: "1px solid #eee",
+            maxWidth: "100%", // Full width on mobile
+          }}
+        >
+          <h6 className="fw-semibold d-flex align-items-center gap-2 mb-3">
+            <i className="bi bi-calendar3"></i> Next calls
+          </h6>
+
+          {/* Item 1 */}
+          <div className="d-flex justify-content-between align-items-start py-3 border-bottom flex-wrap gap-3">
+            <div className="flex-grow-1">
+              <p className="fw-semibold mb-1" style={{ fontSize: "14px" }}>
+                QA session - frequencychain.org portal
+              </p>
+              <p className="text-muted small mb-0">
+                December 10, 2025 at 5:45 PM
+              </p>
+            </div>
+
+            <button className="btn btn-sm btn-outline-primary">
+              Add to calendar
+            </button>
+          </div>
+
+          {/* Item 2 */}
+          <div className="d-flex justify-content-between align-items-start py-3 flex-wrap gap-3">
+            <div className="flex-grow-1">
+              <p className="fw-semibold mb-1" style={{ fontSize: "14px" }}>
+                frequencychain.org Community - December 2025
+              </p>
+              <p className="text-muted small mb-0">
+                December 18, 2025 at 5:00 PM
+              </p>
+            </div>
+
+            <button className="btn btn-sm btn-outline-primary">
+              Add to calendar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE */}
+      <div className="col-lg-6 col-md-12 mt-4 mt-lg-0 text-center">
+        <img
+          src="https://images.pexels.com/photos/8370751/pexels-photo-8370751.jpeg"
+          alt="Community illustration"
+          className="img-fluid rounded-4 shadow-sm community-img"
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            objectFit: "cover",
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
    <Blog />
+   <Events />
+
+                           {/* JOIN FRECX SECTION */}
+
+
+
+                              <section
+      className="py-5"
+      style={{
+        background: "linear-gradient(180deg, #E8DDFD 0%, white 100%)",
+        borderRadius: "24px",
+      }}
+    >
+      <div className="container text-center">
+
+        {/* Title */}
+        <h1 className="fw-bold mb-4 hero-title" style={{ fontSize: "42px" }}>
+          Join frequencychain.org
+        </h1>
+
+        <p className="mb-5" style={{ fontSize: "17px", maxWidth: "700px", margin: "0 auto" }}>
+          This website is open source with hundreds of community contributors.
+          You can propose edits to any of the content on this site.
+        </p>
+
+        {/* Content Grid */}
+        <div className="row justify-content-center gy-5 mt-4">
+
+          {/* How to Contribute */}
+          <div className="col-md-5 d-flex">
+            <div className="d-flex align-items-start gap-3 text-start">
+              <div
+                style={{
+                  width: "70px",
+                  height: "70px",
+                  background: "#fff",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                }}
+                className="d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                  alt="icon"
+                  width="38"
+                />
+              </div>
+
+              <div>
+                <h5 className="fw-bold text-success">How to contribute</h5>
+                <p className="text-muted mb-0">
+                  Find out all the different ways you can help ethereum.org grow and be better.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* GitHub */}
+          <div className="col-md-5 d-flex">
+            <div className="d-flex align-items-start gap-3 text-start">
+              <div
+                style={{
+                  width: "70px",
+                  height: "70px",
+                  background: "#fff",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                }}
+                className="d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                  alt="github"
+                  width="38"
+                />
+              </div>
+
+              <div>
+                <h5 className="fw-bold" style={{color:'#4371F2'}}>GitHub</h5>
+                <p className="text-muted mb-0">
+                  Contribute to code, design, articles, etc.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Discord */}
+          <div className="col-md-5 d-flex">
+            <div className="d-flex align-items-start gap-3 text-start">
+              <div
+                style={{
+                  width: "70px",
+                  height: "70px",
+                  background: "#fff",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                }}
+                className="d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
+                  alt="discord"
+                  width="38"
+                />
+              </div>
+
+              <div>
+                <h5 className="fw-bold" style={{color:'#9357F4'}}>Discord</h5>
+                <p className="text-muted mb-0">
+                  To ask questions, coordinate contribution and join community calls.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* X (Twitter) */}
+          <div className="col-md-5 d-flex">
+            <div className="d-flex align-items-start gap-3 text-start">
+              <div
+                style={{
+                  width: "70px",
+                  height: "70px",
+                  background: "#fff",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                }}
+                className="d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                  alt="x"
+                  width="38"
+                />
+              </div>
+
+              <div>
+                <h5 className="fw-bold" style={{color:'#FF52BD'}}>X</h5>
+                <p className="text-muted mb-0">
+                  To keep up with our updates and important news.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     </>
   );
 }

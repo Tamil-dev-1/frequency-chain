@@ -462,3 +462,16 @@
     max-height: 260px;  /* reduce height safely */
   }
 }
+
+
+             /* BUILD THE COMMUNITY SECTION CSS RESPONSIVE */
+
+             @media (max-width:576) {
+              .community-img{
+                max-height: 240px !important;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 18px;
+              }
+              
+             }
