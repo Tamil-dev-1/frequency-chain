@@ -40,12 +40,8 @@ export default function Home() {
   <div className="col-12 col-sm-6 col-md-3 mb-4">
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
-        className="d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-        style={{
-          width: "80px",
-          height: "80px",
-          background: "transparent",
-        }}
+        className=" topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
+       
       >
         <i className="bi bi-wallet2 fs-1" style={{ color: '#9357F4' }}></i>
       </div>
@@ -60,13 +56,7 @@ export default function Home() {
   <div className="col-12 col-sm-6 col-md-3 mb-4">
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
-        className="d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-        style={{
-          width: "80px",
-          height: "80px",
-          background: "transparent",
-          cursor: "pointer"
-        }}
+        className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
       >
         <i className="bi bi-star fs-1" style={{ color: '#4371EF' }}></i>
       </div>
@@ -81,12 +71,7 @@ export default function Home() {
   <div className="col-12 col-sm-6 col-md-3 mb-4">
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
-        className="d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-        style={{
-          width: "80px",
-          height: "80px",
-          background: "transparent",
-        }}
+        className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
       >
         <i className="bi bi-phone fs-1 text-success"></i>
       </div>
@@ -101,12 +86,7 @@ export default function Home() {
   <div className="col-12 col-sm-6 col-md-3 mb-4">
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
-        className="d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-        style={{
-          width: "80px",
-          height: "80px",
-          background: "transparent",
-        }}
+        className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
       >
         <i className="bi bi-rocket fs-1" style={{ color: '#FF52BD' }}></i>
       </div>
@@ -123,56 +103,138 @@ export default function Home() {
 
                    {/* SECTION=====3 */}
 
-    <section className="py-5">
-      <div className="container">
-        <div className="row align-items-center">
+    <section className="py-5" style={{ background: "#fff" }}>
+  <div className="container">
 
-          {/* LEFT TEXT */}
-          <div className="col-lg-5 mb-4">
-            <span className="badge  text-primary fw-semibold px-3 py-2 usecase-badge">
-              USE CASES
-            </span>
+    {/* TITLE + RIGHT TOP CARD */}
+    <div className="row mb-5 align-items-center">
+      <div className="col-lg-6 mb-4 mb-lg-0">
+        <span className="text-uppercase small text-muted">Use cases</span>
+        <h1 className="fw-bold display-5 mb-3">
+          A new way <br /> to use the internet
+        </h1>
+      </div>
 
-            <h1 className="display-4 fw-bold mt-3">
-              A new way <br /> to use the <br /> internet
-            </h1>
+      {/* Right card */}
+      <div className="col-lg-6">
+        <div
+          className="rounded-4 shadow p-4 d-flex align-items-center gap-4"
+          style={{ background: "#F2E8FF", padding: "32px" }}
+        >
+          <img
+            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
+            className="img-fluid rounded-3"
+            style={{ width: "160px", height: "auto" }}
+            alt=""
+          />
+
+          <div>
+            <h4 className="fw-bold mb-2">Crypto without volatility</h4>
+            <p className="mb-3">
+              Stablecoins maintain stable value and match the U.S. dollar.
+            </p>
+            <button className="btn btn-dark btn-sm rounded-pill px-3">
+              Discover stablecoins →
+            </button>
           </div>
-
-          {/* RIGHT CARD */}
-          <div className="col-lg-7">
-            <div className="usecase-card d-flex align-items-center gap-4 p-4 p-md-5">
-
-              {/* IMAGE LEFT - ALWAYS LEFT */}
-              <div className="usecase-img-box">
-                <img
-                  src="https://images.pexels.com/photos/7567591/pexels-photo-7567591.jpeg"
-                  alt="use-case"
-                  className="img-fluid"
-                />
-              </div>
-
-              {/* TEXT RIGHT */}
-              <div className="usecase-text">
-                <h3 className="fw-bold mb-3">Crypto without volatility</h3>
-                <p className="text-muted mb-4">
-                  Stablecoins are currencies that maintain stable value.
-                  Their price matches the U.S. dollar or other steady assets.
-                </p>
-
-                <button className="btn btn-outline-dark px-4 py-2">
-                  Discover stablecoins →
-                </button>
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </div>
-    </section>
+    </div>
+
+    {/* 3 Cards Row */}
+    <div className="row g-4">
+
+      {/* LEFT CARD */}
+      <div className="col-lg-4">
+        <div
+          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
+          style={{ background: "#EAF7F1", padding: "32px" }}
+        >
+          <img
+            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
+            alt=""
+            className="img-fluid rounded-3"
+            style={{ width: "150px" }}
+          />
+          <div>
+            <h5 className="fw-bold mb-2">A fairer financial system</h5>
+            <p className="mb-3">Ethereum financial system is open to everyone.</p>
+            <button className="btn btn-dark btn-sm rounded-pill px-3">Explore DeFi →</button>
+          </div>
+        </div>
+      </div>
+
+      {/* CENTER CARD */}
+      <div className="col-lg-4">
+        <div
+          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
+          style={{ background: "#FFE8F0", padding: "32px" }}
+        >
+          <img
+            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
+            alt=""
+            className="img-fluid rounded-3"
+            style={{ width: "150px" }}
+          />
+          <div>
+            <h5 className="fw-bold mb-2">The network of networks</h5>
+            <p className="mb-3">Ethereum is the hub for blockchain innovation.</p>
+            <button className="btn btn-dark btn-sm rounded-pill px-3">Explore benefits →</button>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT CARD */}
+      <div className="col-lg-4">
+        <div
+          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
+          style={{ background: "#EAF2FF", padding: "32px" }}
+        >
+          <img
+            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
+            alt=""
+            className="img-fluid rounded-3"
+            style={{ width: "150px" }}
+          />
+          <div>
+            <h5 className="fw-bold mb-2">Innovative apps</h5>
+            <p className="mb-3">Apps that protect your privacy.</p>
+            <button className="btn btn-dark btn-sm rounded-pill px-3">Browse apps →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* BOTTOM CARD */}
+    <div className="row mt-5">
+      <div className="col-lg-12">
+        <div
+          className="rounded-4 shadow p-4 d-flex align-items-center gap-4"
+          style={{ background: "#FFF4E0", padding: "36px" }}
+        >
+          <img
+            src="https://images.pexels.com/photos/6771607/pexels-photo-6771607.jpeg"
+            alt=""
+            className="img-fluid rounded-3"
+            style={{ width: "190px" }}
+          />
+
+          <div>
+            <h4 className="fw-bold mb-2">The internet of assets</h4>
+            <p className="mb-3">Anything can be tokenized — art, real estate, collectibles.</p>
+            <button className="btn btn-dark btn-sm rounded-pill px-3">More on NFTs →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
                                   {/* SECTION======4 */}
-  <section className="eco-wrapper">
+  <section className="eco-wrapper" style={{ background: "#fff" }}>
       <div className="container-fluid px-4 px-md-5">
 
         <div className="row align-items-center gy-5">
@@ -520,7 +582,7 @@ export default function Home() {
       <div className="container text-center">
 
         {/* Title */}
-        <h1 className="fw-bold mb-4 hero-title" style={{ fontSize: "42px" }}>
+        <h1 className="fw-bold mb-4 hero-title" >
           Join frequencychain.org
         </h1>
 

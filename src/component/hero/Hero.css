@@ -1,26 +1,251 @@
-.hero-container {
-  height: 100vh; /* full viewport height */
-  background-color: #0d0d0d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+/* ---------- Variables ---------- */
+:root{
+  --outer-bg-1: #cfe6ff;
+  --outer-bg-2: #b3d5ff;
+  --accent: #4aa1ff;
+  --glass-white: rgba(255,255,255,0.92);
+  --glass-2: rgba(255,255,255,0.55);
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(244,250,255,0.88));
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+/* ---------- Page background like screenshot (soft blue with bloom) ---------- */
+.ce-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 32px;
+  background: radial-gradient(700px 300px at 90% 65%, rgba(255,255,255,0.12), transparent),
+              linear-gradient(90deg, var(--outer-bg-1), var(--outer-bg-2));
 }
 
-.rotate-3d {
-  width: 250px;
-  height: 250px;
-  animation: spin 12s infinite linear;
+/* Outer wide rounded frame (the big rounded blue border in screenshot) */
+.ce-outer-frame{
+  width: calc(100% - 140px);
+  max-width: 1100px;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 20px 44px rgba(10,30,80,0.12);
+}
+
+/* Inner viewport (white glass card with 1px border and rounded corners) */
+.ce-viewport{
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,252,255,0.98));
+  border: 1px solid rgba(255,255,255,0.85);
+  overflow: hidden;
+  position: relative;
+  min-height: 620px;
+}
+
+/* ---------- Navbar (thin translucent) ---------- */
+.ce-nav{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-left:22px;
+  padding-right:22px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+
+.ce-logo{ width:34px; height:34px; object-fit:contain; border-radius:50%; }
+.ce-brand{ font-weight:700; color:#0c2a59; margin-left:6px; font-size:15px; }
+
+.ce-links span{ font-size:14px; color:#0a2548; opacity:0.85; cursor:default; }
+
+/* CTA style — pill */
+.ce-cta{
+  background: linear-gradient(90deg, var(--accent), #66b6ff);
+  color:#fff;
+  border-radius:18px;
+  padding:8px 14px;
+  border:none;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(70,140,220,0.18);
+}
+
+/* ---------- Main grid area ---------- */
+.ce-main-row{
+  min-height: 560px;
+}
+
+/* LEFT hero area */
+.ce-left{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  position:relative;
+  padding-top: 36px;
+}
+
+/* hero container */
+.ce-hero{
+  width:95%;
+  padding-left: 26px;
+}
+
+/* HEADLINE: two stacked lines overlapping */
+/* CRYPTO (black) */
+.ce-hero-line{
+  margin: 0;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -1px;
+}
+
+/* exact sizes tuned to screenshot */
+.ce-hero-crypt{
+  font-size:64px;
+  color:#0b0b0b;
+  transform: translateY(6px);
+}
+
+/* SECURITY (large blue gradient clipped text) */
+.ce-hero-sec{
+  font-size:86px;
+  background: linear-gradient(180deg, rgba(90,160,255,0.98), rgba(170,205,255,0.96));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top:-10px;
+  text-shadow: 0 8px 20px rgba(85,150,220,0.10);
+}
+
+/* Device (big centered tall image) */
+.ce-device-wrap{
+  margin-top: 18px;
+  width: 310px;             /* tuned for screenshot scale */
+  max-width: 56%;
+  position: relative;
   transform-style: preserve-3d;
+  will-change: transform;
+  animation: deviceEntrance 800ms cubic-bezier(.2,.9,.3,1) both;
 }
 
-@keyframes spin {
-  from { transform: rotateY(0deg) rotateX(10deg); }
-  to   { transform: rotateY(360deg) rotateX(10deg); }
+.ce-device{
+  width:100%;
+  display:block;
+  border-radius: 18px;
+  transform-origin:center center;
+  animation: floatDev 4s ease-in-out infinite;
+  box-shadow: 0 22px 50px rgba(8,30,70,0.14);
+}
+
+/* subtle elliptical reflection under the device */
+.ce-device-shadow{
+  position:absolute;
+  bottom:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:62%;
+  height:28px;
+  border-radius:50%;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.18), rgba(255,255,255,0));
+  filter: blur(8px);
+  opacity:0.95;
+}
+
+/* small hero subtitle text at bottom of left area */
+.ce-subtext{
+  color: rgba(6,30,60,0.6);
+  font-size:13px;
+  margin-top:22px;
+  max-width: 60%;
+  line-height:1.45;
+}
+
+/* ---------- RIGHT stacked cards ---------- */
+.ce-right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* container for right cards */
+.ce-cards{
+  width:100%;
+  max-width:320px;
+}
+
+/* single card */
+.ce-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:14px;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: inset 0 2px 12px rgba(255,255,255,0.65), 0 12px 30px rgba(10,35,80,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow:hidden;
+}
+
+/* different vertical spacing to match stacked look in screenshot */
+.ce-card-top { transform: translateY(-6px); }
+.ce-card-mid { transform: translateY(6px) scale(.995); }
+.ce-card-bot { transform: translateY(18px) scale(.99); }
+
+/* image block on left of card */
+.ce-card-img{
+  width:96px;
+  height:96px;
+  flex:0 0 96px;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(245,250,255,1), rgba(230,243,255,1));
+  box-shadow: 0 8px 20px rgba(10,40,80,0.06);
+}
+.ce-card-img img{ width:82%; height:auto; }
+
+/* card texts */
+.ce-card-body{ flex:1 1 auto; }
+.ce-card-title{ font-weight:700; color:#05224a; font-size:15px; }
+.ce-card-sub{ font-size:12.5px; color:rgba(6,30,60,0.6); margin-top:6px; }
+
+/* hover subtle raise */
+.ce-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(10,40,90,0.12);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes floatDev {
+  0% { transform: translateY(0) rotateX(0deg); }
+  50% { transform: translateY(-12px) rotateX(1deg); }
+  100% { transform: translateY(0) rotateX(0deg); }
+}
+@keyframes deviceEntrance {
+  from { opacity:0; transform: translateY(24px) scale(.98); }
+  to { opacity:1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .ce-hero-crypt{ font-size:46px; }
+  .ce-hero-sec{ font-size:58px; margin-top:-8px; }
+  .ce-device-wrap{ width:260px; }
+  .ce-subtext{ max-width:100%; }
+  .ce-cards{ max-width:360px; }
+}
+
+@media (max-width: 720px) {
+  .ce-outer-frame{ width: calc(100% - 48px); padding:12px; }
+  .ce-viewport{ min-height: 760px; }
+  .ce-main-row{ flex-direction:column; }
+  .ce-left{ padding:24px; text-align:center; }
+  .ce-hero{ padding-left:0; width:100%; }
+  .ce-subtext{ margin:16px auto 0; }
+  .ce-right{ padding: 20px 18px; }
+  .ce-cards{ max-width:520px; }
+  .ce-card{ justify-content:center; text-align:center; flex-direction:column; gap:8px; }
+  .ce-card-img{ width:100px; height:100px; margin-bottom:6px; }
+  .ce-card-body{ width:100%; }
 }

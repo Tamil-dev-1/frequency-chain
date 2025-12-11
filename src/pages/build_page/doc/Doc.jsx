@@ -1,207 +1,253 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function FAQPage() {
+export default function DocumentationPage() {
   return (
-    <>
-      {/* HERO */}
-      <section
-        className="py-5 text-center text-white"
+    <div style={{ backgroundColor: "#ffffff", color: "#012371" }}>
+      {/* ---------------- Top Header ---------------- */}
+      <header
+        className="py-5"
         style={{
-          background:
-            "linear-gradient(135deg, #6b4dfb 0%, #4736d8 50%, #2a1fa6 100%)",
-          borderRadius: "0 0 40px 40px",
+          background: "linear-gradient(145deg, #4b36ff, #00236e)",
+          borderBottom: "1px solid rgba(0,0,0,0.1)",
+          color: "white",
         }}
       >
-        <div className="container py-5">
-          <h1 className="fw-bold display-4">Frequently Asked Questions</h1>
-          <p className="mt-3" style={{ fontSize: "18px", opacity: "0.9" }}>
-            Everything you need to know about Frequency Chain, development, and support.
+        <div className="container text-center">
+          <h1 className="fw-bold display-5">Frequency Chain Docs</h1>
+          <p className="mt-3 opacity-75 fs-5">
+            Build secure, scalable, next-gen blockchain applications.
           </p>
+          <span className="badge bg-light text-dark rounded-pill px-3 py-2 mt-3">
+            v1.2.0 – Latest Stable
+          </span>
         </div>
-      </section>
+      </header>
 
-      {/* FAQ ACCORDION */}
-      <section className="py-5">
-        <div className="container" style={{ maxWidth: "900px" }}>
-          <h2 className="fw-bold text-center mb-4">General Questions</h2>
+      <div className="container-fluid px-4 mt-5">
+        <div className="row">
 
-          <div className="accordion" id="faqAccordion">
-            {/* Q1 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="q1">
-                <button
-                  className="accordion-button fw-semibold"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#a1"
+          {/* ---------------- Sidebar ---------------- */}
+          <aside className="col-md-3 col-lg-2 mb-4">
+            <div
+              className="p-4 rounded-4 shadow-sm"
+              style={{
+                background: "#f7f9ff",
+                height: "90vh",
+                position: "sticky",
+                top: "20px",
+                border: "1px solid #e2e6ff",
+                overflowY: "auto",
+              }}
+            >
+              <h5 className="fw-bold mb-3 text-primary">📚 Index</h5>
+
+              <input
+                type="text"
+                className="form-control mb-3 border-primary-subtle"
+                placeholder="Search docs..."
+                style={{ background: "#fff" }}
+              />
+
+              <nav className="d-flex flex-column gap-2">
+                {[
+                  "Introduction",
+                  "Getting Started",
+                  "Installation",
+                  "SDK Usage",
+                  "Wallet Integration",
+                  "Node Setup",
+                  "Blockchain APIs",
+                  "Smart Contracts",
+                  "Staking & Rewards",
+                  "FAQ",
+                ].map((item) => (
+                  <a
+                    key={item}
+                    href={"#" + item.replace(/\s+/g, "")}
+                    className="text-dark text-decoration-none py-2 px-3 rounded-3"
+                    style={{
+                      transition: "0.2s",
+                      fontWeight: 500,
+                    }}
+                    onMouseOver={(e) =>
+                      (e.target.style.background = "#e7eaff")
+                    }
+                    onMouseOut={(e) =>
+                      (e.target.style.background = "transparent")
+                    }
+                  >
+                    {item}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </aside>
+
+          {/* ---------------- Main Content ---------------- */}
+          <main className="col-md-7 col-lg-8">
+            {[ 
+              {
+                id: "Introduction",
+                title: "📘 Introduction",
+                desc: "Frequency Chain is a next-generation Layer-1 blockchain focused on high-speed consensus, scalable transactions, and enterprise-grade tooling."
+              },
+              {
+                id: "GettingStarted",
+                title: "🚀 Getting Started",
+                desc: "Learn the basics of setting up your environment and connecting to Frequency Chain."
+              },
+              {
+                id: "Installation",
+                title: "💻 Installation",
+                desc: "Install Frequency SDK for JavaScript, TypeScript, Python, or Go."
+              },
+            ].map((section) => (
+              <section id={section.id} className="mb-5" key={section.id}>
+                <h2 className="fw-bold mb-3 text-primary">{section.title}</h2>
+                <p className="opacity-75">{section.desc}</p>
+
+                {/* Stylish Code Block */}
+                <div
+                  className="p-3 mt-3 rounded-4"
+                  style={{
+                    background: "#f0f3ff",
+                    borderLeft: "4px solid #4b36ff",
+                    boxShadow: "0 0 12px rgba(75,54,255,0.15)",
+                  }}
                 >
-                  What is Frequency Chain?
-                </button>
-              </h2>
+                  <pre className="text-dark m-0" style={{ whiteSpace: "pre-wrap" }}>
+npm install frequency-sdk
+import Frequency from "frequency-sdk"
+                  </pre>
+                </div>
+              </section>
+            ))}
+
+            {/* ---------------- API Section ---------------- */}
+            <section id="BlockchainAPIs" className="mb-5">
+              <h2 className="fw-bold mb-3 text-primary">🧩 Blockchain API</h2>
+
+              {/* Card 1 */}
               <div
-                id="a1"
-                className="accordion-collapse collapse show"
-                data-bs-parent="#faqAccordion"
+                className="p-4 rounded-4 mb-3 shadow-sm"
+                style={{
+                  background: "#f7f9ff",
+                  border: "1px solid #e2e6ff",
+                }}
               >
-                <div className="accordion-body text-muted">
-                  Frequency Chain is a high-performance blockchain designed for
-                  decentralized applications, identity systems, and scalable Web3 solutions.
-                </div>
-              </div>
-            </div>
-
-            {/* Q2 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="q2">
-                <button
-                  className="accordion-button collapsed fw-semibold"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#a2"
+                <h5 className="fw-bold text-primary">Check Wallet Balance</h5>
+                <div
+                  className="p-3 mt-3 rounded-3"
+                  style={{
+                    background: "#eef1ff",
+                    borderLeft: "4px solid #4b36ff",
+                    color: "#121116",
+                  }}
                 >
-                  How do I start developing on Frequency?
-                </button>
-              </h2>
-              <div id="a2" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  Install our JS SDK, explore the API documentation, and use our
-                  developer tools to start building your decentralized app.
+                  <pre className="m-0">{`const balance = await Frequency.balance("0xUser");
+console.log(balance);`}</pre>
                 </div>
               </div>
-            </div>
 
-            {/* Q3 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="q3">
-                <button
-                  className="accordion-button collapsed fw-semibold"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#a3"
-                >
-                  Is Frequency Chain open source?
-                </button>
-              </h2>
-              <div id="a3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  Yes. All major components including SDKs, APIs and core are
-                  open source and available on GitHub.
-                </div>
-              </div>
-            </div>
+              {/* Card 2 */}
+              <div
+                className="p-4 rounded-4 shadow-sm"
+                style={{
+                  background: "#f7f9ff",
+                  border: "1px solid #e2e6ff",
+                }}
+              >
+                <h5 className="fw-bold text-primary">Send Transaction</h5>
 
-            {/* Q4 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="q4">
-                <button
-                  className="accordion-button collapsed fw-semibold"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#a4"
+                <div
+                  className="p-3 mt-3 rounded-3"
+                  style={{
+                    background: "#eef1ff",
+                    borderLeft: "4px solid #4b36ff",
+                    color: "#121116",
+                  }}
                 >
-                  How do I request support?
-                </button>
-              </h2>
-              <div id="a4" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  You can join our Discord community, open a GitHub issue, or use the
-                  support contact form for assistance.
+                  <pre className="m-0">{`await Frequency.tx({
+  from: "0xUser",
+  to: "0xReceiver",
+  amount: 50
+});`}</pre>
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Q5 */}
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="q5">
-                <button
-                  className="accordion-button collapsed fw-semibold"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#a5"
-                >
-                  Is Frequency suitable for enterprise use?
-                </button>
-              </h2>
-              <div id="a5" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  Absolutely. Frequency is designed to support large-scale applications, high throughput,
-                  and secure decentralized identity systems.
-                </div>
+            {/* ---------------- FAQ ---------------- */}
+            <section id="FAQ" className="mb-5">
+              <h2 className="fw-bold mb-3 text-primary">❓ FAQ</h2>
+
+              <div className="accordion" id="faqAccordion">
+                {[
+                  {
+                    q: "Is Frequency Chain Open Source?",
+                    a: "Yes, all repositories and developer tools are available on GitHub.",
+                  },
+                  {
+                    q: "How is Frequency Chain so fast?",
+                    a: "Frequency uses optimized consensus and parallel execution layers.",
+                  },
+                  {
+                    q: "Can I deploy smart contracts?",
+                    a: "Yes, Frequency supports Solidity and EVM smart contracts.",
+                  },
+                ].map((item, i) => (
+                  <div
+                    className="accordion-item border-primary-subtle"
+                    key={i}
+                    style={{ background: "#f7f9ff" }}
+                  >
+                    <h2 className="accordion-header">
+                      <button
+                        className="accordion-button collapsed bg-white text-dark"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#faq${i}`}
+                      >
+                        {item.q}
+                      </button>
+                    </h2>
+                    <div
+                      id={`faq${i}`}
+                      className="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div className="accordion-body">{item.a}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </section>
+          </main>
+
+          {/* ---------------- Right TOC ---------------- */}
+          <aside className="col-lg-2 d-none d-lg-block">
+            <div
+              className="p-3 rounded-4 shadow-sm"
+              style={{
+                background: "#f7f9ff",
+                border: "1px solid #e2e6ff",
+                position: "sticky",
+                top: "20px",
+              }}
+            >
+              <h6 className="fw-bold mb-2 text-primary">ON THIS PAGE</h6>
+              <ul className="list-unstyled small">
+                <li><a href="#Introduction" className="text-dark">Introduction</a></li>
+                <li><a href="#GettingStarted" className="text-dark">Getting Started</a></li>
+                <li><a href="#Installation" className="text-dark">Installation</a></li>
+                <li><a href="#BlockchainAPIs" className="text-dark">API</a></li>
+                <li><a href="#FAQ" className="text-dark">FAQ</a></li>
+              </ul>
             </div>
-          </div>
+          </aside>
+
         </div>
-      </section>
-
-      {/* SUPPORT CARDS */}
-      <section className="py-5 bg-light">
-        <div className="container">
-          <h2 className="fw-bold text-center mb-5">Need More Help?</h2>
-
-          <div className="row g-4 justify-content-center">
-            {/* Card 1 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
-                  alt="discord"
-                  width="50"
-                />
-                <h5 className="fw-bold mt-3">Join Discord</h5>
-                <p className="text-muted small">
-                  Chat with developers and get help from the community.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                  alt="github"
-                  width="50"
-                />
-                <h5 className="fw-bold mt-3">GitHub Issues</h5>
-                <p className="text-muted small">
-                  Report bugs or suggest new features directly on GitHub.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/684/684809.png"
-                  alt="support"
-                  width="50"
-                />
-                <h5 className="fw-bold mt-3">Support Email</h5>
-                <p className="text-muted small">
-                  Need something specific? Contact the support team directly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FOOTER */}
-      <section
-        className="py-5 text-center text-white"
-        style={{
-          background: "linear-gradient(135deg, #4736d8, #2a1fa6)",
-        }}
-      >
-        <h2 className="fw-bold">Still Have Questions?</h2>
-        <p className="mt-2">We’re here to help you build the future of Web3.</p>
-        <button className="btn btn-light px-4 py-2 fw-semibold mt-3">
-          Contact Support →
-        </button>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
-

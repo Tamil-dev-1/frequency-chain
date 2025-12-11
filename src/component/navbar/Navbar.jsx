@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../../ThemeContext";  
+import { ThemeContext } from "../../ThemeContext";
 import './Navbar.css';
 
 const NavbarComponent = () => {
 
   // Force apply theme again on page navigation
-useEffect(() => {
-  const stored = localStorage.getItem("theme") || "light";
-  document.body.setAttribute("data-theme", stored);
-}, []);
+  useEffect(() => {
+    const stored = localStorage.getItem("theme") || "light";
+    document.body.setAttribute("data-theme", stored);
+  }, []);
 
   const { theme, toggleTheme } = useContext(ThemeContext); // <-- UPDATED
 
@@ -79,8 +79,8 @@ useEffect(() => {
               {open.learn && (
                 <div className="ps-3 pb-2">
                   <Link to='about-frecx' className="dropdown-item">About FreC</Link>
-                  <Link to='governance' className="dropdown-item">Governance</Link>
-                  <a className="dropdown-item">FAQ</a>
+                  <Link to='/governance' className="dropdown-item">Governance</Link>
+                  <Link to='/faq' className="dropdown-item">FAQ</Link>
                 </div>
               )}
             </li>
@@ -137,7 +137,8 @@ useEffect(() => {
 
               {open.ecosystem && (
                 <div className="ps-3 pb-2">
-                  <Link to='ourproduct' className="dropdown-item">OurProduct</Link>
+                  <Link to='/ourproduct' className="dropdown-item">OurProduct</Link>
+                  <Link to='/blog' className="dropdown-item">Blog</Link>
                   <a className="dropdown-item">FAQ</a>
                 </div>
               )}
@@ -171,7 +172,7 @@ useEffect(() => {
               <ul className="dropdown-menu">
                 <li><Link to='about-frecx' className="dropdown-item">About FreC</Link></li>
                 <li><Link to='governance' className="dropdown-item">Governance</Link></li>
-                <li><a className="dropdown-item">FAQ</a></li>
+                <li><Link to='/faq' className="dropdown-item">FAQ</Link></li>
               </ul>
             </li>
 
@@ -193,7 +194,8 @@ useEffect(() => {
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Ecosystem</a>
               <ul className="dropdown-menu">
-                <li><Link to='ourproduct' className="dropdown-item">OurProduct</Link></li>
+                <li><Link to='/ourproduct' className="dropdown-item">OurProduct</Link></li>
+                <li><Link to='/blog' className="dropdown-item">Blog</Link></li>
               </ul>
             </li>
 

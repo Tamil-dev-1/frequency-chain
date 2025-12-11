@@ -12,6 +12,8 @@ import Header from '../component/header/Header';
 import Whitepaper from '../pages/research/Whitepaper';
 import Roadmap from '../pages/research/Roadmap';
 import Footer from '../component/footer/Footer';
+import Faq from '../pages/learn/Faq';
+import Blog from '../pages/blog/Blog';
 const AppRouter = () => {
   return (
     <>
@@ -19,14 +21,16 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<Home />} />
        <Route path= 'about-frecx' element={<Aboutfrec />} />
-       <Route path= 'governance' element={<Governance/>} />
-       <Route path= 'developer' element={<Developer />} />
-       <Route path= 'doc' element={<Doc />} />
-       <Route path= 'eco-system' element={<Ecosystem />} />
-       <Route path= 'ourproduct' element={<OurProduct />} />
-       <Route path= 'stake-earn' element={<StakeEarn />} />
-       <Route path= 'whitepaper' element={<Whitepaper />} />
-       <Route path= 'roadmap' element={<Roadmap />} />
+       <Route path= '/governance' element={<Governance/>} />
+       <Route path= '/developer' element={<Developer />} />
+       <Route path= '/doc' element={<Doc />} />
+       <Route path= '/eco-system' element={<Ecosystem />} />
+       <Route path= '/ourproduct' element={<OurProduct />} />
+       <Route path= '/stake-earn' element={<StakeEarn />} />
+       <Route path= '/whitepaper' element={<Whitepaper />} />
+       <Route path= '/roadmap' element={<Roadmap />} />
+       <Route path= '/faq' element={<Faq />} />
+       <Route path= '/blog' element={<Blog />} />
       </Routes>
       <Footer />
     </>

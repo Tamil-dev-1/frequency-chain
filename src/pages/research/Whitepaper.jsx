@@ -245,7 +245,7 @@ export default function Whitepaper() {
                     <div className="mb-2"><strong>Highlights</strong></div>
                     <div className="muted small">Overview and context for Introduction.</div>
                     <div className="mt-3">
-                      <img src="https://dummyimage.com/280x160/eff2ff/0d6efd.png&text=Introduction" alt="illustration" className="img-fluid rounded" />
+                      <img src="https://images.pexels.com/photos/7567606/pexels-photo-7567606.jpeg" alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
