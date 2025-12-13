@@ -104,7 +104,7 @@ export default function Whitepaper() {
                 <a href="#pdf-viewer" className="btn btn-light btn-lg" onClick={handleNavClick('pdf-viewer')}>
                   <i className="bi bi-file-earmark-pdf-fill me-2"></i> View PDF
                 </a>
-                <a href="/whitepaper.pdf" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-lg">
+                <a href="/dummy.pdf" target="_blank" rel="noreferrer" className="btn btn-outline-light btn-lg">
                   <i className="bi bi-download me-2"></i> Download
                 </a>
               </div>
@@ -190,27 +190,30 @@ export default function Whitepaper() {
               </div>
             </section> */}
 
-  <section id="pdf-viewer" className="mb-5 reveal section-card p-4">
+<section id="pdf-viewer" className="mb-5 section-card p-4">
   <div className="d-flex justify-content-between align-items-center mb-3">
     <h3 className="mb-0">Whitepaper PDF</h3>
-    <div className="muted small">Embedded viewer</div>
+    <div className="text-muted small">Embedded viewer</div>
   </div>
 
-  {/* PDF inside iframe */}
+  {/* Embedded PDF */}
   <iframe
-    className="pdf-frame"
+   className="pdf-frame"
     title="dummy-pdf"
     src="/dummy.pdf#view=FitH"
+
   ></iframe>
 
-  <div className="mt-3 d-flex gap-2">
+  {/* Buttons */}
+  <div className="mt-3 d-flex flex-wrap gap-2">
     <a
-      href="/whitepaper.pdf"
+      href="/dummy.pdf"
       className="btn btn-outline-primary"
       target="_blank"
       rel="noreferrer"
     >
-      <i className="bi bi-box-arrow-up-right me-2"></i> Open in new tab
+      <i className="bi bi-box-arrow-up-right me-2"></i>
+      Open in new tab
     </a>
 
     <button
@@ -218,10 +221,47 @@ export default function Whitepaper() {
       data-bs-toggle="modal"
       data-bs-target="#pdfModal"
     >
-      <i className="bi bi-arrows-fullscreen me-2"></i> Fullscreen
+      <i className="bi bi-arrows-fullscreen me-2"></i>
+      Fullscreen
     </button>
   </div>
 </section>
+
+
+
+<div
+  className="modal fade"
+  id="pdfModal"
+  tabIndex="-1"
+  aria-hidden="true"
+>
+  <div className="modal-dialog modal-fullscreen">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title">Whitepaper PDF</h5>
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div className="modal-body p-0">
+        <iframe
+          title="dummy-pdf-fullscreen"
+          src="/dummy.pdf"
+          style={{
+            width: "100%",
+            height: "100%",
+            border: "none",
+          }}
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
             {/* MANUAL SECTIONS */}

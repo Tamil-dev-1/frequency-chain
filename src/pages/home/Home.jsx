@@ -1,21 +1,41 @@
 
 import Hero from '../../component/hero/Hero'
 import ComparisonSlider from '../../component/slider/ComparisonSlider';
-// import HeroSection from '../../component/hero/HeroSection'
 import Blog from '../../component/blog/Blog';
 import './Home.css';
 import Events from '../../component/event/Events';
+import Demo from '../../assets/images/home/demo.png'
+import Demo2 from '../../assets/images/home/demo2.png'
+import Demo3 from '../../assets/images/home/demo3.png'
+import Demo4 from '../../assets/images/home/demo4.png'
+import Demo5 from '../../assets/images/home/demo5.png'
+
+
+
 export default function Home() {
 
-   
+ 
+
+    const imgStyle = {
+    width: "100%",
+    maxWidth: "150px",
+    height: "auto",
+  };
+
   return (
     <>
-      <Hero />
+
+    
+    <Hero />
+
+
+      
       {/* <HeroSection /> */}
       
                   {/* SECTION=====2 */}
 
-   <section className="hero-section d-flex flex-column align-items-center">
+   <section className="hero-section d-flex flex-column align-items-center"
+   >
   <div className="container">
     <div className="col-lg-8 mx-auto text-center">
       <h1 className="hero-title">Welcome to FrecX</h1>
@@ -38,7 +58,7 @@ export default function Home() {
 
   {/* 1. Pick a wallet */}
   <div className="col-12 col-sm-6 col-md-3 mb-4">
-    <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
+    <div className="topic-card rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
         className=" topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
        
@@ -103,134 +123,134 @@ export default function Home() {
 
                    {/* SECTION=====3 */}
 
-    <section className="py-5" style={{ background: "#fff" }}>
-  <div className="container">
+ <section className="py-5" style={{ background: "#fff" }}>
+      <div className="container">
 
-    {/* TITLE + RIGHT TOP CARD */}
-    <div className="row mb-5 align-items-center">
-      <div className="col-lg-6 mb-4 mb-lg-0">
-        <span className="text-uppercase small text-muted">Use cases</span>
-        <h1 className="fw-bold display-5 mb-3">
-          A new way <br /> to use the internet
-        </h1>
-      </div>
+        {/* TITLE + RIGHT CARD */}
+        <div className="row mb-4 align-items-center">
+          <div
+            className="col-lg-6 mb-3 mb-lg-0"
+            data-aos="fade-up"
+          >
+            <span className="eco-label mb-3 d-inline-block">USE CASE</span>
+            <h1 className="fw-bold display-5">
+              A new way <br /> to use the internet
+            </h1>
+          </div>
 
-      {/* Right card */}
-      <div className="col-lg-6">
-        <div
-          className="rounded-4 shadow p-4 d-flex align-items-center gap-4"
-          style={{ background: "#F2E8FF", padding: "32px" }}
-        >
-          <img
-            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
-            className="img-fluid rounded-3"
-            style={{ width: "160px", height: "auto" }}
-            alt=""
-          />
+          <div className="col-lg-6" data-aos="fade-left">
+            <div
+              className="rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
+              style={{ background: "#F2E8FF" }}
+            >
+              <img
+                src={Demo}
+                className="img-fluid rounded-3"
+                style={imgStyle}
+                alt=""
+              />
 
-          <div>
-            <h4 className="fw-bold mb-2">Crypto without volatility</h4>
-            <p className="mb-3">
-              Stablecoins maintain stable value and match the U.S. dollar.
-            </p>
-            <button className="btn btn-dark btn-sm rounded-pill px-3">
-              Discover stablecoins →
-            </button>
+              <div>
+                <h4 className="fw-bold mb-2">Crypto without volatility</h4>
+                <p className="mb-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <button className="btn btn-dark btn-sm rounded-pill px-3">
+                  Discover stablecoins →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    {/* 3 Cards Row */}
-    <div className="row g-4">
+        {/* 3 CARDS */}
+        <div className="row g-4">
 
-      {/* LEFT CARD */}
-      <div className="col-lg-4">
-        <div
-          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
-          style={{ background: "#EAF7F1", padding: "32px" }}
-        >
-          <img
-            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
-            alt=""
-            className="img-fluid rounded-3"
-            style={{ width: "150px" }}
-          />
-          <div>
-            <h5 className="fw-bold mb-2">A fairer financial system</h5>
-            <p className="mb-3">Ethereum financial system is open to everyone.</p>
-            <button className="btn btn-dark btn-sm rounded-pill px-3">Explore DeFi →</button>
+          <div className="col-lg-4 col-md-6" data-aos="fade-up">
+            <div
+              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              style={{ background: "#EAF7F1" }}
+            >
+              <img src={Demo3} className="img-fluid rounded-3" style={imgStyle} alt="" />
+              <div>
+                <h5 className="fw-bold mb-2">A fairer financial system</h5>
+                <p className="mb-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <button className="btn btn-dark btn-sm rounded-pill px-3">
+                  Explore DeFi →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              style={{ background: "#FFE8F0" }}
+            >
+              <img src={Demo4} className="img-fluid rounded-3" style={imgStyle} alt="" />
+              <div>
+                <h5 className="fw-bold mb-2">The network of networks</h5>
+                <p className="mb-3">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <button className="btn btn-dark btn-sm rounded-pill px-3">
+                  Explore benefits →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              style={{ background: "#EAF2FF" }}
+            >
+              <img src={Demo5} className="img-fluid rounded-3" style={imgStyle} alt="" />
+              <div>
+                <h5 className="fw-bold mb-2">Innovative apps</h5>
+                <p className="mb-3">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <button className="btn btn-dark btn-sm rounded-pill px-3">
+                  Browse apps →
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* BOTTOM CARD */}
+        <div className="row mt-4">
+          <div className="col-12" data-aos="fade-up">
+            <div
+              className="rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
+              style={{ background: "#FFF4E0" }}
+            >
+              <img
+                src={Demo2}
+                className="img-fluid rounded-3"
+                style={{ width: "100%", maxWidth: "250px" }}
+                alt=""
+              />
+
+              <div>
+                <h4 className="fw-bold mb-2">The internet of assets</h4>
+                <p className="mb-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button className="btn btn-dark btn-sm rounded-pill px-3">
+                  More on NFTs →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
-
-      {/* CENTER CARD */}
-      <div className="col-lg-4">
-        <div
-          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
-          style={{ background: "#FFE8F0", padding: "32px" }}
-        >
-          <img
-            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
-            alt=""
-            className="img-fluid rounded-3"
-            style={{ width: "150px" }}
-          />
-          <div>
-            <h5 className="fw-bold mb-2">The network of networks</h5>
-            <p className="mb-3">Ethereum is the hub for blockchain innovation.</p>
-            <button className="btn btn-dark btn-sm rounded-pill px-3">Explore benefits →</button>
-          </div>
-        </div>
-      </div>
-
-      {/* RIGHT CARD */}
-      <div className="col-lg-4">
-        <div
-          className="rounded-4 shadow p-4 d-flex gap-4 align-items-center h-100"
-          style={{ background: "#EAF2FF", padding: "32px" }}
-        >
-          <img
-            src="https://images.pexels.com/photos/5077039/pexels-photo-5077039.jpeg"
-            alt=""
-            className="img-fluid rounded-3"
-            style={{ width: "150px" }}
-          />
-          <div>
-            <h5 className="fw-bold mb-2">Innovative apps</h5>
-            <p className="mb-3">Apps that protect your privacy.</p>
-            <button className="btn btn-dark btn-sm rounded-pill px-3">Browse apps →</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    {/* BOTTOM CARD */}
-    <div className="row mt-5">
-      <div className="col-lg-12">
-        <div
-          className="rounded-4 shadow p-4 d-flex align-items-center gap-4"
-          style={{ background: "#FFF4E0", padding: "36px" }}
-        >
-          <img
-            src="https://images.pexels.com/photos/6771607/pexels-photo-6771607.jpeg"
-            alt=""
-            className="img-fluid rounded-3"
-            style={{ width: "190px" }}
-          />
-
-          <div>
-            <h4 className="fw-bold mb-2">The internet of assets</h4>
-            <p className="mb-3">Anything can be tokenized — art, real estate, collectibles.</p>
-            <button className="btn btn-dark btn-sm rounded-pill px-3">More on NFTs →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
                                   {/* SECTION======4 */}
@@ -598,15 +618,8 @@ export default function Home() {
           <div className="col-md-5 d-flex">
             <div className="d-flex align-items-start gap-3 text-start">
               <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background: "#fff",
-                  borderRadius: "14px",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                }}
-                className="d-flex justify-content-center align-items-center"
-              >
+                
+                className="d-flex justify-content-center align-items-center topic-icon">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="icon"
@@ -627,15 +640,7 @@ export default function Home() {
           <div className="col-md-5 d-flex">
             <div className="d-flex align-items-start gap-3 text-start">
               <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background: "#fff",
-                  borderRadius: "14px",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                }}
-                className="d-flex justify-content-center align-items-center"
-              >
+                className="d-flex justify-content-center align-items-center topic-icon">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="github"
@@ -655,16 +660,7 @@ export default function Home() {
           {/* Discord */}
           <div className="col-md-5 d-flex">
             <div className="d-flex align-items-start gap-3 text-start">
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background: "#fff",
-                  borderRadius: "14px",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                }}
-                className="d-flex justify-content-center align-items-center"
-              >
+              <div className="d-flex justify-content-center align-items-center topic-icon">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
                   alt="discord"
@@ -684,16 +680,7 @@ export default function Home() {
           {/* X (Twitter) */}
           <div className="col-md-5 d-flex">
             <div className="d-flex align-items-start gap-3 text-start">
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background: "#fff",
-                  borderRadius: "14px",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                }}
-                className="d-flex justify-content-center align-items-center"
-              >
+              <div className="d-flex justify-content-center align-items-center topic-icon">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="x"

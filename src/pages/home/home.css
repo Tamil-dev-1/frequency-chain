@@ -225,6 +225,19 @@
 }
 
 
+                      /* SECTION ====== 3 */
+
+.demo-img{
+  width: 220px;
+  height: auto;
+}
+  @media(max-Width:570){
+    .demo-img{
+      width: 100%;
+     max-width: 150px;
+    }
+  }
+
 
 /* strongest ecosystem section*/
 

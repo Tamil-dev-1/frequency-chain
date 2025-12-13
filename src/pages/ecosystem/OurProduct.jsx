@@ -5,7 +5,7 @@ const Ourbrand = () => {
   return (
     <div>
        <section
-      className="py-5"
+      className="py-5 round"
       style={{ background: "#0d0f16" }}
     >
       <div className="container">
@@ -108,7 +108,7 @@ const Ourbrand = () => {
 
                                 {/* SECTION --------- 2 */}
 
-             <ProductSlider />
+                    <ProductSlider />
 
 
 
@@ -270,119 +270,130 @@ const Ourbrand = () => {
 
                                   {/* SECTION -------- 4       */}
 
-                   <div className="py-5" style={{ backgroundColor: "#ffffff" }}>
-      
-      {/* Section Title */}
-      <h2
-        className="text-center hero-title"
-        style={{ fontWeight: 700, fontSize: "42px", color: "#000",paddingBottom:"40px" }}
-      >
-        Explore Our Apps
-      </h2>
+    <div className="py-5" style={{ backgroundColor: "#ffffff" }}>
 
-      {/* Main container 65% width */}
-      <div className="container" style={{ width: "65%" }}>
-        <div className="row g-4">
+  {/* Section Title */}
+  <h2
+    className="text-center hero-title mb-5"
+    style={{
+      fontWeight: 700,
+      fontSize: "clamp(28px, 4vw, 42px)",
+      color: "#000",
+    }}
+  >
+    Explore Our Apps
+  </h2>
 
-          {/* Card 1 */}
-          <div className="col-md-4">
-            <div
-              style={{
-                backgroundColor: "#000",
-                borderRadius: "25px 25px 0 0",
-                overflow: "hidden",
-                height: "260px",
-              }}
-            >
-              <img
-                src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg"
-                alt="BYB"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
+  {/* Responsive Container */}
+  <div className="container">
+    <div className="row g-4 justify-content-center">
 
-            <div
-              className="p-4"
-              style={{
-                background: "#f8f8f8",
-                borderRadius: "0 0 25px 25px",
-                minHeight: "210px",
-              }}
-            >
-              <h4 style={{ fontWeight: 600 }}>App-1</h4>
-              <p style={{ color: "#555", fontSize: "15px" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat.
-              </p>
-            </div>
+      {/* CARD 1 */}
+      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div style={{ maxWidth: "320px", width: "100%" }}>
+          <div
+            style={{
+              backgroundColor: "#000",
+              borderRadius: "24px 24px 0 0",
+              overflow: "hidden",
+              height: "clamp(200px, 30vw, 260px)",
+            }}
+          >
+            <img
+              src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg"
+              alt="App-1"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
 
-          {/* Card 2 */}
-          <div className="col-md-4">
-            <div
-              style={{
-                backgroundColor: "#000",
-                borderRadius: "25px 25px 0 0",
-                overflow: "hidden",
-                height: "260px",
-              }}
-            >
-              <img
-                src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"
-                alt="Restify"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-
-            <div
-              className="p-4"
-              style={{
-                background: "#f8f8f8",
-                borderRadius: "0 0 25px 25px",
-                minHeight: "210px",
-              }}
-            >
-              <h4 style={{ fontWeight: 600 }}>App-2</h4>
-              <p style={{ color: "#555", fontSize: "15px" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quam.
-              </p>
-            </div>
+          <div
+            className="p-4"
+            style={{
+              background: "#f8f8f8",
+              borderRadius: "0 0 24px 24px",
+              minHeight: "200px",
+            }}
+          >
+            <h4 style={{ fontWeight: 600 }}>App-1</h4>
+            <p style={{ color: "#555", fontSize: "15px", lineHeight: 1.6 }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat.
+            </p>
           </div>
-
-          {/* Card 3 */}
-          <div className="col-md-4">
-            <div
-              style={{
-                backgroundColor: "#0053ff",
-                borderRadius: "25px 25px 0 0",
-                overflow: "hidden",
-                height: "260px",
-              }}
-            >
-              <img
-                src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg"
-                alt="EVearn"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-
-            <div
-              className="p-4"
-              style={{
-                background: "#f8f8f8",
-                borderRadius: "0 0 25px 25px",
-                minHeight: "210px",
-              }}
-            >
-              <h4 style={{ fontWeight: 600 }}>App-3</h4>
-              <p style={{ color: "#555", fontSize: "15px" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, fugiat.
-              </p>
-            </div>
-          </div>
-
         </div>
       </div>
-    </div>        
+
+      {/* CARD 2 */}
+      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div style={{ maxWidth: "320px", width: "100%" }}>
+          <div
+            style={{
+              backgroundColor: "#000",
+              borderRadius: "24px 24px 0 0",
+              overflow: "hidden",
+              height: "clamp(200px, 30vw, 260px)",
+            }}
+          >
+            <img
+              src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"
+              alt="App-2"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+
+          <div
+            className="p-4"
+            style={{
+              background: "#f8f8f8",
+              borderRadius: "0 0 24px 24px",
+              minHeight: "200px",
+            }}
+          >
+            <h4 style={{ fontWeight: 600 }}>App-2</h4>
+            <p style={{ color: "#555", fontSize: "15px", lineHeight: 1.6 }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quam.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* CARD 3 */}
+      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+        <div style={{ maxWidth: "320px", width: "100%" }}>
+          <div
+            style={{
+              backgroundColor: "#0053ff",
+              borderRadius: "24px 24px 0 0",
+              overflow: "hidden",
+              height: "clamp(200px, 30vw, 260px)",
+            }}
+          >
+            <img
+              src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg"
+              alt="App-3"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+
+          <div
+            className="p-4"
+            style={{
+              background: "#f8f8f8",
+              borderRadius: "0 0 24px 24px",
+              minHeight: "200px",
+            }}
+          >
+            <h4 style={{ fontWeight: 600 }}>App-3</h4>
+            <p style={{ color: "#555", fontSize: "15px", lineHeight: 1.6 }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fugiat.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+        
 
                                      {/* SECTION ------- 5          */}
 
@@ -391,7 +402,6 @@ const Ourbrand = () => {
         className="w-75 p-5 position-relative round"
         style={{
           backgroundColor: "#0d5550",
-          
           color: "#fff",
           overflow: "hidden",
         }}

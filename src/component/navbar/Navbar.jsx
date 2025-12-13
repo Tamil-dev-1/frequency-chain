@@ -1,17 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../../ThemeContext";
 import './Navbar.css';
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";  // Update path if needed
 
 const NavbarComponent = () => {
-
-  // Force apply theme again on page navigation
-  useEffect(() => {
-    const stored = localStorage.getItem("theme") || "light";
-    document.body.setAttribute("data-theme", stored);
-  }, []);
-
-  const { theme, toggleTheme } = useContext(ThemeContext); // <-- UPDATED
+const { theme, toggleTheme } = useContext(ThemeContext);
 
   const [open, setOpen] = useState({
     learn: false,
@@ -37,17 +31,26 @@ const NavbarComponent = () => {
           <img src="/logo.svg" width="32" height="32" alt="logo" />
         </a>
 
-        {/* RIGHT SIDE — SEARCH + THEME ICON (MOBILE HIDDEN) */}
+        {/* RIGHT SIDE — SEARCH + ICON (MOBILE HIDDEN) */}
         <div className="d-flex d-lg-none align-items-center gap-3">
-          {/* Search button */}
           <i className="bi bi-search fs-5"></i>
 
-          {/* Theme toggle */}
-          <i
-            className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+          {/* Static theme icon (no theme logic) */}
+          {/* <i
+            className="bi bi-moon fs-4"
             style={{ cursor: "pointer" }}
-            onClick={toggleTheme}
-          ></i>
+          ></i> */}
+
+          <i
+  className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+  onClick={toggleTheme}
+  style={{
+    cursor: "pointer",
+    color: theme === "light" ? "#000" : "#fff",
+    transition: "0.3s"
+  }}
+></i>
+
         </div>
 
         {/* Mobile Toggle */}
@@ -63,7 +66,7 @@ const NavbarComponent = () => {
         <div className="collapse navbar-collapse" id="mainNavbar">
 
           {/* MOBILE ACCORDION MENU */}
-          <ul className="navbar-nav d-lg-none w-100 mt-3">
+          <ul className="nav-text navbar-nav d-lg-none w-100 mt-3">
 
             {/* LEARN */}
             <li className="w-100">
@@ -163,6 +166,7 @@ const NavbarComponent = () => {
                 </div>
               )}
             </li>
+
           </ul>
 
           {/* DESKTOP MENU */}
@@ -208,17 +212,26 @@ const NavbarComponent = () => {
             </li>
           </ul>
 
-          {/* RIGHT SIDE (DESKTOP) */}
+          {/* RIGHT SIDE — DESKTOP */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            {/* Search */}
             <i className="bi bi-search fs-5" style={{ cursor: "pointer" }}></i>
 
-            {/* Theme Toggle */}
-            <i
-              className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+            {/* Static icon only */}
+            {/* <i
+              className="bi bi-moon fs-4"
               style={{ cursor: "pointer" }}
-              onClick={toggleTheme}
-            ></i>
+            ></i> */}
+
+            <i
+  className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+  onClick={toggleTheme}
+  style={{
+    cursor: "pointer",
+    color: theme === "light" ? "#000" : "#fff",
+    transition: "0.3s"
+  }}
+></i>
+
           </div>
 
         </div>

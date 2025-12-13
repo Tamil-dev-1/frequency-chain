@@ -79,173 +79,186 @@ export default function Blog() {
                                       {/* section ------- 2 */}
 
 
-               <div className="container py-5 bg-light">
+    <div className="container py-5 bg-light">
 
-      {/* ================= FEATURED LEFT + TRENDING RIGHT ================= */}
-      <div className="row mb-5">
+  {/* ================= FEATURED LEFT + TRENDING RIGHT ================= */}
+  <div className="row mb-5">
 
-        {/* LEFT FEATURED CARD */}
-        <div className="col-lg-7 mb-5">
-          <div className="position-relative">
-            <img
-              src="https://images.pexels.com/photos/3970329/pexels-photo-3970329.jpeg"
-              className="img-fluid rounded"
-              alt="featured"
-            />
+    {/* LEFT FEATURED CARD */}
+    <div className="col-lg-7 mb-5">
+      <div className="position-relative">
 
-            {/* Featured overlay card */}
-            <div
-              className="p-4 bg-white shadow rounded position-absolute"
-              style={{
-                bottom: "-40px",
-                left: "40px",
-                width: "85%",
-              }}
-            >
-              <h4 className="fw-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima.
-              </h4>
-              <p className="text-muted mb-2" style={{ fontSize: "14px" }}>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores. Laudantium?
-              </p>
+        {/* Main Image */}
+        <img
+          src="https://images.pexels.com/photos/3970329/pexels-photo-3970329.jpeg"
+          className="img-fluid rounded"
+          alt="featured"
+        />
 
-              <span className="badge bg-light text-dark me-2">Announcements</span>
-              <span className="text-muted small">29 min read</span>
-            </div>
-          </div>
+        {/* Overlay card for Desktop */}
+        <div
+          className="d-none d-lg-block position-absolute p-4 bg-white shadow rounded"
+          style={{
+            bottom: "-40px",
+            left: "40px",
+            width: "85%",
+          }}
+        >
+          <h4 className="fw-bold mb-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima.
+          </h4>
+          <p className="text-muted mb-2" style={{ fontSize: "14px" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores. Laudantium?
+          </p>
+          <span className="badge bg-light text-dark me-2">Announcements</span>
+          <span className="text-muted small">29 min read</span>
         </div>
 
-        {/* RIGHT TRENDING LIST */}
-        <div className="col-lg-5">
-
-          {/* TRENDING TITLE WITH LINE */}
-          <div className="d-flex align-items-center mb-4">
-            <h6 className="text-primary fw-bold mb-0 me-3">TRENDING</h6>
-            <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB" }}></div>
-          </div>
-
-          {[
-            {
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Announcements",
-              time: "29 min read"
-            },
-            {
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Announcements",
-              time: "17 min read"
-            },
-            {
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Announcements",
-              time: "11 min read"
-            },
-            {
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Vision",
-              time: "39 min read"
-            },
-            {
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Announcements",
-              time: "41 min read"
-            }
-          ].map((item, i) => (
-            <div key={i} className="mb-4">
-              <h6 className="fw-semibold" style={{color:'#001F82'}}>{item.title}</h6>
-              <span className="badge text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
-              <span className="text-muted small">{item.time}</span>
-              <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB",marginTop:'10px' }}></div>
-            </div>
-          ))}
+        {/* Overlay card for Mobile/Tablet */}
+        <div className="d-block d-lg-none mt-3 p-3 bg-white shadow rounded">
+          <h4 className="fw-bold mb-2" style={{ fontSize: "16px" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima.
+          </h4>
+          <p className="text-muted mb-2" style={{ fontSize: "13px" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores. Laudantium?
+          </p>
+          <span className="badge bg-light text-dark me-2">Announcements</span>
+          <span className="text-muted small">29 min read</span>
         </div>
+
       </div>
+    </div>
 
-      {/* ================= VISION SECTION ================= */}
-
-      {/* VISION TITLE WITH LINE */}
+    {/* RIGHT TRENDING LIST */}
+    <div className="col-lg-5">
+      {/* TRENDING TITLE WITH LINE */}
       <div className="d-flex align-items-center mb-4">
-        <h6 className="text-primary fw-bold mb-0 me-3">VISION</h6>
+        <h6 className="text-primary fw-bold mb-0 me-3">TRENDING</h6>
         <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB" }}></div>
       </div>
 
-      <div className="row">
-        {/* LEFT VISION LIST */}
-        <div className="col-lg-7 mb-4">
-          {[
-            {
-              img: "https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg",
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.e",
-              tag: "Vision",
-              time: "9 min read"
-            },
-            {
-              img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
-              title:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Announcements",
-              time: "12 min read"
-            },
-            {
-              img: "https://images.pexels.com/photos/3944460/pexels-photo-3944460.jpeg",
-              title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.3.0",
-              tag: "Vision",
-              time: "12 min read"
-            },
-            {
-              img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
-              title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-              tag: "Vision",
-              time: "22 min read"
-            }
-          ].map((item, i) => (
-            <div className="d-flex mb-4" key={i}>
-              <img
-                src={item.img}
-                className="rounded me-3"
-                width="180"
-                height="100"
-                alt="vision"
-              />
-              <div>
-                <h6 className="fw-semibold mb-1">{item.title}</h6>
-                <span className="badge  text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
-                <span className="text-muted small">{item.time}</span>
-              </div>
-            </div>
-          ))}
+      {[ 
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Announcements",
+          time: "29 min read"
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Announcements",
+          time: "17 min read"
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Announcements",
+          time: "11 min read"
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Vision",
+          time: "39 min read"
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Announcements",
+          time: "41 min read"
+        }
+      ].map((item, i) => (
+        <div key={i} className="mb-4">
+          <h6 className="fw-semibold" style={{color:'#001F82'}}>{item.title}</h6>
+          <span className="badge text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
+          <span className="text-muted small">{item.time}</span>
+          <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB", marginTop:'10px' }}></div>
         </div>
+      ))}
+    </div>
+  </div>
 
-        {/* RIGHT NEWSLETTER BOX */}
-        <div className="col-lg-5">
-          <div className="p-4 rounded shadow-sm" style={{backgroundColor:'#EBEEFD'}}>
-            <h5 className="fw-bold">Subscribe to the Missing Link</h5>
-            <input
-              className="form-control my-3"
-              placeholder="Enter your email address"
-            />
-            <button className="btn btn-primary w-100 mb-3">Sign up</button>
+  {/* ================= VISION SECTION ================= */}
+  {/* VISION TITLE WITH LINE */}
+  <div className="d-flex align-items-center mb-4">
+    <h6 className="text-primary fw-bold mb-0 me-3">VISION</h6>
+    <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB" }}></div>
+  </div>
 
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" id="agree" />
-              <label className="form-check-label small text-muted" htmlFor="agree">
-                Yes, I agree to receive email communications.
-              </label>
-            </div>
+  <div className="row">
+    {/* LEFT VISION LIST */}
+    <div className="col-lg-7 mb-4">
+      {[
+        {
+          img: "https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg",
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Vision",
+          time: "9 min read"
+        },
+        {
+          img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Announcements",
+          time: "12 min read"
+        },
+        {
+          img: "https://images.pexels.com/photos/3944460/pexels-photo-3944460.jpeg",
+          title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Vision",
+          time: "12 min read"
+        },
+        {
+          img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
+          title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+          tag: "Vision",
+          time: "22 min read"
+        }
+      ].map((item, i) => (
+        <div className="d-flex mb-4" key={i}>
+          <img
+            src={item.img}
+            className="rounded me-3"
+            width="180"
+            height="100"
+            alt="vision"
+          />
+          <div>
+            <h6 className="fw-semibold mb-1">{item.title}</h6>
+            <span className="badge  text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
+            <span className="text-muted small">{item.time}</span>
           </div>
         </div>
-      </div>
-
-      {/* extra bottom spacing */}
-      <div style={{ height: "50px" }}></div>
+      ))}
     </div>
-              
+
+    {/* RIGHT NEWSLETTER BOX */}
+    <div className="col-lg-5">
+      <div className="p-4 rounded shadow-sm" style={{backgroundColor:'#EBEEFD'}}>
+        <h5 className="fw-bold">Subscribe to the Missing Link</h5>
+        <input
+          className="form-control my-3"
+          placeholder="Enter your email address"
+        />
+        <button className="btn btn-primary w-100 mb-3">Sign up</button>
+
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" id="agree" />
+          <label className="form-check-label small text-muted" htmlFor="agree">
+            Yes, I agree to receive email communications.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* extra bottom spacing */}
+  <div style={{ height: "50px" }}></div>
+
+</div>
+  
                                {/* Carousel ------ section */}
 
                                <Carousel />
@@ -349,7 +362,7 @@ export default function Blog() {
       <div className="container text-center">
         {/* Heading */}
         <h2 className="mb-4" style={{ color: "#1a237e", fontWeight: "700" }}>
-          Stay updated on the latest Chainlink news
+          Stay updated on the latest FrequencyChain news
         </h2>
 
         {/* Email input + Button */}
@@ -375,7 +388,7 @@ export default function Blog() {
             htmlFor="newsletterConsent"
             style={{ fontSize: "0.9rem", color: "#555" }}
           >
-            Yes, I agree to receive email communications from Chainlink.*
+            Yes, I agree to receive email communications from FrequencyChain.*
           </label>
         </div>
       </div>

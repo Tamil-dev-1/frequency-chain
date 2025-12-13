@@ -178,11 +178,11 @@ export default function Governance() {
             ))}
 
             {/* FOOTER */}
-            <footer className="text-center py-4">
+            {/* <footer className="text-center py-4">
               <small className="text-muted">
                 © {new Date().getFullYear()} Frequency Chain Governance
               </small>
-            </footer>
+            </footer> */}
           </div>
         </div>
       </main>
