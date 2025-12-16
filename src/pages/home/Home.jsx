@@ -9,12 +9,13 @@ import Demo2 from '../../assets/images/home/demo2.png'
 import Demo3 from '../../assets/images/home/demo3.png'
 import Demo4 from '../../assets/images/home/demo4.png'
 import Demo5 from '../../assets/images/home/demo5.png'
-
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 
 export default function Home() {
 
- 
+ const {theme} = useContext(ThemeContext);
 
     const imgStyle = {
     width: "100%",
@@ -34,20 +35,31 @@ export default function Home() {
       
                   {/* SECTION=====2 */}
 
-   <section className="hero-section d-flex flex-column align-items-center"
+   <section className="d-flex flex-column align-items-center py-5"
+      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}
    >
   <div className="container">
     <div className="col-lg-8 mx-auto text-center">
-      <h1 className="hero-title">Welcome to FrecX</h1>
+      <h1 className="hero-title" style={{color: theme === "dark"? "#ffff":""}}>Welcome to FrecX</h1>
 
-      <p className="hero-subtitle mt-3">
+      <p className="hero-subtitle mt-3"
+       style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores est, 
         reiciendis beatae voluptas doloremque consequatur expedita eius odio id!
       </p>
 
       {/* Button aligned LEFT */}
       <div className="text-center">
-        <button className="hero-btn mt-4">Learn More</button>
+        <button className="hero-btn mt-4"
+      >Learn More</button>
       </div>
     </div>
   </div>
@@ -58,16 +70,20 @@ export default function Home() {
 
   {/* 1. Pick a wallet */}
   <div className="col-12 col-sm-6 col-md-3 mb-4">
-    <div className="topic-card rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
+    <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start" >
       <div
         className=" topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
        
-      >
-        <i className="bi bi-wallet2 fs-1" style={{ color: '#9357F4' }}></i>
+      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
+        <i className="bi bi-wallet2 fs-1" style={{ color: '#9357F4', }}></i>
       </div>
       <div>
         <h5 className="fw-bold" style={{ color: '#9357F4' }}>Pick a wallet</h5>
-        <p className="text-muted small m-0">Create accounts & manage assets</p>
+        <p className="icon-text small m-0">Create accounts & manage assets</p>
       </div>
     </div>
   </div>
@@ -77,12 +93,16 @@ export default function Home() {
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
         className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-      >
+       style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
         <i className="bi bi-star fs-1" style={{ color: '#4371EF' }}></i>
       </div>
       <div>
         <h5 className="fw-bold" style={{ color: '#4371EF' }}>Get FrecX</h5>
-        <p className="text-muted small m-0">The currency of Ethereum</p>
+        <p className="icon-text small m-0">The currency of Ethereum</p>
       </div>
     </div>
   </div>
@@ -92,12 +112,16 @@ export default function Home() {
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
         className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-      >
+      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }} >
         <i className="bi bi-phone fs-1 text-success"></i>
       </div>
       <div>
-        <h5 className="fw-bold text-success">Try apps</h5>
-        <p className="text-muted small m-0">Finance, gaming, social</p>
+        <h5 className="fw-bold" style={{color:"#92FDDE"}}>Try apps</h5>
+        <p className="icon-text small m-0">Finance, gaming, social</p>
       </div>
     </div>
   </div>
@@ -107,12 +131,16 @@ export default function Home() {
     <div className="rounded-4 p-4 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
       <div
         className="topic-icon d-flex justify-content-center align-items-center rounded-4 shadow mb-3 mb-md-0"
-      >
+       style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
         <i className="bi bi-rocket fs-1" style={{ color: '#FF52BD' }}></i>
       </div>
       <div>
         <h5 className="fw-bold" style={{ color: '#FF52BD' }}>Start building</h5>
-        <p className="text-muted small m-0">Create your first app</p>
+        <p className="icon-text small m-0">Create your first app</p>
       </div>
     </div>
   </div>
@@ -123,7 +151,11 @@ export default function Home() {
 
                    {/* SECTION=====3 */}
 
- <section className="py-5" style={{ background: "#fff" }}>
+ <section className="py-5" style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }} >
       <div className="container">
 
         {/* TITLE + RIGHT CARD */}
@@ -132,16 +164,16 @@ export default function Home() {
             className="col-lg-6 mb-3 mb-lg-0"
             data-aos="fade-up"
           >
-            <span className="eco-label mb-3 d-inline-block">USE CASE</span>
+            <span className="learn-badge px-3 py-1">USE CASE</span>
             <h1 className="fw-bold display-5">
               A new way <br /> to use the internet
             </h1>
           </div>
 
-          <div className="col-lg-6" data-aos="fade-left">
+          <div className="col-lg-6" data-aos="fade-left" >
             <div
-              className="rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
-              style={{ background: "#F2E8FF" }}
+              className="gradient-box gradient-1 rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
+              
             >
               <img
                 src={Demo}
@@ -151,7 +183,7 @@ export default function Home() {
               />
 
               <div>
-                <h4 className="fw-bold mb-2">Crypto without volatility</h4>
+                <h4 className="fw-bold mb-2" style={{color: theme === "dark" ? "#ffffff" : "#111111",}}>Crypto without volatility</h4>
                 <p className="mb-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
@@ -168,12 +200,12 @@ export default function Home() {
 
           <div className="col-lg-4 col-md-6" data-aos="fade-up">
             <div
-              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              style={{ background: "#EAF7F1" }}
+              className="gradient-box gradient-2  rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              
             >
               <img src={Demo3} className="img-fluid rounded-3" style={imgStyle} alt="" />
               <div>
-                <h5 className="fw-bold mb-2">A fairer financial system</h5>
+                <h5 className="fw-bold mb-2" style={{color: theme === "dark" ? "#ffffff" : "#111111",}}>A fairer financial system</h5>
                 <p className="mb-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
@@ -186,8 +218,8 @@ export default function Home() {
 
           <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div
-              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              style={{ background: "#FFE8F0" }}
+              className="gradient-box gradient-3 rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              
             >
               <img src={Demo4} className="img-fluid rounded-3" style={imgStyle} alt="" />
               <div>
@@ -204,8 +236,8 @@ export default function Home() {
 
           <div className="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
             <div
-              className="rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              style={{ background: "#EAF2FF" }}
+              className="gradient-box gradient-4 rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
+              
             >
               <img src={Demo5} className="img-fluid rounded-3" style={imgStyle} alt="" />
               <div>
@@ -226,8 +258,8 @@ export default function Home() {
         <div className="row mt-4">
           <div className="col-12" data-aos="fade-up">
             <div
-              className="rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
-              style={{ background: "#FFF4E0" }}
+              className="gradient-box gradient-5 rounded-2 shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4 text-center text-md-start"
+              
             >
               <img
                 src={Demo2}
@@ -237,7 +269,7 @@ export default function Home() {
               />
 
               <div>
-                <h4 className="fw-bold mb-2">The internet of assets</h4>
+                <h4 className="fw-bold mb-2"  style={{color: theme === "dark" ? "#ffffff" : "#111111",}}>The internet of assets</h4>
                 <p className="mb-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -254,7 +286,7 @@ export default function Home() {
 
 
                                   {/* SECTION======4 */}
-  <section className="eco-wrapper" style={{ background: "#fff" }}>
+  <section className="eco-wrapper" >
       <div className="container-fluid px-4 px-md-5">
 
         <div className="row align-items-center gy-5">
@@ -272,10 +304,12 @@ export default function Home() {
           <div className="col-12 col-lg-6 ps-lg-5 d-flex flex-column justify-content-center">
 
             <span className="eco-label mb-5">ACTIVITY</span>
-
+          
             <h2 className="eco-title mb-5 hero-title">The strongest ecosystem</h2>
 
-            <p className="eco-subtitle">
+            <p className="eco-subtitle" style={{ color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",}}
+          >
               Activity from all frecX networks
             </p>
 
@@ -285,22 +319,30 @@ export default function Home() {
 
                 <div className="col-12 col-sm-6 stats-item">
                   <div className="stats-value">$147B</div>
-                  <div className="stats-text">Value locked in DeFi</div>
+                  <div className="stats-text" 
+                  style={{ color: theme === "dark" ? "#ffffff" : "#5d5555ff",
+          transition: "0.3s",}}>Value locked in DeFi</div>
                 </div>
 
                 <div className="col-12 col-sm-6 stats-item">
                   <div className="stats-value">$114.3B</div>
-                  <div className="stats-text">Value protecting FrecX</div>
+                  <div className="stats-text"
+                      style={{ color: theme === "dark" ? "#ffffff" : "#5d5555ff",
+          transition: "0.3s",}}>Value protecting FrecX</div>
                 </div>
 
                 <div className="col-12 col-sm-6 stats-item">
                   <div className="stats-value">$0.0018</div>
-                  <div className="stats-text">Average transaction cost</div>
+                  <div className="stats-text" 
+                      style={{ color: theme === "dark" ? "#ffffff" : "#5d5555ff",
+          transition: "0.3s",}}>Average transaction cost</div>
                 </div>
 
                 <div className="col-12 col-sm-6 stats-item">
                   <div className="stats-value">19.92M</div>
-                  <div className="stats-text">Transactions in the last 24h</div>
+                  <div className="stats-text"
+                      style={{ color: theme === "dark" ? "#ffffff" : "#5d5555ff",
+          transition: "0.3s",}}>Transactions in the last 24h</div>
                 </div>
 
               </div>
@@ -312,7 +354,8 @@ export default function Home() {
                 Enterprise FrecX
               </button>
 
-              <button className="btn btn-outline-dark px-4 py-2">
+              <button className="btn btn-outline-dark px-4 py-2" style={{ color: theme === "dark" ? "#ffffff" : "#5d5555ff",
+          transition: "0.3s",}}>
                 More ecosystem resources →
               </button>
             </div>
@@ -334,53 +377,101 @@ export default function Home() {
 
         <h1 className="fw-bold display-5 mt-3 hero-title">Understand FrecX</h1>
 
-        <p className="text-muted mt-2">
-          Crypto can feel overwhelming. Don’t worry, these materials are designed
-          to help you understand Ethereum in just a few minutes.
+        <p className="mt-2" style={{ color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",}}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laudantium dolorum fugit harum, esse unde obcaecati sapiente!.
         </p>
 
         <h5 className="fw-semibold mt-4">Popular topics</h5>
 
         <div className="row g-4 mt-2">
 
-          <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
-            <div className="topic-icon">
+          <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3"
+          >
+            <div className="topic-icons"  style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ff2fab" : "#ff2fab",
+          transition: "0.3s",
+        }}>
               <i className="bi bi-gear-fill"></i>
             </div>
             <span className="topic-text hover-underline">What is FrecX?</span>
           </div>
 
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
-            <div className="topic-icon">
+            <div className="topic-icons"
+
+            style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ff2fab" : "#ff2fab",
+          transition: "0.3s",
+        }}>
               <i className="bi bi-wallet2"></i>
             </div>
-            <span className="topic-text hover-underline">What are crypto wallets?</span>
+            <span className="topic-text hover-underline"
+                 style={{
+          color: theme === "dark" ? "#ffff" : "#000",
+          transition: "0.3s",
+        }}>What are crypto wallets?</span>
           </div>
 
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
-            <div className="topic-icon">
+            <div className="topic-icons"
+            style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ff2fab" : "#ff2fab",
+          transition: "0.3s",
+        }}>
               <i className="bi bi-box-fill"></i>
             </div>
-            <span className="topic-text hover-underline">How to start, step by step</span>
+            <span className="topic-text hover-underline"
+                 style={{
+          color: theme === "dark" ? "#ffff" : "#000",
+          transition: "0.3s",
+        }}>How to start, step by step</span>
           </div>
 
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
-            <div className="topic-icon">
+            <div className="topic-icons"
+            
+            style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ff2fab" : "#ff2fab",
+          transition: "0.3s",
+        }}>
               <i className="bi bi-file-earmark-text-fill"></i>
             </div>
-            <span className="topic-text hover-underline">FrecX Whitepaper</span>
+            <span className="topic-text hover-underline"
+                 style={{
+          color: theme === "dark" ? "#ffff" : "#000",
+          transition: "0.3s",
+        }}>FrecX Whitepaper</span>
           </div>
 
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
-            <div className="topic-icon">
+            <div className="topic-icons" 
+            style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ff2fab" : "#ff2fab",
+          transition: "0.3s",
+        }}>
               <i className="bi bi-signpost-split"></i>
             </div>
-            <span className="topic-text hover-underline">FrecX roadmap</span>
+            <span className="topic-text hover-underline" 
+            style={{
+          color: theme === "dark" ? "#ffff" : "#000",
+          transition: "0.3s",
+        }}>FrecX roadmap</span>
           </div>
 
         </div>
 
-        <button className="btn btn-outline-dark mt-4 px-4 py-2">
+        <button className="btn btn-outline-dark mt-4 px-4 py-2 "
+        style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffff" : "#0000",
+          transition: "0.3s",
+        }}>
           Other topics →
         </button>
       </div>
@@ -432,10 +523,13 @@ export default function Home() {
 
         {/* Subtitle */}
         <p
-          className="text-muted mt-3"
-          style={{
-            fontSize: "20px",
-          }}
+          className="mt-3"
+
+               style={{
+          color: theme === "dark" ? "#ffff" : "#6c5f5fff",
+          transition: "0.3s",
+          fontSize:'20px'
+        }}
         >
           Be part of the digital revolution
         </p>
@@ -471,15 +565,25 @@ export default function Home() {
           Built by the community
         </h1>
 
-        <p className="text-muted mt-3">
+        <p className=" mt-3" 
+             style={{
+          color: theme === "dark" ? "#ffffff" : "#5a5353ff",
+          transition: "0.3s",
+        }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos nemo dolor quas?
         </p>
 
-        <p className="text-muted">
+        <p     style={{
+          color: theme === "dark" ? "#ffffff" : "#5a5353ff",
+          transition: "0.3s",
+        }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates velit, saepe deserunt voluptate ipsam aliquid.
         </p>
 
-        <p className="text-muted mb-4">
+        <p className="mb-4"     style={{
+          color: theme === "dark" ? "#ffffff" : "#5a5353ff",
+          transition: "0.3s",
+        }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, consectetur.
         </p>
 
@@ -499,22 +603,24 @@ export default function Home() {
 
           {/* Icon Buttons */}
           <button
-            className="btn btn-light border shadow-sm d-flex align-items-center justify-content-center"
+            className="btn btn-light shadow-sm d-flex align-items-center justify-content-center"
             style={{
               width: "48px",
               height: "48px",
               borderRadius: "10px",
+              border:'1px solid gray'
             }}
           >
-            <i className="bi bi-discord" style={{ fontSize: "22px" }}></i>
+            <i className="bi bi-discord" style={{ fontSize: "22px",}}></i>
           </button>
 
           <button
-            className="btn btn-light border shadow-sm d-flex align-items-center justify-content-center"
+            className="btn btn-light shadow-sm d-flex align-items-center justify-content-center"
             style={{
               width: "48px",
               height: "48px",
               borderRadius: "10px",
+                border:'1px solid gray'
             }}
           >
             <i className="bi bi-github" style={{ fontSize: "22px" }}></i>
@@ -540,7 +646,10 @@ export default function Home() {
               <p className="fw-semibold mb-1" style={{ fontSize: "14px" }}>
                 QA session - frequencychain.org portal
               </p>
-              <p className="text-muted small mb-0">
+              <p className="small mb-0"     style={{
+          color: theme === "dark" ? "#989292ff" : "#5a5353ff",
+          transition: "0.3s",
+        }}>
                 December 10, 2025 at 5:45 PM
               </p>
             </div>
@@ -556,7 +665,10 @@ export default function Home() {
               <p className="fw-semibold mb-1" style={{ fontSize: "14px" }}>
                 frequencychain.org Community - December 2025
               </p>
-              <p className="text-muted small mb-0">
+              <p className="small mb-0"     style={{
+          color: theme === "dark" ? "#989292ff" : "#5a5353ff",
+          transition: "0.3s",
+        }}>
                 December 18, 2025 at 5:00 PM
               </p>
             </div>
@@ -592,12 +704,11 @@ export default function Home() {
 
 
 
-                              <section
-      className="py-5"
-      style={{
-        background: "linear-gradient(180deg, #E8DDFD 0%, white 100%)",
-        borderRadius: "24px",
-      }}
+ <section className="py-5 gradient-box"
+      // style={{
+      //   background: "linear-gradient(180deg, #E8DDFD 0%, white 100%)",
+      //   borderRadius: "24px",
+      // }}
     >
       <div className="container text-center">
 
@@ -619,7 +730,8 @@ export default function Home() {
             <div className="d-flex align-items-start gap-3 text-start">
               <div
                 
-                className="d-flex justify-content-center align-items-center topic-icon">
+                className="d-flex justify-content-center align-items-center topic-icon" 
+                >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="icon"
@@ -629,7 +741,11 @@ export default function Home() {
 
               <div>
                 <h5 className="fw-bold text-success">How to contribute</h5>
-                <p className="text-muted mb-0">
+                <p className=" mb-0"
+                 style={{
+           color: theme === "dark" ? "#ffff" : "#766464ff",
+          transition: "0.3s",
+        }}>
                   Find out all the different ways you can help ethereum.org grow and be better.
                 </p>
               </div>
@@ -640,7 +756,8 @@ export default function Home() {
           <div className="col-md-5 d-flex">
             <div className="d-flex align-items-start gap-3 text-start">
               <div
-                className="d-flex justify-content-center align-items-center topic-icon">
+                className="d-flex justify-content-center align-items-center topic-icon"
+                >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="github"
@@ -650,7 +767,11 @@ export default function Home() {
 
               <div>
                 <h5 className="fw-bold" style={{color:'#4371F2'}}>GitHub</h5>
-                <p className="text-muted mb-0">
+                <p className="mb-0"
+                 style={{
+           color: theme === "dark" ? "#ffff" : "#766464ff",
+          transition: "0.3s",
+        }}>
                   Contribute to code, design, articles, etc.
                 </p>
               </div>
@@ -670,7 +791,11 @@ export default function Home() {
 
               <div>
                 <h5 className="fw-bold" style={{color:'#9357F4'}}>Discord</h5>
-                <p className="text-muted mb-0">
+                <p className=" mb-0" 
+                 style={{
+           color: theme === "dark" ? "#ffff" : "#766464ff",
+          transition: "0.3s",
+        }}>
                   To ask questions, coordinate contribution and join community calls.
                 </p>
               </div>
@@ -690,7 +815,11 @@ export default function Home() {
 
               <div>
                 <h5 className="fw-bold" style={{color:'#FF52BD'}}>X</h5>
-                <p className="text-muted mb-0">
+                <p className=" mb-0" 
+                 style={{
+           color: theme === "dark" ? "#ffff" : "#766464ff",
+          transition: "0.3s",
+        }}>
                   To keep up with our updates and important news.
                 </p>
               </div>

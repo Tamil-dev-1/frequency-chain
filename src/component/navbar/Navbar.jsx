@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css';
-import { useContext } from "react";
-import { ThemeContext } from "../../ThemeContext";  // Update path if needed
+import "./Navbar.css";
+import { ThemeContext } from "../../ThemeContext";
 
 const NavbarComponent = () => {
-const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState({
     learn: false,
     getStarted: false,
@@ -14,6 +14,13 @@ const { theme, toggleTheme } = useContext(ThemeContext);
     participate: false,
     ecosystem: false,
   });
+
+  // SCROLL SHADOW EFFECT
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const toggleMenu = (key) => {
     setOpen((prev) => ({
@@ -23,37 +30,39 @@ const { theme, toggleTheme } = useContext(ThemeContext);
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <nav
+      className={`navbar navbar-expand-lg py-3 sticky-navbar navbar-${theme} ${
+        scrolled ? "scrolled" : ""
+      }`}
+    >
       <div className="container">
 
-        {/* Logo */}
-        <a className="navbar-brand" href="#">
+        {/* LOGO */}
+        <Link className="navbar-brand" to="/">
           <img src="/logo.svg" width="32" height="32" alt="logo" />
-        </a>
+        </Link>
 
-        {/* RIGHT SIDE — SEARCH + ICON (MOBILE HIDDEN) */}
+        {/* MOBILE RIGHT ICONS */}
         <div className="d-flex d-lg-none align-items-center gap-3">
           <i className="bi bi-search fs-5"></i>
 
-          {/* Static theme icon (no theme logic) */}
+          {/* THEME TOGGLE ICON */}
           {/* <i
-            className="bi bi-moon fs-4"
-            style={{ cursor: "pointer" }}
-          ></i> */}
-
-          <i
-  className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+            className={`bi ${
+              theme === "light" ? "bi-sun" : "bi-moon"
+            } fs-4 theme-icon`}
+            onClick={toggleTheme}
+          /> */}
+                      <i
+  key={theme}
+  className={`bi ${
+    theme === "light" ? "bi-sun" : "bi-moon"
+  } fs-4 theme-icon`}
   onClick={toggleTheme}
-  style={{
-    cursor: "pointer",
-    color: theme === "light" ? "#000" : "#fff",
-    transition: "0.3s"
-  }}
-></i>
-
+/>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* MOBILE TOGGLE */}
         <button
           className="navbar-toggler ms-2"
           type="button"
@@ -66,174 +75,144 @@ const { theme, toggleTheme } = useContext(ThemeContext);
         <div className="collapse navbar-collapse" id="mainNavbar">
 
           {/* MOBILE ACCORDION MENU */}
-          <ul className="nav-text navbar-nav d-lg-none w-100 mt-3">
-
-            {/* LEARN */}
-            <li className="w-100">
-              <div
-                className="d-flex justify-content-between py-2 px-1"
-                onClick={() => toggleMenu("learn")}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="fw-semibold">Learn</span>
-                <i className={`bi bi-chevron-${open.learn ? "up" : "down"}`}></i>
-              </div>
-
-              {open.learn && (
-                <div className="ps-3 pb-2">
-                  <Link to='about-frecx' className="dropdown-item">About FreC</Link>
-                  <Link to='/governance' className="dropdown-item">Governance</Link>
-                  <Link to='/faq' className="dropdown-item">FAQ</Link>
+          <ul className="navbar-nav d-lg-none w-100 mt-3">
+            {[
+              {
+                key: "learn",
+                title: "Learn",
+                links: [
+                  { to: "about-frecx", label: "About FreC" },
+                  { to: "governance", label: "Governance" },
+                  { to: "/faq", label: "FAQ" },
+                ],
+              },
+              {
+                key: "getStarted",
+                title: "Get Started",
+                links: [{ to: "stake-earn", label: "Stake & Earn" }],
+              },
+              {
+                key: "build",
+                title: "Build",
+                links: [
+                  { to: "developer", label: "Developer" },
+                  { to: "doc", label: "Docs" },
+                ],
+              },
+              {
+                key: "ecosystem",
+                title: "Ecosystem",
+                links: [
+                  { to: "/ourproduct", label: "OurProduct" },
+                  { to: "/blog", label: "Blog" },
+                ],
+              },
+              {
+                key: "participate",
+                title: "Research",
+                links: [
+                  { to: "whitepaper", label: "Whitepaper" },
+                  { to: "roadmap", label: "Roadmap" },
+                ],
+              },
+            ].map((item) => (
+              <li key={item.key} className="w-100">
+                <div
+                  className="d-flex justify-content-between py-2 px-1"
+                  onClick={() => toggleMenu(item.key)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <span className="fw-semibold">{item.title}</span>
+                  <i
+                    className={`bi bi-chevron-${
+                      open[item.key] ? "up" : "down"
+                    }`}
+                  />
                 </div>
-              )}
-            </li>
 
-            {/* GET STARTED */}
-            <li className="w-100">
-              <div
-                className="d-flex justify-content-between py-2 px-1"
-                onClick={() => toggleMenu("getStarted")}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="fw-semibold">Get Started</span>
-                <i className={`bi bi-chevron-${open.getStarted ? "up" : "down"}`}></i>
-              </div>
-
-              {open.getStarted && (
-                <div className="ps-3 pb-2">
-                  <Link to='stake-earn' className="dropdown-item">Stake & Earn</Link>
-                  <a className="dropdown-item">FAQ</a>
-                </div>
-              )}
-            </li>
-
-            {/* BUILD */}
-            <li className="w-100">
-              <div
-                className="d-flex justify-content-between py-2 px-1"
-                onClick={() => toggleMenu("build")}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="fw-semibold">Build</span>
-                <i className={`bi bi-chevron-${open.build ? "up" : "down"}`}></i>
-              </div>
-
-              {open.build && (
-                <div className="ps-3 pb-2">
-                  <Link to='developer' className="dropdown-item">Developer</Link>
-                  <Link to='doc' className="dropdown-item">Docs</Link>
-                  <a className="dropdown-item">FAQ</a>
-                </div>
-              )}
-            </li>
-
-            {/* ECOSYSTEM */}
-            <li className="w-100">
-              <div
-                className="d-flex justify-content-between py-2 px-1"
-                onClick={() => toggleMenu("ecosystem")}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="fw-semibold">Ecosystem</span>
-                <i className={`bi bi-chevron-${open.ecosystem ? "up" : "down"}`}></i>
-              </div>
-
-              {open.ecosystem && (
-                <div className="ps-3 pb-2">
-                  <Link to='/ourproduct' className="dropdown-item">OurProduct</Link>
-                  <Link to='/blog' className="dropdown-item">Blog</Link>
-                  <a className="dropdown-item">FAQ</a>
-                </div>
-              )}
-            </li>
-
-            {/* RESEARCH */}
-            <li className="w-100">
-              <div
-                className="d-flex justify-content-between py-2 px-1"
-                onClick={() => toggleMenu("participate")}
-                style={{ cursor: "pointer" }}
-              >
-                <span className="fw-semibold">Research</span>
-                <i className={`bi bi-chevron-${open.participate ? "up" : "down"}`}></i>
-              </div>
-
-              {open.participate && (
-                <div className="ps-3 pb-2">
-                  <Link to='whitepaper' className="dropdown-item">Whitepaper</Link>
-                  <Link to='roadmap' className="dropdown-item">Roadmap</Link>
-                  <a className="dropdown-item">FAQ</a>
-                </div>
-              )}
-            </li>
-
+                {open[item.key] && (
+                  <div className="ps-3 pb-2">
+                    {item.links.map((link) => (
+                      <Link
+                        key={link.label}
+                        to={link.to}
+                        className="dropdown-item"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
           </ul>
 
           {/* DESKTOP MENU */}
           <ul className="navbar-nav mx-lg-auto gap-lg-4 d-none d-lg-flex">
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
-              <ul className="dropdown-menu">
-                <li><Link to='about-frecx' className="dropdown-item">About FreC</Link></li>
-                <li><Link to='governance' className="dropdown-item">Governance</Link></li>
-                <li><Link to='/faq' className="dropdown-item">FAQ</Link></li>
-              </ul>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Build</a>
-              <ul className="dropdown-menu">
-                <li><Link to='developer' className="dropdown-item">Developer</Link></li>
-                <li><Link to='doc' className="dropdown-item">Docs</Link></li>
-              </ul>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Get Started</a>
-              <ul className="dropdown-menu">
-                <li><Link to='stake-earn' className="dropdown-item">Stake & Earn</Link></li>
-              </ul>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Ecosystem</a>
-              <ul className="dropdown-menu">
-                <li><Link to='/ourproduct' className="dropdown-item">OurProduct</Link></li>
-                <li><Link to='/blog' className="dropdown-item">Blog</Link></li>
-              </ul>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Research</a>
-              <ul className="dropdown-menu">
-                <li><Link to='whitepaper' className="dropdown-item">Whitepaper</Link></li>
-                <li><Link to='roadmap' className="dropdown-item">Roadmap</Link></li>
-              </ul>
-            </li>
+            {[
+              {
+                title: "Learn",
+                links: [
+                  { to: "about-frecx", label: "About FreC" },
+                  { to: "governance", label: "Governance" },
+                  { to: "/faq", label: "FAQ" },
+                ],
+              },
+              {
+                title: "Build",
+                links: [
+                  { to: "developer", label: "Developer" },
+                  { to: "doc", label: "Docs" },
+                ],
+              },
+              {
+                title: "Get Started",
+                links: [{ to: "stake-earn", label: "Stake & Earn" }],
+              },
+              {
+                title: "Ecosystem",
+                links: [
+                  { to: "/ourproduct", label: "OurProduct" },
+                  { to: "/blog", label: "Blog" },
+                ],
+              },
+              {
+                title: "Research",
+                links: [
+                  { to: "whitepaper", label: "Whitepaper" },
+                  { to: "roadmap", label: "Roadmap" },
+                ],
+              },
+            ].map((menu) => (
+              <li className="nav-item dropdown" key={menu.title}>
+                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                  {menu.title}
+                </a>
+                <ul className="dropdown-menu">
+                  {menu.links.map((link) => (
+                    <li key={link.label}>
+                      <Link to={link.to} className="dropdown-item">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
 
-          {/* RIGHT SIDE — DESKTOP */}
+          {/* DESKTOP RIGHT ICONS */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            <i className="bi bi-search fs-5" style={{ cursor: "pointer" }}></i>
-
-            {/* Static icon only */}
-            {/* <i
-              className="bi bi-moon fs-4"
-              style={{ cursor: "pointer" }}
-            ></i> */}
-
+            <i className="bi bi-search fs-5"></i>
             <i
-  className={`bi ${theme === "light" ? "bi-moon" : "bi-sun"} fs-4`}
+  key={theme}
+  className={`bi ${
+    theme === "light" ? "bi-sun" : "bi-moon"
+  } fs-4 theme-icon`}
   onClick={toggleTheme}
-  style={{
-    cursor: "pointer",
-    color: theme === "light" ? "#000" : "#fff",
-    transition: "0.3s"
-  }}
-></i>
+/>
 
           </div>
-
         </div>
       </div>
     </nav>

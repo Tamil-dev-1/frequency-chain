@@ -1,7 +1,13 @@
 import React from 'react'
 import './ourproduct.css'
 import ProductSlider from '../../component/productSlider/ProductSlider'
+import  { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
+
 const Ourbrand = () => {
+
+  const {theme} = useContext(ThemeContext);
   return (
     <div>
        <section
@@ -192,7 +198,7 @@ const Ourbrand = () => {
       </h2>
 
       {/* Wrapper 65% width align center */}
-      <div className="container" style={{ width: "65%" }}>
+      <div className="container" style={{ width: "65%"}}>
         <div className="row g-4">
           {/* Card 1 */}
           <div className="col-md-6">
@@ -222,10 +228,10 @@ const Ourbrand = () => {
                 textAlign: "center",
               }}
             >
-              <h5 style={{ color: "#232323", fontWeight: 500 }}>
+              <h5 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s",fontWeight: 500 }}>
                 Applications Built
               </h5>
-              <h1 style={{ fontWeight: 700 }}>350</h1>
+              <h1 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 700 }}>350</h1>
             </div>
           </div>
 
@@ -239,10 +245,10 @@ const Ourbrand = () => {
                 textAlign: "center",
               }}
             >
-              <h5 style={{ color: "#232323", fontWeight: 500 }}>
+              <h5 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 500 }}>
                 Total Staked
               </h5>
-              <h1 style={{ fontWeight: 700 }}>5.8B</h1>
+              <h1 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 700 }}>5.8B</h1>
               {/* <small>VET</small> */}
             </div>
           </div>
@@ -270,7 +276,7 @@ const Ourbrand = () => {
 
                                   {/* SECTION -------- 4       */}
 
-    <div className="py-5" style={{ backgroundColor: "#ffffff" }}>
+    <div className="py-5">
 
   {/* Section Title */}
   <h2
@@ -300,7 +306,7 @@ const Ourbrand = () => {
             }}
           >
             <img
-              src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg"
+              src="https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg"
               alt="App-1"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />

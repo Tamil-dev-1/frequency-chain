@@ -1,8 +1,14 @@
-import React from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import './ComparisonSlider.css';
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
 
 export default function ComparisonSlider() {
+
+   const {theme} = useContext(ThemeContext); 
+
   const topItems = [
     "Equal Access",
     "Privacy Oriented",
@@ -20,7 +26,11 @@ export default function ComparisonSlider() {
   ];
 
   return (
-    <div className="container py-5">
+    <div className="container py-5" 
+     style={{
+          background: theme === "dark" ? "#3D4CEB" : "#ffff",
+          transition: "0.3s",
+        }}>
 
       {/* TOP ROW (→ scroll) */}
       <div className="overflow-hidden mb-4">

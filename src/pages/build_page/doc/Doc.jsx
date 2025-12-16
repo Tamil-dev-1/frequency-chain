@@ -16,19 +16,27 @@ import { LiaGalacticSenate } from "react-icons/lia";
 import { TbTextSize } from "react-icons/tb";
 import { FaLessThanEqual } from "react-icons/fa6";
 import { TbBrandReact } from "react-icons/tb";
+import  { useContext } from "react";
+import { ThemeContext } from "../../../ThemeContext";
+
+
 export default function Docs() {
 
-  
+  const {theme} = useContext(ThemeContext);
 
   return (
     <>
       <div className="docs-container container-fluid">
         {/* Top Right Menu */}
         <div className="row">
-          <div className="col-12 d-flex justify-content-end">
+          <div className="col-12 d-flex justify-content-end"
+           style={{
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
             <div className="top-links text-end">
-              <a href="#">SUBMIT A PR</a>
-              <a href="#">SUBMIT AN ISSUE</a>
+              <span >SUBMIT A PR</span>
+              <p >SUBMIT AN ISSUE</p>
               <div className="last-edit">LAST EDIT: Nov 12, 2025</div>
             </div>
           </div>
@@ -40,28 +48,43 @@ export default function Docs() {
           <div className="col-lg-9 left-content">
             <h1 className="page-title">Frequency Chain Documentation</h1>
 
-            <p className="body-text">
+            <p className="body-text" style={{ color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",}}>
               Frequency chain is an open source platform where participants produce
               best-in-class digital commodities...
             </p>
 
-            <p className="body-text">
+            <p className="body-text"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore neque id, quibusdam repellendus nostrum!.
             </p>
 
-            <p className="body-text">
+            <p className="body-text"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, officiis.
             </p>
 
             <ul className="custom-list">
-              <li><strong>Miners</strong> — Work to produce digital commodities.</li>
-              <li><strong>Validators</strong> — Evaluate the miners' work.</li>
-              <li><strong>Subnet Creators</strong> — Manage incentive mechanisms.</li>
-              <li><strong>Stakers</strong> — Stake TAO to validators.</li>
+              <li><strong  style={{ color: theme === "dark" ? "#9357F4" : "#111111",
+          transition: "0.3s",}}>Miners</strong> — Work to produce digital commodities.</li>
+              <li><strong style={{ color: theme === "dark" ? "#9357F4" : "#111111",
+          transition: "0.3s",}}>Validators</strong> — Evaluate the miners' work.</li>
+              <li><strong style={{ color: theme === "dark" ? "#9357F4" : "#111111",
+          transition: "0.3s",}}>Subnet Creators</strong> — Manage incentive mechanisms.</li>
+              <li><strong style={{ color: theme === "dark" ? "#9357F4" : "#111111",
+          transition: "0.3s",}}>Stakers</strong> — Stake TAO to validators.</li>
             </ul>
 
             {/* Green box */}
-            <div className="info-box mt-4">
+            <div className="info-box mt-4"
+             style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          borderBottom:"1px solid white",
+          borderTop:"1px solid white",
+          borderRight:"1px solid white",
+          transition: "0.3s",
+        }}>
               <h6 className="info-title">💡 BROWSE THE SUBNETS</h6>
               <p className="info-text">
                 Browse the subnets and explore links to repositories on Our.
@@ -86,7 +109,12 @@ export default function Docs() {
     <div className="cards-row">
 
       {/* Card 1 */}
-      <div className="cards-col">
+      <div className="cards-col"
+        style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
         <div className="doc-card">
           <div className="card-icon"><GiStarFormation /></div>
           <h5 className="card-title">Frequency chain frequently asked questions (FAQ)</h5>
@@ -311,13 +339,26 @@ export default function Docs() {
                   <div className="container my-5">
 
       {/* TITLE */}
-      <h2 className="sdk-title">Frequency Chain CLI, SDK, Wallet SDK</h2>
-      <p className="sdk-subtitle">
+      <h2 className="sdk-title"  style={{
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>Frequency Chain CLI, SDK, Wallet SDK</h2>
+      <p className="sdk-subtitle" style={{
+          color: theme === "dark" ? "#979494ff" : "#111111",
+          transition: "0.3s",
+        }}>
         Use the Frequency Chain CLI and SDK and Wallet SDK to develop and participate in the Frequency Chain network.
       </p>
 
       {/* YELLOW ALERT BOX */}
-      <div className="alert-box">
+      <div className="alert-box"   style={{
+          background: theme === "dark" ? "#000000" : "#fff7dd",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          borderTop:"1px solid white",
+          borderBottom:"1px solid white",
+          borderRight:"1px solid white",
+          transition: "0.3s",
+        }}>
         <strong>⚠ LOOKING FOR LEGACY Frequency Chain 7.4.0 DOCS?</strong>
         <br />
         See <a href="#">Legacy Frequency Chain 7.4.0 Documentation.</a>
@@ -327,7 +368,8 @@ export default function Docs() {
       <div className="row mt-4 justify-content-between">
 
         {/* Card 1 */}
-        <div className="col-md-5 mb-4">
+        <div className="col-md-5 mb-4"
+      >
           <div className="sdk-card">
             <div className="sdk-icon"><FaLessThanEqual /></div>
             <div className="sdk-title-small">Frequency Chain CLI</div>
@@ -360,78 +402,10 @@ export default function Docs() {
     </div>                    
 
 
-                               {/* DEMO HOME SECTION */}
+                             
 
 
-      <div className="container my-5" style={{ maxWidth: "1200px" }}>
-      <div className="row g-4">
-
-        {/* LEFT TALL CARD (UNCHANGED) */}
-        <div className="col-md-4">
-          <div className="premium-card h-100 d-flex flex-column justify-content-between">
-            <h4 className="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos quo, harum molestias repudiandae odio minus blanditiis eveniet incidunt modi unde expedita quos cupiditate ullam exercitationem quisquam tenetur autem! Aspernatur neque incidunt suscipit accusamus illo nesciunt! Consequatur, quod recusandae optio, ex totam nulla dolorum dignissimos consequuntur vel velit laborum neque.</h4>
-            <img
-              src="https://images.pexels.com/photos/7948099/pexels-photo-7948099.jpeg"
-              alt="left"
-              className="img-fluid rounded"
-            />
-          </div>
-        </div>
-
-        {/* RIGHT SECTION */}
-        <div className="col-md-8">
-          <div className="row g-4">
-
-            {/* TOP MIDDLE */}
-            <div className="col-md-6">
-              <div className="premium-card d-flex align-items-center gap-3">
-                <img
-                  src="https://images.pexels.com/photos/7948099/pexels-photo-7948099.jpeg"
-                  alt=""
-                  className="side-img"
-                />
-                <div>
-                  <h5 className="fw-semibold mb-1">Heading</h5>
-                  <p className="mb-0 text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, animi. Temporibus aliquam illum obcaecati accusantium corrupti rerum praesentium magni. Possimus quo odio in provident ratione.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* TOP RIGHT */}
-            <div className="col-md-6">
-              <div className="premium-card d-flex align-items-center gap-3">
-                <img
-                  src="https://images.pexels.com/photos/7948099/pexels-photo-7948099.jpeg"
-                  alt=""
-                  className="side-img"
-                />
-                <div>
-                  <h5 className="fw-semibold mb-1">Heading</h5>
-                  <p className="mb-0 text-muted">Description text</p>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTTOM RIGHT ONLY */}
-            <div className="col-md-6 offset-md-6">
-              <div className="premium-card d-flex align-items-center gap-3">
-                <img
-                  src="https://images.pexels.com/photos/7948099/pexels-photo-7948099.jpeg"
-                  alt=""
-                  className="side-img"
-                />
-                <div>
-                  <h5 className="fw-semibold mb-1">Heading</h5>
-                  <p className="mb-0 text-muted">Description text</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
+   
     </>
   );
 }

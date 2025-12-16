@@ -27,27 +27,33 @@
 
 
 
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [globalTheme, setGlobalTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
+  const [theme, setTheme] = useState("light");
 
-  const toggleGlobalTheme = () => {
-    setGlobalTheme((prev) => (prev === "light" ? "dark" : "light"));
+  // Initial load
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const nextTheme = prev === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      return nextTheme;
+    });
   };
 
-  useEffect(() => {
-    document.body.setAttribute("data-theme", globalTheme);
-    localStorage.setItem("theme", globalTheme);
-  }, [globalTheme]);
-
   return (
-    <ThemeContext.Provider value={{ globalTheme, toggleGlobalTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
+

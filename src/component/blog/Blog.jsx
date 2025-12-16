@@ -1,11 +1,15 @@
-import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 export default function BlogCarousel() {
+
+  const {theme} = useContext(ThemeContext);
   const blogs = [
     {
       img: "https://ethpandaops.io/img/blog/announcing-dasmon.png",
@@ -34,7 +38,7 @@ export default function BlogCarousel() {
   ];
 
   return (
-    <section className="py-5" style={{ background: "#F5F7FA" }}>
+    <section className="py-5" >
       <div className="container">
         <h2 className="text-center fw-bold mb-4 hero-title">Recent posts</h2>
 
@@ -59,7 +63,7 @@ export default function BlogCarousel() {
                 style={{
                   borderRadius: "5px",
                   overflow: "hidden",
-                  background: "#fff",
+                  background: "",
                   transition: "0.3s",
                   boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
                 }}
@@ -75,7 +79,11 @@ export default function BlogCarousel() {
                 />
 
                 <div className="p-4">
-                  <small className="text-muted">
+                  <small className=""
+                   style={{
+          color: theme === "dark" ? "#8e8282ff" : "#8d7e7eff",
+          transition: "0.3s",
+        }}>
                     BY {item.author} — {item.date}
                   </small>
 

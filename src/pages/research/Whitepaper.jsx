@@ -2,7 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './Whitepaper.css';
+
+import  { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
+
 export default function Whitepaper() {
+
+  const {theme} = useContext(ThemeContext);
   const [activeId, setActiveId] = useState("intro");
   const observerRef = useRef(null);
 

@@ -1,6 +1,10 @@
-import React from "react";
+
 import './Event.css'
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 export default function Events() {
+
+  const {theme} = useContext(ThemeContext);
   const events = [
     {
       banner:
@@ -10,7 +14,7 @@ export default function Events() {
       location: "RIYADH, KSA",
       badge: "View on YouTube →",
       badgeColor: "trans",
-      bigText: "Lorem ipsum dolor sit amet consectetur ",
+      bigText: "Lorem ipsum dolor sit amet ",
     },
     {
       banner:
@@ -19,7 +23,7 @@ export default function Events() {
       date: "June 8–10, 2026",
       location: "NEW YORK, USA",
       badge: "Get Tickets",
-      badgeColor: "#FFD500",
+      // badgeColor: "#FFD500",
       bigText: "Lorem",
     },
   ];
@@ -29,14 +33,20 @@ export default function Events() {
       <div className="container">
         {/* Heading */}
         <h1 className="fw-bold mb-2 hero-title">Events</h1>
-        <p className="text-muted mb-5" style={{ maxWidth: "550px" }}>
+        <p className=" mb-5"  
+        style={{
+          color: theme === "dark" ? "#ffffff" : "#877979ff",
+          transition: "0.3s",
+          maxWidth: "550px"
+        }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, asperiores.
         </p>
 
         {/* Row */}
         <div className="row g-5">
           {events.map((item, i) => (
-            <div className="col-lg-6" key={i}>
+            <div className="col-lg-6" key={i} 
+         >
               {/* Banner */}
               <div
                 className="p-4 d-flex flex-column justify-content-end"
@@ -78,10 +88,18 @@ export default function Events() {
               </div>
 
               {/* Title */}
-              <h4 className="fw-bold mt-3">{item.title}</h4>
+              <h4 className="fw-bold mt-3"
+                   style={{
+          color: theme === "dark" ? "#ffffff" : "#231d1dff",
+          transition: "0.3s",
+        }}>{item.title}</h4>
 
               {/* Date */}
-              <p className="text-muted fst-italic mb-1">{item.date}</p>
+              <p className=" fst-italic mb-1"
+               style={{
+          color: theme === "dark" ? "#ffffff" : "#867777ff",
+          transition: "0.3s",
+        }}>{item.date}</p>
 
               {/* Location */}
               <small className="text-uppercase text-secondary fw-semibold">

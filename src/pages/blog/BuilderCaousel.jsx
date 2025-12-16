@@ -1,12 +1,21 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import  { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
+
+
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function BuilderCarousel() {
+  const {theme} = useContext(ThemeContext);
+
+
+
   const items = [
     { title: "Lorem1", img: "https://blog.chain.link/wp-content/uploads/2023/07/from-tcpip-to-ccip-640x360.png" },
     { title: "Lorem2", img: "https://blog.chain.link/wp-content/uploads/2023/07/from-tcpip-to-ccip-640x360.png" },
@@ -25,7 +34,7 @@ export default function BuilderCarousel() {
           style={{
             fontWeight: "700",
             fontSize: "24px",
-            color: "#111",
+            color : theme === "dark" ? "#fff" : "#111",
             marginBottom: "6px",
           }}
         >

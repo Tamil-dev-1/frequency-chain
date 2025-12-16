@@ -1,12 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import  { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Carousel() {
+
+  const {theme} = useContext(ThemeContext);
   const items = [
     { title: "Lorem1", img: "https://images.pexels.com/photos/1464196/pexels-photo-1464196.jpeg" },
     { title: "Lorem2", img: "https://images.pexels.com/photos/1464196/pexels-photo-1464196.jpeg" },
@@ -25,7 +29,7 @@ export default function Carousel() {
           style={{
             fontWeight: "700",
             fontSize: "24px",
-            color: "#111",
+            color : theme === "dark" ? "#fff" : "#111",
             marginBottom: "6px",
           }}
         >

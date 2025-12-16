@@ -2,7 +2,14 @@ import React from "react";
 import './StakeEarn.css';
 import Img1 from '../../assets/images/ourproduct/img1.jpg'
 import { Coins, Gift } from "lucide-react";
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
+
+
 const StakeEarn = () => {
+
+  const {theme} = useContext(ThemeContext);
   return (
     <>
       <section
@@ -109,7 +116,7 @@ const StakeEarn = () => {
                 Total Staked
               </p>
 
-              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem" }}>
+              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem",color: theme === "dark" ? "#111111" : "#111111", }}>
                 7B+
                 <span style={{ fontSize: "1rem", marginLeft: "6px" }}>Lorem</span>
               </h1>
@@ -121,7 +128,7 @@ const StakeEarn = () => {
             <div
               className="p-4 rounded-4 h-100"
               style={{
-                background: "#f5f5ff",   // very light lavender
+                background: "#ffc5fbff",   // very light lavender
                 borderRadius: "20px",
               }}
             >
@@ -129,7 +136,7 @@ const StakeEarn = () => {
                 Total Wallets
               </p>
 
-              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem" }}>
+              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem", color: theme === "dark" ? "#111111" : "#111111", }}>
                 15500+
               </h1>
             </div>
@@ -148,7 +155,7 @@ const StakeEarn = () => {
                 Rewards Distributed
               </p>
 
-              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem" }}>
+              <h1 className="fw-bold m-0" style={{ fontSize: "2.8rem",color: theme === "dark" ? "#111111" : "#111111", }}>
                 1.7B
                 <span style={{ fontSize: "1rem", marginLeft: "6px" }}>Lorem</span>
               </h1>
@@ -163,7 +170,7 @@ const StakeEarn = () => {
 
                                        {/* SECTION ======== 3 */}
 
-                     <section className="py-5 bg-white">
+                     <section className="py-5">
       <div className="container">
         <div className="row align-items-center">
 
@@ -178,22 +185,22 @@ const StakeEarn = () => {
 
           {/* RIGHT TEXT */}
           <div className="col-lg-6">
-            <h2 className="fw-bold mb-4">Why Stake?</h2>
+            <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Why Stake?</h2>
 
             <div className="stake-line mb-4"></div>
 
-            <h4 className="fw-semibold">Earn rewards</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Earn rewards</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quos.
             </p>
 
-            <h4 className="fw-semibold mt-4">Participate in governance</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold mt-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Participate in governance</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint dolore id quae iste provident officiis!
             </p>
 
-            <h4 className="fw-semibold mt-4">Ecosystem advantages</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold mt-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Ecosystem advantages</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam harum labore culpa! Deserunt, quibusdam quasi!
             </p>
           </div>
@@ -206,7 +213,12 @@ const StakeEarn = () => {
                                          {/* SECTION ====== 4   */}
 
 
-                                     <section className="py-5 bg-white">
+     <section className="py-5"
+                                      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
       <div className="container text-center">
 
         <h2 className="fw-bold mb-4 premium-title">
@@ -214,7 +226,12 @@ const StakeEarn = () => {
         </h2>
 
         {/* FIXED Video Box */}
-        <div className="video-box mx-auto mb-4">
+        <div className="video-box mx-auto mb-4"  style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          border:"1px solid white",
+          transition: "0.3s",
+        }}>
           <iframe
             className="video-frame"
             src="https://www.youtube.com/embed/HYf3SPQpaNE"
@@ -236,7 +253,7 @@ const StakeEarn = () => {
 
 
 
-                                                <section className="py-5 bg-white">
+<section className="py-5">
       <div className="container">
         <div className="row align-items-center">
 
@@ -251,22 +268,22 @@ const StakeEarn = () => {
 
           {/* RIGHT TEXT */}
           <div className="col-lg-6">
-            <h2 className="fw-bold mb-4">How to Get Started</h2>
+            <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>How to Get Started</h2>
 
             <div className="stake-line mb-4"></div>
 
-            <h4 className="fw-semibold">Connect your wallet</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Connect your wallet</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quos.
             </p>
 
-            <h4 className="fw-semibold mt-4">Stake Frec</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold mt-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Stake Frec</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint dolore id quae iste provident officiis!
             </p>
 
-            <h4 className="fw-semibold mt-4">Earn rewards</h4>
-            <p className="text-muted">
+            <h4 className="fw-semibold mt-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Earn rewards</h4>
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam harum labore culpa! Deserunt, quibusdam quasi!
             </p>
 
@@ -288,7 +305,7 @@ const StakeEarn = () => {
 
                                        {/* SECTION ======= 6 */}
 
-                                       <section className="py-5">
+   <section style={{paddingTop:"100px"}}>
       <div className="container">
 
         <div className="row text-center justify-content-between">
@@ -299,7 +316,7 @@ const StakeEarn = () => {
               <i className="bi bi-camera" />
             </div>
             <h5 className="fw-bold">Choose your NFT</h5>
-            <p className="text-muted">
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
           </div>
@@ -310,7 +327,7 @@ const StakeEarn = () => {
               <i className="bi bi-gift" />
             </div>
             <h5 className="fw-bold">Earn rewards</h5>
-            <p className="text-muted">
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
           </div>
@@ -321,7 +338,7 @@ const StakeEarn = () => {
               <i className="bi bi-arrow-left-right" />
             </div>
             <h5 className="fw-bold">Ecosystem</h5>
-            <p className="text-muted">
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
           </div>
@@ -332,7 +349,7 @@ const StakeEarn = () => {
               <i className="bi bi-diagram-3" />
             </div>
             <h5 className="fw-bold">Governance</h5>
-            <p className="text-muted">
+            <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
           </div>

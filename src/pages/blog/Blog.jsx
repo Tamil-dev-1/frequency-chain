@@ -2,32 +2,39 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import Carousel from '../blog/Carousel'
 import BuilderCarousel from "./BuilderCaousel";
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+import './Blog.css';
+
+
 export default function Blog() {
+
+  const {theme} = useContext(ThemeContext);
   return (
     <>
                            {/* section --------- 1 */}
     <div className="container py-4">
       <div
         className="d-flex align-items-center gap-3 flex-wrap"
-        style={{ background: "#f7f9fc" }}
+       
       >
         {/* Search Input */}
         <div className="d-flex align-items-center px-3 border rounded"
-          style={{ height:'44px',background:'#ffff' }}
+          style={{ height:'44px', }}
         >
           <FaSearch size={16} color="#3b5cff" className="me-2" />
           <input
             type="text"
-            className="form-control border-0 shadow-none p-0"
+            className="form-control border-0 shadow-none p-0 search-input"
             placeholder="Search blog"
-            style={{ width: "200px", background: "transparent" }}
+            style={{ width: "200px", background: "transparent",color: theme === "dark" ? "#fff" : "#111",}}
           />
         </div>
 
         {/* Category Dropdown */}
         <select
           className="form-select"
-          style={{ width:"180px", height: "44px" }}
+          style={{ width:"180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
         >
           <option>Category</option>
         </select>
@@ -35,7 +42,7 @@ export default function Blog() {
         {/* Services Dropdown */}
         <select
           className="form-select"
-          style={{ width: "180px", height: "44px" }}
+          style={{ width: "180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
         >
           <option>Services</option>
         </select>
@@ -43,7 +50,7 @@ export default function Blog() {
         {/* Tags Dropdown */}
         <select
           className="form-select"
-          style={{ width: "180px", height: "44px" }}
+          style={{ width: "180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
         >
           <option>Tags</option>
         </select>
@@ -79,7 +86,7 @@ export default function Blog() {
                                       {/* section ------- 2 */}
 
 
-    <div className="container py-5 bg-light">
+    <div className="container" style={{paddingTop:"100px"}}>
 
   {/* ================= FEATURED LEFT + TRENDING RIGHT ================= */}
   <div className="row mb-5">
@@ -97,17 +104,19 @@ export default function Blog() {
 
         {/* Overlay card for Desktop */}
         <div
-          className="d-none d-lg-block position-absolute p-4 bg-white shadow rounded"
+          className="d-none d-lg-block position-absolute p-4 shadow rounded"
           style={{
             bottom: "-40px",
             left: "40px",
             width: "85%",
+            background: theme === "dark" ? "#151A2D" : "#fff",
+            color: theme === "dark" ? "#ffff" : "#000000"
           }}
         >
-          <h4 className="fw-bold mb-2">
+          <h4 className="fw-bold mb-2" style={{color: theme === "dark" ? "#ffff" : "#000000"}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima.
           </h4>
-          <p className="text-muted mb-2" style={{ fontSize: "14px" }}>
+          <p className="mb-2" style={{ fontSize: "14px", color: theme === "dark" ? "#a19595ff" : "#000000"}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores. Laudantium?
           </p>
           <span className="badge bg-light text-dark me-2">Announcements</span>
@@ -170,7 +179,7 @@ export default function Blog() {
         }
       ].map((item, i) => (
         <div key={i} className="mb-4">
-          <h6 className="fw-semibold" style={{color:'#001F82'}}>{item.title}</h6>
+          <h6 className="fw-semibold" style={{color: theme === "dark" ? "#6C24E0" : "#001F82"}}>{item.title}</h6>
           <span className="badge text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
           <span className="text-muted small">{item.time}</span>
           <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB", marginTop:'10px' }}></div>
@@ -226,7 +235,7 @@ export default function Blog() {
             alt="vision"
           />
           <div>
-            <h6 className="fw-semibold mb-1">{item.title}</h6>
+            <h6 className="fw-semibold mb-1" style={{color: theme === "dark" ? "#6C24E0" : "#001F82"}}>{item.title}</h6>
             <span className="badge  text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
             <span className="text-muted small">{item.time}</span>
           </div>
@@ -236,7 +245,7 @@ export default function Blog() {
 
     {/* RIGHT NEWSLETTER BOX */}
     <div className="col-lg-5">
-      <div className="p-4 rounded shadow-sm" style={{backgroundColor:'#EBEEFD'}}>
+      <div className="p-4 rounded shadow-sm" style={{background: theme === "dark" ? "#1C1C1C" : "#fff"}} >
         <h5 className="fw-bold">Subscribe to the Missing Link</h5>
         <input
           className="form-control my-3"
@@ -246,7 +255,7 @@ export default function Blog() {
 
         <div className="form-check">
           <input className="form-check-input" type="checkbox" id="agree" />
-          <label className="form-check-label small text-muted" htmlFor="agree">
+          <label className="form-check-label small" htmlFor="agree" style={{color: theme === "dark" ? "#918686ff" : "#0c0b0bff"}}>
             Yes, I agree to receive email communications.
           </label>
         </div>
@@ -268,16 +277,16 @@ export default function Blog() {
 
 
                                {/* RECENT POST SECTION */}
-                     <section style={{ backgroundColor: "#ffff", padding: "60px 0" }}>
+                     <section style={{padding: "60px 0" }}>
       <div className="container d-flex justify-content-center">
         <div style={{ width: "60%" }}>
-          <h2 className="text-center mb-5" style={{ color: "#1b2765" }}>
+          <h2 className="text-center mb-5" style={{ color: theme === "dark" ? "#fff" : "#1b2765" }}>
             Most Recent
           </h2>
 
           {/* First Article */}
           <div className="mb-5">
-            <h5 style={{ color: "#1b2765" }}>
+            <h5 style={{ color: theme === "dark" ? "#fff" : "#1b2765" }}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, sint?
             </h5>
             <div className="mb-3">
@@ -301,7 +310,7 @@ export default function Blog() {
 
           {/* Second Article */}
            <div className="mb-5">
-            <h5 style={{ color: "#1b2765" }}>
+            <h5 style={{ color: theme === "dark" ? "#fff" : "#1b2765" }}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, sint?
             </h5>
             <div className="mb-3">
@@ -325,7 +334,7 @@ export default function Blog() {
 
            {/* Third Article */}
            <div className="mb-5">
-            <h5 style={{ color: "#1b2765" }}>
+            <h5 style={{ color: theme === "dark" ? "#fff" : "#1b2765"}}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, sint?
             </h5>
             <div className="mb-3">
@@ -358,10 +367,10 @@ export default function Blog() {
                           {/* NEWS SUBSCRIBTION FORM       */}
 
 
-                     <section className="py-5" style={{ backgroundColor: "#f2f4ff" }}>
+                     <section className="py-5" style={{background: theme === "dark" ? "#000000" : "#fff"}}>
       <div className="container text-center">
         {/* Heading */}
-        <h2 className="mb-4" style={{ color: "#1a237e", fontWeight: "700" }}>
+        <h2 className="mb-4" style={{ color: theme === "dark" ? "#fff" : "#1a237e", fontWeight: "700" }}>
           Stay updated on the latest FrequencyChain news
         </h2>
 

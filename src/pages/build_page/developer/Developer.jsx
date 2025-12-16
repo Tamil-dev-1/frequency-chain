@@ -1,15 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import  { useContext } from "react";
+import { ThemeContext } from "../../../ThemeContext";
 
 export default function Developer() {
+
+  const {theme} = useContext(ThemeContext);
+
   return (
     <>
       {/* HERO SECTION */}
       <section
-        className="py-5 text-center text-white"
+        className="py-5 text-center text-white bg-dev"
         style={{
-          background:
-            "linear-gradient(135deg, #6b4dfb 0%, #4736d8 50%, #2a1fa6 100%)",
+          
           borderRadius: "0 0 40px 40px",
         }}
       >
@@ -29,19 +33,28 @@ export default function Developer() {
       {/* DEVELOPER TOOLS SECTION */}
       <section className="py-5">
         <div className="container">
-          <h2 className="fw-bold text-center mb-5">Developer Tools</h2>
+          <h2 className="fw-bold text-center mb-5"
+            style={{
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>Developer Tools</h2>
 
           <div className="row g-4">
             {/* Card 1 */}
             <div className="col-md-4">
-              <div className="p-4 rounded-4 shadow-sm bg-white h-100">
+              <div className="p-4 rounded-4 shadow-sm h-100"
+              style={{
+          background: theme === "dark" ? "#111A17" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png"
                   alt="sdk"
                   width="50"
                 />
                 <h5 className="fw-bold mt-3">JavaScript SDK</h5>
-                <p className="text-muted">
+                <p style={{color: theme === "dark" ? "#d7ccccff" : "#302020ff",}}>
                   Integrate Frequency blockchain operations into your
                   JavaScript apps easily.
                 </p>
@@ -53,14 +66,19 @@ export default function Developer() {
 
             {/* Card 2 */}
             <div className="col-md-4">
-              <div className="p-4 rounded-4 shadow-sm bg-white h-100">
+              <div className="p-4 rounded-4 shadow-sm h-100"
+                  style={{
+          background: theme === "dark" ? "#21151C" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }} >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/919/919853.png"
                   alt="api"
                   width="50"
                 />
                 <h5 className="fw-bold mt-3">REST API</h5>
-                <p className="text-muted">
+                <p style={{color: theme === "dark" ? "#d7ccccff" : "#302020ff",}}>
                   Access blockchain state, account info and transaction data via
                   our robust REST API.
                 </p>
@@ -72,14 +90,19 @@ export default function Developer() {
 
             {/* Card 3 */}
             <div className="col-md-4">
-              <div className="p-4 rounded-4 shadow-sm bg-white h-100">
+              <div className="p-4 rounded-4 shadow-sm h-100"
+                       style={{
+          background: theme === "dark" ? "#151E32" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }} >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/919/919842.png"
                   alt="cli"
                   width="50"
                 />
                 <h5 className="fw-bold mt-3">Developer CLI</h5>
-                <p className="text-muted">
+                <p  style={{color: theme === "dark" ? "#d7ccccff" : "#302020ff",}}>
                   Build, deploy and test blockchain smart contracts using our
                   powerful CLI tooling.
                 </p>
@@ -93,10 +116,11 @@ export default function Developer() {
       </section>
 
       {/* API SECTION */}
-      <section className="py-5 bg-light">
+      <section className="py-5">
         <div className="container">
-          <h2 className="fw-bold text-center mb-4">Frequency Chain API</h2>
-          <p className="text-center text-muted mb-5" style={{ maxWidth: "700px", margin: "0 auto" }}>
+          <h2 className="fw-bold text-center mb-4"
+          style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Frequency Chain API</h2>
+          <p className="text-center mb-5" style={{ maxWidth: "700px", margin: "0 auto",color: theme === "dark" ? "#ffffff" : "#706969ff", }}>
             Access node RPC, send transactions, query blocks and interact with
             smart contracts.
           </p>
@@ -120,9 +144,9 @@ fetch("https://rpc.frequencychain.io", {
 
       {/* DOCUMENTATION SECTION */}
       <section className="py-5">
-        <div className="container text-center">
-          <h2 className="fw-bold mb-4">Documentation</h2>
-          <p className="text-muted mb-4" style={{ maxWidth: "650px", margin: "0 auto" }}>
+        <div className="container text-center ">
+          <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffffff" : "#111111",}}>Documentation</h2>
+          <p className=" mb-4" style={{ maxWidth: "650px", margin: "0 auto",color: theme === "dark" ? "#ffffff" : "#706969ff", }}>
             Learn how to build on Frequency chain with step-by-step tutorials,
             guides and reference docs.
           </p>
@@ -134,46 +158,83 @@ fetch("https://rpc.frequencychain.io", {
       </section>
 
       {/* COMMUNITY SECTION */}
-      <section className="py-5 bg-light">
+      <section className="py-5">
         <div className="container text-center">
-          <h2 className="fw-bold mb-4">Join the Community</h2>
+          <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffffff" : "#706969ff",}}>Join the Community</h2>
 
-          <div className="row justify-content-center gy-4">
+          <div className="row justify-content-center gy-4"
+          >
             {/* Discord */}
-            <div className="col-md-3 d-flex flex-column align-items-center">
+            <div className="col-md-3 p-4 rounded-4 shadow-sm d-flex flex-column align-items-center"
+                           style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
                 width="50"
                 alt="discord"
+                   style={{
+    filter: theme === "dark"
+      ? "invert(1)"
+      : "invert(1)",
+    transition: "0.3s",
+  }}
               />
               <h6 className="fw-bold mt-2">Discord</h6>
-              <p className="text-muted small">
+              <p className="small" style={{ color: theme === "dark" ? "#949292ff" : "#776e6eff",}}>
                 Ask questions and collaborate with developers.
               </p>
             </div>
 
             {/* GitHub */}
-            <div className="col-md-3 d-flex flex-column align-items-center">
+            <div className="col-md-3 p-4 rounded-4 shadow-sm d-flex flex-column align-items-center"
+                               style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                 width="50"
                 alt="github"
+                                 style={{
+    filter: theme === "dark"
+      ? "invert(1)"
+      : "invert(0.1)",
+    transition: "0.3s",
+  }}
               />
               <h6 className="fw-bold mt-2">GitHub</h6>
-              <p className="text-muted small">
+              <p className="small" style={{ color: theme === "dark" ? "#949292ff" : "#776e6eff",}}>
                 Contribute to open-source development.
               </p>
             </div>
 
             {/* Twitter */}
-            <div className="col-md-3 d-flex flex-column align-items-center">
+            <div className="col-md-3 p-4 rounded-4 shadow-sm d-flex flex-column align-items-center"
+                               style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
               <img
                 src="https://seeklogo.com/images/T/twitter-x-logo-101C7D218D-seeklogo.com.png"
                 width="50"
                 alt="x"
+                                 style={{
+    filter: theme === "dark"
+      ? "invert(1)"
+      : "invert(1)",
+    transition: "0.3s",
+  }}
               />
               <h6 className="fw-bold mt-2">X (Twitter)</h6>
-              <p className="text-muted small">
+              <p className="small" style={{ color: theme === "dark" ? "#949292ff" : "#776e6eff",}}>
                 Follow updates & blockchain announcements.
               </p>
             </div>
@@ -185,12 +246,14 @@ fetch("https://rpc.frequencychain.io", {
       <section
         className="py-5 text-center text-white"
         style={{
-          background: "linear-gradient(135deg, #4736d8, #2a1fa6)",
+          background: theme === "dark" ? "#000000" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
         }}
       >
-        <h2 className="fw-bold">Start Building Today</h2>
-        <p className="mt-2">Everything you need to create on Frequency Chain.</p>
-        <button className="btn btn-light mt-3 px-4 py-2 fw-semibold">
+        <h2 className="fw-bold" style={{color: theme === "dark" ? "#ffffff" : "#252323ff",}}>Start Building Today</h2>
+        <p className="mt-2" style={{color: theme === "dark" ? "#797575ff" : "#5c5454ff",}}>Everything you need to create on Frequency Chain.</p>
+        <button className="btn  mt-3 px-4 py-2 fw-semibold" style={{background: theme === "dark" ? "#0D6EFD" : "#0D6EFD", color: theme === "dark" ? "#ffffff" : "#ffff",}}>
           Get Started →
         </button>
       </section>

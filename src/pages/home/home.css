@@ -66,7 +66,7 @@
   background: #000;
   color: #fff;
   padding: 12px 28px;
-  border: none;
+  border: 1px solid white;
   font-weight: 600;
   position: relative;
 }
@@ -244,7 +244,7 @@
 .eco-wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 100px 0;
 }
 
 /* IMAGE FIX */
@@ -428,6 +428,19 @@
 } */
 
 /* Icons */
+.topic-icons {
+  background: none;
+  color: #ff2fab;
+  padding: 12px 18px 12px 18px;
+  font-size: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid #ff2fab;
+}
+
 .topic-icon {
   background: none;
   color: #ff2fab;
@@ -438,12 +451,16 @@
   box-shadow: 0px 4px 20px rgba(0,0,0,0.06);
   cursor: pointer;
   transition: 0.2s;
-  border: 1px solid #000000;
+  border: 1px solid gray;
+}
+
+.icon-text{
+  font-size: 17px;
 }
 .topic-text{
   font-size: 20px;
   font-weight: 600;
-  color:#000
+  
 }
 
 /* Image styling */

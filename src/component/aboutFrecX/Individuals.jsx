@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 const Individuals = () => {
+   const {theme} = useContext(ThemeContext);
   return (
     <div>
-                          <section className="py-5 bg-white">
+       <section className="py-5" >
       <div className="container">
 
         {/* Title */}
-        <h2 className="fw-bold mb-4">Why Frequency Chain?</h2>
+        <h2 className="fw-bold mb-4"
+         style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}
+         >Why Frequency Chain?</h2>
 
         {/* Tabs */}
         <div className="d-flex gap-2 mb-4">
@@ -29,10 +33,10 @@ const Individuals = () => {
               />
 
               <div className="p-4">
-                <h4 className="fw-semibold">
+                <h4 className="fw-semibold"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>
                   Earn Rewards and Make a Positive Impact
                 </h4>
-                <p className="text-muted">
+                <p  style={{ color: theme === "dark" ? "#ac9b9bff" : "#685959ff",}}>
                   Turn everyday sustainable actions into rewards with real, tradable value.
                 </p>
               </div>
@@ -45,8 +49,8 @@ const Individuals = () => {
 
               {/* Text Left */}
               <div className="p-4 flex-grow-1">
-                <h4 className="fw-semibold">Track and Prove Your Positive Impact</h4>
-                <p className="text-muted">
+                <h4 className="fw-semibold"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Track and Prove Your Positive Impact</h4>
+                <p style={{ color: theme === "dark" ? "#ac9b9bff" : "#685959ff",}}>
                   See your contributions verified and build transparent proof of your efforts.
                 </p>
               </div>
@@ -71,7 +75,7 @@ const Individuals = () => {
 
           {/* Left Card */}
           <div className="col-lg-6">
-            <div className="card border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-lg-row flex-column">
+            <div className="card border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-lg-row flex-column ">
 
               {/* Image Left */}
               <img
@@ -86,8 +90,8 @@ const Individuals = () => {
 
               {/* Text Right */}
               <div className="p-4 flex-grow-1">
-                <h4 className="fw-semibold">Built for Mainstream Adoption</h4>
-                <p className="text-muted">
+                <h4 className="fw-semibold"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Built for Mainstream Adoption</h4>
+                <p style={{ color: theme === "dark" ? "#ac9b9bff" : "#685959ff",}}>
                   Connect with millions of people working toward measurable progress.
                 </p>
               </div>
@@ -107,8 +111,8 @@ const Individuals = () => {
               />
 
               <div className="p-4">
-                <h4 className="fw-semibold">Simple and Accessible Technology</h4>
-                <p className="text-muted">
+                <h4 className="fw-semibold"  style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Simple and Accessible Technology</h4>
+                <p style={{ color: theme === "dark" ? "#ac9b9bff" : "#685959ff",}}>
                   Get started easily through VeWorld and VeBetter, no crypto experience required.
                 </p>
               </div>

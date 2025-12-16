@@ -1,17 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import  { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 export default function FAQPage() {
+   const {theme} = useContext(ThemeContext);
   return (
     <>
       {/* HERO */}
       <section
-        className="py-5 text-center text-white"
-        style={{
-          background:
-            "linear-gradient(135deg, #6b4dfb 0%, #4736d8 50%, #2a1fa6 100%)",
-          borderRadius: "0 0 40px 40px",
-        }}
+        className="py-5 bg-faq text-center text-white"
+       
       >
         <div className="container py-5">
           <h1 className="fw-bold display-4">Frequently Asked Questions</h1>
@@ -24,11 +23,15 @@ export default function FAQPage() {
       {/* FAQ ACCORDION */}
       <section className="py-5">
         <div className="container" style={{ maxWidth: "900px" }}>
-          <h2 className="fw-bold text-center mb-4">General Questions</h2>
+          <h2 className="fw-bold text-center mb-4"
+          style={{
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>General Questions</h2>
 
-          <div className="accordion" id="faqAccordion">
+          <div className="accordion" id="faqAccordion" style={{backgroundColor:'#000'}}>
             {/* Q1 */}
-            <div className="accordion-item">
+            <div className="accordion-item ">
               <h2 className="accordion-header" id="q1">
                 <button
                   className="accordion-button fw-semibold"
@@ -135,21 +138,27 @@ export default function FAQPage() {
       </section>
 
       {/* SUPPORT CARDS */}
-      <section className="py-5 bg-light">
+      <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">Need More Help?</h2>
 
           <div className="row g-4 justify-content-center">
             {/* Card 1 */}
             <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+              <div className="p-4 rounded-4 shadow-sm h-100 text-center"
+               style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
                   alt="discord"
                   width="50"
                 />
                 <h5 className="fw-bold mt-3">Join Discord</h5>
-                <p className="text-muted small">
+                <p className="small" style={{color: theme === "dark" ? "#ffffff" : "#877d7dff",}}>
                   Chat with developers and get help from the community.
                 </p>
               </div>
@@ -157,14 +166,27 @@ export default function FAQPage() {
 
             {/* Card 2 */}
             <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+              <div className="p-4 rounded-4 shadow-sm h-100 text-center"
+                      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                   alt="github"
                   width="50"
+                  style={{
+    filter: theme === "dark"
+      ? "invert(1)"
+      : "invert(0.1)",
+    transition: "0.3s",
+  }}
                 />
                 <h5 className="fw-bold mt-3">GitHub Issues</h5>
-                <p className="text-muted small">
+                <p className=" small" 
+                style={{color: theme === "dark" ? "#ffffff" : "#877d7dff",}}>
                   Report bugs or suggest new features directly on GitHub.
                 </p>
               </div>
@@ -172,14 +194,26 @@ export default function FAQPage() {
 
             {/* Card 3 */}
             <div className="col-md-4">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+              <div className="p-4 rounded-4 shadow-sm h-100 text-center"
+                      style={{
+          background: theme === "dark" ? "#000000" : "#ffff",
+          border: theme === "dark" ? "1px solid white" : "#ffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
+          transition: "0.3s",
+        }}>
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/684/684809.png"
                   alt="support"
                   width="50"
+    style={{
+    filter: theme === "dark"
+      ? "invert(1)"
+      : "invert(0.1)",
+    transition: "0.3s",
+  }}
                 />
                 <h5 className="fw-bold mt-3">Support Email</h5>
-                <p className="text-muted small">
+                <p className=" small" style={{color: theme === "dark" ? "#ffffff" : "#877d7dff",}}>
                   Need something specific? Contact the support team directly.
                 </p>
               </div>

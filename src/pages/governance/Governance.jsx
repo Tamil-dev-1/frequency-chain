@@ -1,10 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 import './Governance.css';
 
 export default function Governance() {
+
+   const {theme} = useContext(ThemeContext);
   const sections = [
     { id: "overview", title: "Overview" },
     { id: "dao-structure", title: "DAO Structure" },
@@ -59,7 +63,7 @@ export default function Governance() {
   return (
     <div className="governance-wrapper">
       {/* HERO SECTION */}
-      <header className="gov-hero py-5">
+      <header className="gradient-bg gov-hero py-5">
         <div className="container">
           <div className="row align-items-center gy-4">
             <div className="col-lg-7">
@@ -121,7 +125,7 @@ export default function Governance() {
         <div className="row">
           {/* SIDEBAR FOR DESKTOP */}
           <aside className="col-lg-3 d-none d-lg-block">
-            <div className="gov-sidebar p-3">
+            <div className="gov-sidebar sidebar-bg bg-sidebar p-3">
               <h5 className="fw-bold">Governance Sections</h5>
               <div className="list-group mt-3">
                 {sections.map((s) => (
@@ -129,7 +133,7 @@ export default function Governance() {
                     key={s.id}
                     href={`#${s.id}`}
                     onClick={scrollTo(s.id)}
-                    className={`list-group-item list-group-item-action border-0 ${
+                    className={`list-group-item list-group-item-action sidebar-text border-0 ${
                       activeId === s.id ? "active" : ""
                     }`}
                   >
