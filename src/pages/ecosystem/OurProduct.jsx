@@ -188,91 +188,50 @@ const Ourbrand = () => {
     </div>      */}
                                {/* SECTION -------- 3          */}
 
-                <div className="py-5" style={{ backgroundColor: "#0f0f13" }}>
-      {/* Title */}
-      <h2
-        className="text-center mb-5"
-        style={{ color: "#fff", fontWeight: 600 }}
-      >
-        FrequencyChain Stats that drive a difference in the world
-      </h2>
+     <div className="stats-wrapper py-5">
+  <h2 className="text-center text-white fw-semibold mb-5">
+    FrequencyChain Stats that drive a difference in the world
+  </h2>
 
-      {/* Wrapper 65% width align center */}
-      <div className="container" style={{ width: "65%"}}>
-        <div className="row g-4">
-          {/* Card 1 */}
-          <div className="col-md-6">
-            <div
-              style={{
-                backgroundColor: "#c8baff",
-                borderRadius: "20px",
-                padding: "40px",
-                textAlign: "center",
-              }}
-            >
-              <h5 style={{ color: "#232323", fontWeight: 500 }}>
-                Rewarded Sustainable Actions
-              </h5>
-              <h1 style={{ fontWeight: 700 }}>1M</h1>
-              {/* <small>/Week</small> */}
-            </div>
-          </div>
+  <div className="container">
+    <div className="row g-4 stats-row">
 
-          {/* Card 2 */}
-          <div className="col-md-6">
-            <div
-              style={{
-                backgroundColor: "#f3f3f5",
-                borderRadius: "20px",
-                padding: "40px",
-                textAlign: "center",
-              }}
-            >
-              <h5 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s",fontWeight: 500 }}>
-                Applications Built
-              </h5>
-              <h1 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 700 }}>350</h1>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="col-md-6">
-            <div
-              style={{
-                backgroundColor: "#f3f3f5",
-                borderRadius: "20px",
-                padding: "40px",
-                textAlign: "center",
-              }}
-            >
-              <h5 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 500 }}>
-                Total Staked
-              </h5>
-              <h1 style={{color: theme === "dark" ? "#0F0F13" : "#0F0F13",transition: "0.3s", fontWeight: 700 }}>5.8B</h1>
-              {/* <small>VET</small> */}
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="col-md-6">
-            <div
-              style={{
-                backgroundColor: "#c8baff",
-                borderRadius: "20px",
-                padding: "40px",
-                textAlign: "center",
-              }}
-            >
-              <h5 style={{ color: "#232323", fontWeight: 500 }}>
-                Rewards Distributed
-              </h5>
-              <h1 style={{ fontWeight: 700 }}>242.9M</h1>
-              {/* <small>VTHO</small> */}
-            </div>
-          </div>
+      {/* Card 1 */}
+      <div className="col-12 col-md-6 d-flex">
+        <div className="stats-card purple-bg round text-center w-100">
+          <h5>Rewarded Sustainable Actions</h5>
+          <h1>1M</h1>
         </div>
       </div>
-    </div>         
+
+      {/* Card 2 */}
+      <div className="col-12 col-md-6 d-flex">
+        <div className="stats-card white-bg round text-center w-100">
+          <h5>Applications Built</h5>
+          <h1>350</h1>
+        </div>
+      </div>
+
+      {/* Card 3 */}
+      <div className="col-12 col-md-6 d-flex">
+        <div className="stats-card white-bg round text-center w-100">
+          <h5>Total Staked</h5>
+          <h1>5.8B</h1>
+        </div>
+      </div>
+
+      {/* Card 4 */}
+      <div className="col-12 col-md-6 d-flex">
+        <div className="stats-card purple-bg round text-center w-100">
+          <h5>Rewards Distributed</h5>
+          <h1>242.9M</h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+      
 
                                   {/* SECTION -------- 4       */}
 

@@ -9,6 +9,7 @@ import Demo2 from '../../assets/images/home/demo2.png'
 import Demo3 from '../../assets/images/home/demo3.png'
 import Demo4 from '../../assets/images/home/demo4.png'
 import Demo5 from '../../assets/images/home/demo5.png'
+import X from '..//..//assets/images/home/x.png'
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
@@ -63,9 +64,12 @@ export default function Home() {
       </div>
     </div>
   </div>
-                <div className="container text-center py-5">
+</section>
 
+                        {/* SECTION ---------  3 */}
 
+<section>
+  <div className="container-fluid text-center py-5">
 <div className="row mt-5 justify-content-center">
 
   {/* 1. Pick a wallet */}
@@ -101,7 +105,7 @@ export default function Home() {
         <i className="bi bi-star fs-1" style={{ color: '#4371EF' }}></i>
       </div>
       <div>
-        <h5 className="fw-bold" style={{ color: '#4371EF' }}>Get FrecX</h5>
+        <h5 className="fw-bold" style={{color: '#4371EF'}}>Get FrecX</h5>
         <p className="icon-text small m-0">The currency of Ethereum</p>
       </div>
     </div>
@@ -149,7 +153,7 @@ export default function Home() {
     </div>
 </section>
 
-                   {/* SECTION=====3 */}
+                   {/* SECTION=====4 */}
 
  <section className="py-5" style={{
           background: theme === "dark" ? "#000000" : "#ffff",
@@ -199,58 +203,103 @@ export default function Home() {
         <div className="row g-4">
 
           <div className="col-lg-4 col-md-6" data-aos="fade-up">
-            <div
-              className="gradient-box gradient-2  rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              
-            >
-              <img src={Demo3} className="img-fluid rounded-3" style={imgStyle} alt="" />
-              <div>
-                <h5 className="fw-bold mb-2" style={{color: theme === "dark" ? "#ffffff" : "#111111",}}>A fairer financial system</h5>
-                <p className="mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </p>
-                <button className="btn btn-dark btn-sm rounded-pill px-3">
-                  Explore DeFi →
-                </button>
-              </div>
-            </div>
-          </div>
+  <div
+    className="gradient-box gradient-2 rounded-2 shadow p-4
+               d-flex flex-column align-items-center
+               text-center h-100"
+  >
+    {/* IMAGE */}
+    <img
+      src={Demo3}
+      className="img-fluid rounded-3 mb-3"
+      style={imgStyle}
+      alt=""
+    />
+
+    {/* CONTENT */}
+    <div>
+      <h5
+        className="fw-bold mb-2"
+        style={{ color: theme === "dark" ? "#ffffff" : "#111111" }}
+      >
+        A fairer financial system
+      </h5>
+
+      <p className="mb-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+      </p>
+
+      <button className="btn btn-dark btn-sm rounded-pill px-3">
+        Explore DeFi →
+      </button>
+    </div>
+  </div>
+</div>
+
 
           <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div
-              className="gradient-box gradient-3 rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              
-            >
-              <img src={Demo4} className="img-fluid rounded-3" style={imgStyle} alt="" />
-              <div>
-                <h5 className="fw-bold mb-2">The network of networks</h5>
-                <p className="mb-3">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <button className="btn btn-dark btn-sm rounded-pill px-3">
-                  Explore benefits →
-                </button>
-              </div>
-            </div>
-          </div>
+  <div
+    className="gradient-box gradient-3 rounded-2 shadow p-4
+               d-flex flex-column align-items-center
+               text-center h-100"
+  >
+    {/* TEXT */}
+    <div className="mb-3">
+      <h5 className="fw-bold mb-2">
+        The network of networks
+      </h5>
+
+      <p className="mb-3">
+        Lorem ipsum dolor sit amet consectetur.
+      </p>
+
+      <button className="btn btn-dark btn-sm rounded-pill px-3">
+        Explore benefits →
+      </button>
+    </div>
+
+    {/* IMAGE */}
+    <img
+      src={Demo4}
+      className="img-fluid rounded-3 mt-auto"
+      style={imgStyle}
+      alt=""
+    />
+  </div>
+</div>
+
 
           <div className="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
-            <div
-              className="gradient-box gradient-4 rounded-2 shadow p-4 d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start h-100"
-              
-            >
-              <img src={Demo5} className="img-fluid rounded-3" style={imgStyle} alt="" />
-              <div>
-                <h5 className="fw-bold mb-2">Innovative apps</h5>
-                <p className="mb-3">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <button className="btn btn-dark btn-sm rounded-pill px-3">
-                  Browse apps →
-                </button>
-              </div>
-            </div>
-          </div>
+  <div
+    className="gradient-box gradient-4 rounded-2 shadow p-4
+               d-flex flex-column align-items-center
+               text-center h-100"
+  >
+    {/* IMAGE */}
+    <img
+      src={Demo5}
+      className="img-fluid rounded-3 mb-3"
+      style={imgStyle}
+      alt=""
+    />
+
+    {/* TEXT */}
+    <div className='mt-5'>
+      <h5 className="fw-bold mb-2">
+        Innovative apps
+      </h5>
+
+      <p className="mb-3">
+        Lorem ipsum dolor sit amet consectetur.
+      </p>
+
+      <button className="btn btn-dark btn-sm rounded-pill px-3">
+        Browse apps →
+      </button>
+    </div>
+  </div>
+</div>
+
 
         </div>
 
@@ -285,9 +334,9 @@ export default function Home() {
     </section>
 
 
-                                  {/* SECTION======4 */}
+                                  {/* SECTION======5 */}
   <section className="eco-wrapper" >
-      <div className="container-fluid px-4 px-md-5">
+      <div className="container px-1 px-md-5">
 
         <div className="row align-items-center gy-5">
 
@@ -366,7 +415,7 @@ export default function Home() {
     </section>
 
 
-                                   {/* SECTION=====5 */}
+                                   {/* SECTION=====6 */}
 <section className="py-5">
   <div className="container">
     <div className="row align-items-start">
@@ -488,7 +537,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-                                           {/* SECTION=====6 */} 
+                                           {/* SECTION=====7 */} 
 
 
   <section className="py-5">
@@ -807,7 +856,7 @@ export default function Home() {
             <div className="d-flex align-items-start gap-3 text-start">
               <div className="d-flex justify-content-center align-items-center topic-icon">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                  src={X}
                   alt="x"
                   width="38"
                 />

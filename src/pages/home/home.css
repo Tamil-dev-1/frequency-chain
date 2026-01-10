@@ -53,6 +53,14 @@
   -webkit-text-fill-color: transparent;
 }
 
+[data-theme="dark"] .hero-title {
+  background-image: none;          /* remove gradient */
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+
 .hero-subtitle {
   font-size: 18px;
   color: #555;

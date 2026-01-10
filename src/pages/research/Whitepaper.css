@@ -17,3 +17,24 @@
     height: 280px; /* Extra small screens */
   }
 }
+
+
+:root {
+  --bg-whitepaper: linear-gradient(135deg, #0b1226 0%, #0d6efd 40%, #6f42c1 100%);
+}
+
+/* DARK THEME */
+[data-theme="dark"] {
+  --bg-whitepaper: linear-gradient(360deg,#111111 , #321B29);
+}
+           
+.bg-paper {
+  background-image: var(--bg-whitepaper);
+  border-radius: 0px;
+  padding: 24px;
+  color: #ffff;
+  transition: background 0.3s ease;
+}     
+
+
+

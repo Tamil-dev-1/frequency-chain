@@ -31,6 +31,7 @@ const AppRouter = () => {
        <Route path= '/roadmap' element={<Roadmap />} />
        <Route path= '/faq' element={<Faq />} />
        <Route path= '/blog' element={<Blog />} />
+       
       </Routes>
       <Footer />
     </>

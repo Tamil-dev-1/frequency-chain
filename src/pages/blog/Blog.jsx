@@ -13,12 +13,12 @@ export default function Blog() {
   return (
     <>
                            {/* section --------- 1 */}
-    <div className="container py-4">
+    {/* <div className="container py-4">
       <div
         className="d-flex align-items-center gap-3 flex-wrap"
        
       >
-        {/* Search Input */}
+        
         <div className="d-flex align-items-center px-3 border rounded"
           style={{ height:'44px', }}
         >
@@ -31,7 +31,7 @@ export default function Blog() {
           />
         </div>
 
-        {/* Category Dropdown */}
+        
         <select
           className="form-select"
           style={{ width:"180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
@@ -39,7 +39,7 @@ export default function Blog() {
           <option>Category</option>
         </select>
 
-        {/* Services Dropdown */}
+       
         <select
           className="form-select"
           style={{ width: "180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
@@ -47,7 +47,7 @@ export default function Blog() {
           <option>Services</option>
         </select>
 
-        {/* Tags Dropdown */}
+        
         <select
           className="form-select"
           style={{ width: "180px", height: "44px",color: theme === "dark" ? "#fff" : "#111", background: theme === "dark" ? "transparent" : "transparent" }}
@@ -55,7 +55,7 @@ export default function Blog() {
           <option>Tags</option>
         </select>
 
-        {/* Search Button */}
+        
         <button
           className="btn"
           style={{
@@ -69,7 +69,7 @@ export default function Blog() {
           Search
         </button>
 
-        {/* Clear All */}
+        
         <a
           href="#"
           className="ms-2"
@@ -82,7 +82,7 @@ export default function Blog() {
           Clear all
         </a>
       </div>
-    </div>
+    </div> */}
                                       {/* section ------- 2 */}
 
 
@@ -367,7 +367,7 @@ export default function Blog() {
                           {/* NEWS SUBSCRIBTION FORM       */}
 
 
-                     <section className="py-5" style={{background: theme === "dark" ? "#000000" : "#fff"}}>
+      <section className="py-5" style={{background: theme === "dark" ? "#000000" : "#fff"}}>
       <div className="container text-center">
         {/* Heading */}
         <h2 className="mb-4" style={{ color: theme === "dark" ? "#fff" : "#1a237e", fontWeight: "700" }}>
@@ -397,7 +397,7 @@ export default function Blog() {
             htmlFor="newsletterConsent"
             style={{ fontSize: "0.9rem", color: "#555" }}
           >
-            Yes, I agree to receive email communications from FrequencyChain.*
+            Yes, I agree to receive email communications from FrequencyChain.
           </label>
         </div>
       </div>

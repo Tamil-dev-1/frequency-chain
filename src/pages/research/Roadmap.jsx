@@ -1,5 +1,8 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import './Roadmap.css'
+// import  { useContext } from "react";
+// import { ThemeContext } from "../../ThemeContext";
+
 
 export default function RoadmapPage() {
   return (
@@ -119,6 +122,7 @@ export default function RoadmapPage() {
                 <p className="text-muted">
                   Global scaling, partnerships and community expansion.
                 </p>
+               
               </div>
 
               <div className="col-md-6 order-md-1 text-md-end">

@@ -1,18 +1,19 @@
-
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import React, { useContext } from "react";
-import { ThemeContext } from "../../ThemeContext";
 
 export default function BlogCarousel() {
+  const { theme } = useContext(ThemeContext);
 
-  const {theme} = useContext(ThemeContext);
   const blogs = [
     {
-      img: "https://ethpandaops.io/img/blog/announcing-dasmon.png",
+      img: "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg",
       author: "John Doe",
       date: "14 Jan, 2024",
       title: "Premium UI trends that will shape the next decade",
@@ -38,64 +39,63 @@ export default function BlogCarousel() {
   ];
 
   return (
-    <section className="py-5" >
+    <section className="py-5">
       <div className="container">
-        <h2 className="text-center fw-bold mb-4 hero-title">Recent posts</h2>
+        <h2 className="text-center fw-bold mb-4 hero-title">
+          Recent Posts
+        </h2>
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          slidesPerView={1}
           spaceBetween={30}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 2500 }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           breakpoints={{
-            576: { slidesPerView: 1 },
+            0: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             992: { slidesPerView: 3 },
             1400: { slidesPerView: 4 },
           }}
         >
           {blogs.map((item, i) => (
-            <SwiperSlide key={i}>
-              <div
-                className="card border-0 premium-card"
-                style={{
-                  borderRadius: "5px",
-                  overflow: "hidden",
-                  background: "",
-                  transition: "0.3s",
-                  boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-                }}
-              >
+            <SwiperSlide key={i} className="h-100">
+              <div className="card blog-card h-100 d-flex flex-column border-0">
+
+                {/* IMAGE */}
                 <img
                   src={item.img}
                   alt="blog"
-                  className="w-100"
-                  style={{
-                    height: "230px",
-                    objectFit: "cover",
-                  }}
+                  className="w-100 blog-img"
                 />
 
-                <div className="p-4">
-                  <small className=""
-                   style={{
-          color: theme === "dark" ? "#8e8282ff" : "#8d7e7eff",
-          transition: "0.3s",
-        }}>
+                {/* CONTENT */}
+                <div className="p-4 d-flex flex-column flex-grow-1">
+                  <small
+                    style={{
+                      color:
+                        theme === "dark"
+                          ? "#8e8282"
+                          : "#8d7e7e",
+                    }}
+                  >
                     BY {item.author} — {item.date}
                   </small>
 
-                  <h5 className="fw-semibold mt-2">{item.title}</h5>
+                  <h5 className="fw-semibold mt-2 blog-title">
+                    {item.title}
+                  </h5>
 
-                  <a
-                    href="#"
-                    className="text-primary fw-semibold mt-3 d-inline-block"
-                    style={{ textDecoration: "underline" }}
-                  >
-                    Read More →
-                  </a>
+                  {/* PUSH TO BOTTOM */}
+                  <div className="mt-auto">
+                    <a
+                      href="#"
+                      className="text-primary fw-semibold"
+                      style={{ textDecoration: "underline" }}
+                    >
+                      Read More →
+                    </a>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

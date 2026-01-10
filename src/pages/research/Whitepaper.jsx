@@ -10,6 +10,7 @@ import { ThemeContext } from "../../ThemeContext";
 export default function Whitepaper() {
 
   const {theme} = useContext(ThemeContext);
+
   const [activeId, setActiveId] = useState("intro");
   const observerRef = useRef(null);
 
@@ -101,7 +102,7 @@ export default function Whitepaper() {
       `}</style>
 
       {/* HERO */}
-      <header className="hero-gradient py-5">
+      <header className="bg-paper py-5">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-7 text-lg-start text-center mb-4 mb-lg-0">
@@ -117,7 +118,7 @@ export default function Whitepaper() {
               </div>
             </div>
             <div className="col-lg-5 text-center">
-              <div className="card p-3 section-card bg-white text-start" style={{borderRadius: 16}}>
+              <div className="card p-3 section-card bg-some text-start" style={{borderRadius: 16}}>
                 <div className="d-flex align-items-center mb-3">
                   <div className="me-3" style={{width:48,height:48}}>
                     <svg viewBox="0 0 64 64" width="48" height="48"><circle cx="32" cy="32" r="30" fill="#0d6efd"/></svg>

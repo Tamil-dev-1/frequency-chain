@@ -86,16 +86,18 @@ export default function Governance() {
                 <h5 className="fw-bold">Governance Stats</h5>
                 <div className="d-flex justify-content-between mt-3">
                   <div>
-                    <h4 className="fw-bold">125</h4>
-                    <small className="text-muted">Validators</small>
+                    <h4 className="fw-bold" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>125</h4>
+                    <span className="" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Validators</span>
                   </div>
                   <div>
-                    <h4 className="fw-bold">8K+</h4>
-                    <small className="text-muted">Community Members</small>
+                    <h4 className="fw-bold" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>8K+</h4>
+                    <span className="" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Community Members</span>
                   </div>
                   <div>
-                    <h4 className="fw-bold">72</h4>
-                    <small className="text-muted">Proposals</small>
+                    <h4 className="fw-bold" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>72
+
+                    </h4>
+                    <span className="" style={{ color: theme === "dark" ? "#ffffff" : "#111111",}}>Proposals</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +127,7 @@ export default function Governance() {
         <div className="row">
           {/* SIDEBAR FOR DESKTOP */}
           <aside className="col-lg-3 d-none d-lg-block">
-            <div className="gov-sidebar sidebar-bg bg-sidebar p-3">
+            <div className="gov-sidebar gradient-bg p-3">
               <h5 className="fw-bold">Governance Sections</h5>
               <div className="list-group mt-3">
                 {sections.map((s) => (
