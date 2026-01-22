@@ -1,8 +1,11 @@
 import React from 'react'
 import './ourproduct.css'
-import ProductSlider from '../../component/productSlider/ProductSlider'
+// import ProductSlider from '../../component/productSlider/ProductSlider'
+// import ScrollBoxes from "../../component/ScrollBoxes/ScrollBoxes";
 import  { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
+import { motion } from "framer-motion";
+import Pattern from "../../assets/images/ourproduct/pattern.png";
 
 
 const Ourbrand = () => {
@@ -18,7 +21,11 @@ const Ourbrand = () => {
         <div className="row align-items-center justify-content-between">
 
           {/* LEFT SIDE TEXT */}
-          <div className="col-lg-5 col-md-6 col-12 text-white mb-5 mb-md-0">
+          <motion.div className="col-lg-5 col-md-6 col-12 text-white mb-5 mb-md-0"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true }} style={{ overflow: "hidden" }}>
             <h1 className="fw-bold mb-3">
               Build  Secure Manage Make an impact{" "}
               <span
@@ -40,10 +47,14 @@ const Ourbrand = () => {
             <p className="text-white-50">
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nostrum!
             </p>
-          </div>
+          </motion.div>
 
-          {/* RIGHT SIDE IMAGES */}
-          <div className="col-lg-5 col-md-6 col-12 d-flex justify-content-center position-relative">
+          {/* RIGHT SIDE IMAGES */} 
+          <motion.div className="col-lg-5 col-md-6 col-12 d-flex justify-content-center position-relative"
+            initial={{ opacity: 0, x: 60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
+  viewport={{ once: true }}>
 
             {/* MAIN IMAGE */}
             <img
@@ -106,7 +117,7 @@ const Ourbrand = () => {
                 transform: "rotate(20deg)",
               }}
             />
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -114,8 +125,10 @@ const Ourbrand = () => {
 
                                 {/* SECTION --------- 2 */}
 
-                    <ProductSlider />
-
+                    {/* <ProductSlider /> */}
+                        {/* OUR PRODUCT COMPONENT */}
+                        
+                                    {/* <ScrollBoxes /> */}
 
 
                   {/* <div className="container py-5">
@@ -189,44 +202,64 @@ const Ourbrand = () => {
                                {/* SECTION -------- 3          */}
 
      <div className="stats-wrapper py-5">
-  <h2 className="text-center text-white fw-semibold mb-5">
+  <motion.h2 className="text-center text-white fw-semibold mb-5"
+   initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}>
     FrequencyChain Stats that drive a difference in the world
-  </h2>
+  </motion.h2>
 
   <div className="container">
     <div className="row g-4 stats-row">
 
       {/* Card 1 */}
-      <div className="col-12 col-md-6 d-flex">
+      <motion.div className="col-12 col-md-6 d-flex"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div className="stats-card purple-bg round text-center w-100">
           <h5>Rewarded Sustainable Actions</h5>
           <h1>1M</h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 2 */}
-      <div className="col-12 col-md-6 d-flex">
+      <motion.div className="col-12 col-md-6 d-flex"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div className="stats-card white-bg round text-center w-100">
           <h5>Applications Built</h5>
           <h1>350</h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 3 */}
-      <div className="col-12 col-md-6 d-flex">
+      <motion.div className="col-12 col-md-6 d-flex"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div className="stats-card white-bg round text-center w-100">
           <h5>Total Staked</h5>
           <h1>5.8B</h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 4 */}
-      <div className="col-12 col-md-6 d-flex">
+      <motion.div className="col-12 col-md-6 d-flex"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div className="stats-card purple-bg round text-center w-100">
           <h5>Rewards Distributed</h5>
           <h1>242.9M</h1>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </div>
@@ -254,7 +287,11 @@ const Ourbrand = () => {
     <div className="row g-4 justify-content-center">
 
       {/* CARD 1 */}
-      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+      <motion.div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div style={{ maxWidth: "320px", width: "100%" }}>
           <div
             style={{
@@ -285,10 +322,14 @@ const Ourbrand = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* CARD 2 */}
-      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+      <motion.div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div style={{ maxWidth: "320px", width: "100%" }}>
           <div
             style={{
@@ -299,7 +340,7 @@ const Ourbrand = () => {
             }}
           >
             <img
-              src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"
+              src="https://images.pexels.com/photos/9474027/pexels-photo-9474027.jpeg"
               alt="App-2"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -319,10 +360,14 @@ const Ourbrand = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* CARD 3 */}
-      <div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+      <motion.div className="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}>
         <div style={{ maxWidth: "320px", width: "100%" }}>
           <div
             style={{
@@ -353,7 +398,7 @@ const Ourbrand = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </div>
@@ -372,9 +417,14 @@ const Ourbrand = () => {
         }}
       >
         {/* Text */}
-        <h2 style={{ fontSize: "38px", fontWeight: 600,color:"#ffff" }}>
+        <motion.h2
+         initial={{ opacity: 0, x: -60 }}
+         whileInView={{ opacity: 1, x: 0 }}
+         transition={{ duration: 1.2, ease: "easeOut" }}
+         viewport={{ once: true }}
+         style={{ fontSize: "38px", fontWeight: 600,color:"#ffff" }}>
           Ready to start making your impact?
-        </h2>
+        </motion.h2>
 
         {/* Button */}
         <button
@@ -391,7 +441,7 @@ const Ourbrand = () => {
 
         {/* Decorative curved lines (Right side) */}
         <img
-          src="https://cdn-icons-png.flaticon.com/512/7698/7698640.png"
+          src={Pattern}
           alt="pattern"
           className="position-absolute"
           style={{

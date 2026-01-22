@@ -5,9 +5,43 @@ import BuilderCarousel from "./BuilderCaousel";
 import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import './Blog.css';
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.35,   // timeline gap
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: "easeOut" },
+  },
+};
+
+const sideVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1.1, ease: "easeOut",delay: 0.4, },
+  },
+};
+
+
 
 
 export default function Blog() {
+
+ 
+
+
 
   const {theme} = useContext(ThemeContext);
   return (
@@ -92,12 +126,16 @@ export default function Blog() {
   <div className="row mb-5">
 
     {/* LEFT FEATURED CARD */}
-    <div className="col-lg-7 mb-5">
+    <motion.div className="col-lg-7 mb-5"
+   initial={{ opacity: 0, x: -50 }}
+   whileInView={{ opacity: 1, x: 0 }}
+   transition={{ duration: 1.2, ease: "easeOut" }}
+   viewport={{ once: true }}>
       <div className="position-relative">
 
         {/* Main Image */}
         <img
-          src="https://images.pexels.com/photos/3970329/pexels-photo-3970329.jpeg"
+          src="https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg"
           className="img-fluid rounded"
           alt="featured"
         />
@@ -136,10 +174,14 @@ export default function Blog() {
         </div>
 
       </div>
-    </div>
+    </motion.div>
 
     {/* RIGHT TRENDING LIST */}
-    <div className="col-lg-5">
+    <motion.div className="col-lg-5"
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+    viewport={{ once: true }}>
       {/* TRENDING TITLE WITH LINE */}
       <div className="d-flex align-items-center mb-4">
         <h6 className="text-primary fw-bold mb-0 me-3">TRENDING</h6>
@@ -185,7 +227,7 @@ export default function Blog() {
           <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB", marginTop:'10px' }}></div>
         </div>
       ))}
-    </div>
+    </motion.div>
   </div>
 
   {/* ================= VISION SECTION ================= */}
@@ -195,73 +237,112 @@ export default function Blog() {
     <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB" }}></div>
   </div>
 
-  <div className="row">
-    {/* LEFT VISION LIST */}
-    <div className="col-lg-7 mb-4">
-      {[
-        {
-          img: "https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg",
-          title:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-          tag: "Vision",
-          time: "9 min read"
-        },
-        {
-          img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
-          title:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-          tag: "Announcements",
-          time: "12 min read"
-        },
-        {
-          img: "https://images.pexels.com/photos/3944460/pexels-photo-3944460.jpeg",
-          title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-          tag: "Vision",
-          time: "12 min read"
-        },
-        {
-          img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
-          title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
-          tag: "Vision",
-          time: "22 min read"
-        }
-      ].map((item, i) => (
-        <div className="d-flex mb-4" key={i}>
-          <img
-            src={item.img}
-            className="rounded me-3"
-            width="180"
-            height="100"
-            alt="vision"
-          />
-          <div>
-            <h6 className="fw-semibold mb-1" style={{color: theme === "dark" ? "#6C24E0" : "#001F82"}}>{item.title}</h6>
-            <span className="badge  text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
-            <span className="text-muted small">{item.time}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* RIGHT NEWSLETTER BOX */}
-    <div className="col-lg-5">
-      <div className="p-4 rounded shadow-sm" style={{background: theme === "dark" ? "#1C1C1C" : "#fff"}} >
-        <h5 className="fw-bold">Subscribe to the Missing Link</h5>
-        <input
-          className="form-control my-3"
-          placeholder="Enter your email address"
+  <motion.div
+  className="row"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
+  {/* LEFT VISION LIST */}
+  <motion.div className="col-lg-7 mb-4">
+    {[
+      {
+        img: "https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg",
+        title:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+        tag: "Vision",
+        time: "9 min read",
+      },
+      {
+        img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
+        title:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+        tag: "Announcements",
+        time: "12 min read",
+      },
+      {
+        img: "https://images.pexels.com/photos/3944460/pexels-photo-3944460.jpeg",
+        title:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+        tag: "Vision",
+        time: "12 min read",
+      },
+      {
+        img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
+        title:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
+        tag: "Vision",
+        time: "22 min read",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        className="d-flex mb-4"
+        variants={fadeUpVariants}
+      >
+        <img
+          src={item.img}
+          className="rounded me-3"
+          width="180"
+          height="100"
+          alt="vision"
         />
-        <button className="btn btn-primary w-100 mb-3">Sign up</button>
-
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" id="agree" />
-          <label className="form-check-label small" htmlFor="agree" style={{color: theme === "dark" ? "#918686ff" : "#0c0b0bff"}}>
-            Yes, I agree to receive email communications.
-          </label>
+        <div>
+          <h6
+            className="fw-semibold mb-1"
+            style={{ color: theme === "dark" ? "#6C24E0" : "#001F82" }}
+          >
+            {item.title}
+          </h6>
+          <span
+            className="badge text-dark me-2"
+            style={{ backgroundColor: "#DFE7FB" }}
+          >
+            {item.tag}
+          </span>
+          <span className="text-muted small">{item.time}</span>
         </div>
+      </motion.div>
+    ))}
+  </motion.div>
+
+  {/* RIGHT NEWSLETTER BOX */}
+  <motion.div
+    className="col-lg-5"
+    variants={sideVariants}
+  >
+    <div
+      className="p-4 rounded shadow-sm"
+      style={{ background: theme === "dark" ? "#1C1C1C" : "#fff" }}
+    >
+      <h5 className="fw-bold">Subscribe to the Missing Link</h5>
+
+      <input
+        className="form-control my-3"
+        placeholder="Enter your email address"
+      />
+
+      <button className="btn btn-primary w-100 mb-3">
+        Sign up
+      </button>
+
+      <div className="form-check">
+        <input className="form-check-input" type="checkbox" id="agree" />
+        <label
+          className="form-check-label small"
+          htmlFor="agree"
+          style={{
+            color: theme === "dark" ? "#918686ff" : "#0c0b0bff",
+          }}
+        >
+          Yes, I agree to receive email communications.
+        </label>
       </div>
     </div>
-  </div>
+  </motion.div>
+</motion.div>
+
 
   {/* extra bottom spacing */}
   <div style={{ height: "50px" }}></div>

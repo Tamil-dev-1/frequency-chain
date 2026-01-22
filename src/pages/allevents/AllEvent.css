@@ -1,0 +1,170 @@
+
+/* Conference Cards */
+.conference-card {
+  transition: transform 0.35s ease;
+}
+
+.conference-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Banner image */
+.conference-image {
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.conference-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.conference-card:hover .conference-image img {
+  transform: scale(1.06);
+}
+
+/* Logo box */
+.logo-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Muted text */
+.text-muted {
+  color: #9a9a9a !important;
+}
+
+
+/* SECTION   ------- 3 css */
+
+
+/* Horizontal scroll container */
+.hub-scroll {
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.hub-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hub-scroll::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* Card base */
+.hub-card {
+  min-width: 320px;
+  max-width: 320px;
+  height: 460px;
+  padding: 28px;
+  border-radius: 28px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #cfcfcf;
+  transition: transform 0.35s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card themes */
+.hub-card.london {
+  background: radial-gradient(circle at top, #1b2435, #0f1523);
+}
+
+.hub-card.berlin {
+  background: radial-gradient(circle at top, #2a1337, #140818);
+}
+
+.hub-card.dubai {
+  background: radial-gradient(circle at top, #3a2a08, #181102);
+}
+
+.hub-card.lagos {
+  background: radial-gradient(circle at top, #052735, #02131b);
+}
+
+/* Logo circle */
+.hub-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  color: #ff9c8c;
+  line-height: 1.1;
+}
+
+.hub-logo span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Text */
+.hub-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Links */
+.hub-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.hub-links a {
+  color: #b58cff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hub-links a:hover {
+  text-decoration: underline;
+}
+
+/* Muted override */
+.text-muted {
+  color: #9a9a9a !important;
+}
+
+
+.hub-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-logo-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+}

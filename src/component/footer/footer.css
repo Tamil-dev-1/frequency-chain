@@ -76,3 +76,36 @@
 /* optional subtle hover */
 .footer-links li:hover { color: #111; cursor: pointer; }
 .small-links span:hover { text-decoration: underline; cursor: pointer; }
+
+
+/* GO TO TOP BUTTON */
+
+.site-footer {
+  position: relative;
+}
+
+/* Go to Top Button */
+.go-top-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  background: linear-gradient(135deg, #6B5BFF, #9D4CF5);
+  color: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.go-top-btn:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}

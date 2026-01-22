@@ -1,127 +1,162 @@
-
-import './Event.css'
+import "./Event.css";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom"
 export default function Events() {
+  const { theme } = useContext(ThemeContext);
 
-  const {theme} = useContext(ThemeContext);
   const events = [
     {
-      banner:
-        "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg",
+      banner: "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg",
       title: "Frec Riyadh",
       date: "February 1–28, 2026",
       location: "RIYADH, KSA",
       badge: "View on YouTube →",
-      badgeColor: "trans",
-      bigText: "Lorem ipsum dolor sit amet ",
+      bigText: "Lorem ipsum dolor sit amet",
     },
     {
-      banner:
-        "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+      banner: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       title: "FrecConf",
       date: "June 8–10, 2026",
       location: "NEW YORK, USA",
       badge: "Get Tickets",
-      // badgeColor: "#FFD500",
       bigText: "Lorem",
     },
   ];
 
+  /* Animation Variants */
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.18 },
+    },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="py-5">
+    <section className="events-section py-5">
       <div className="container">
         {/* Heading */}
-        <h1 className="fw-bold mb-2 hero-title">Events</h1>
-        <p className=" mb-5"  
-        style={{
-          color: theme === "dark" ? "#ffffff" : "#877979ff",
-          transition: "0.3s",
-          maxWidth: "550px"
-        }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, asperiores.
-        </p>
+        <motion.h1
+          className="fw-bold hero-title mb-2"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Events
+        </motion.h1>
 
-        {/* Row */}
-        <div className="row g-5">
+        <motion.p
+          className="events-desc mb-5"
+          style={{ color: theme === "dark" ? "#fff" : "#877979ff" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
+          asperiores.
+        </motion.p>
+
+        {/* Cards */}
+        <motion.div
+          className="row g-5"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {events.map((item, i) => (
-            <div className="col-lg-6" key={i} 
-         >
-              {/* Banner */}
-              <div
-                className="p-4 d-flex flex-column justify-content-end"
-                style={{
-                  height: "240px",
-                  borderRadius: "20px",
-                  backgroundImage: `url(${item.banner})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  color: "#fff",
-                  boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
-                  position: "relative",
-                }}
+            <motion.div
+              className="col-lg-6"
+              key={i}
+              variants={card}
+            >
+              <motion.div
+                className="event-card"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Large Text */}
-                <h3
-                  className="fw-bold"
-                  style={{
-                    whiteSpace: "pre-line",
-                    lineHeight: "1.2",
-                    maxWidth: "75%",
-                  }}
+                <div
+                  className="event-banner"
+                  style={{ backgroundImage: `url(${item.banner})` }}
                 >
-                  {item.bigText}
-                </h3>
+                  <div className="event-overlay">
+                    <motion.h3
+                      className="event-bigtext"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {item.bigText}
+                    </motion.h3>
 
-                {/* Badge Button */}
-                <button
-                  className="btn btn-sm mt-3 fw-semibold"
-                  style={{
-                    background: item.badgeColor,
-                    borderRadius: "50px",
-                    padding: "6px 18px",
-                    fontSize: "0.9rem",
-                  }}
+                    <motion.button
+                      className="event-badge"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {item.badge}
+                    </motion.button>
+                  </div>
+                </div>
+
+                <h4
+                  className="fw-bold mt-3"
+                  style={{ color: theme === "dark" ? "#fff" : "#231d1dff" }}
                 >
-                  {item.badge}
-                </button>
-              </div>
+                  {item.title}
+                </h4>
 
-              {/* Title */}
-              <h4 className="fw-bold mt-3"
-                   style={{
-          color: theme === "dark" ? "#ffffff" : "#231d1dff",
-          transition: "0.3s",
-        }}>{item.title}</h4>
+                <p
+                  className="fst-italic mb-1"
+                  style={{ color: theme === "dark" ? "#ccc" : "#867777ff" }}
+                >
+                  {item.date}
+                </p>
 
-              {/* Date */}
-              <p className=" fst-italic mb-1"
-               style={{
-          color: theme === "dark" ? "#ffffff" : "#867777ff",
-          transition: "0.3s",
-        }}>{item.date}</p>
-
-              {/* Location */}
-              <small className="text-uppercase text-secondary fw-semibold">
-                {item.location}
-              </small>
-            </div>
+                <small className="text-uppercase text-secondary fw-semibold">
+                  {item.location}
+                </small>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Button */}
-        <div className="text-center mt-5">
-          <button
-            className="btn fw-semibold px-4 py-2"
-            style={{
-              background: "#7A3EF3",
-              color: "#fff",
-              borderRadius: "0px",
-            }}
+        {/* CTA */}
+        <motion.div
+          className="text-center mt-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Link to="/all-events">
+          <motion.button
+           style={{
+            background: theme === "dark" ? "#fff" : "#000",
+            color: theme === "dark" ? "#000" : "#ffff",
+            transition: "0.3s",
+          }}
+            className="btn events-cta"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             See all events →
-          </button>
-        </div>
+          </motion.button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

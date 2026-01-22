@@ -1,14 +1,22 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./footer.css"; // <- add the CSS below into this file
+import "./footer.css";
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="site-footer">
       <div className="container">
         <p className="last-updated">Website last updated: December 8, 2025</p>
 
-        {/* 5 columns row — note gx (horizontal gap) increased */}
+        {/* 5 columns */}
         <div className="row gx-5 gy-5">
           <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 footer-column">
             <h6 className="title">Learn</h6>
@@ -69,7 +77,7 @@ const Footer = () => {
               <li>Contributing to frequencyChain.org</li>
               <li>Translation Program</li>
               <li>Frequency bug bounty</li>
-              <li>Frequency  Foundation</li>
+              <li>Frequency Foundation</li>
               <li>Foundation Blog (↗)</li>
               <li>Ecosystem Support Program (↗)</li>
               <li>Devcon (↗)</li>
@@ -79,45 +87,55 @@ const Footer = () => {
           <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 footer-column">
             <h6 className="title">Research</h6>
             <ul className="footer-links">
-              <li>Frequency  Whitepaper</li>
-              <li>Frequency  roadmap</li>
+              <li>Frequency Whitepaper</li>
+              <li>Frequency roadmap</li>
               <li>Improved security</li>
               <li>Technical history</li>
               <li>Open research</li>
               <li>EIPs</li>
-              <li>Frequency  governance</li>
+              <li>Frequency governance</li>
               <li>Trillion dollar project</li>
             </ul>
           </div>
         </div>
 
-       {/* bottom bar */}
-<div className="bottom-bar py-4">
-  <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+        {/* Bottom bar */}
+        <div className="bottom-bar py-4 position-relative">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
 
-    {/* Social Icons */}
-    <div className="icons d-flex gap-4">
-      <i className="bi bi-github" style={{ fontSize: "1.8rem" }}></i>
-      <i className="bi bi-twitter-x" style={{ fontSize: "1.8rem" }}></i>
-      <i className="bi bi-discord" style={{ fontSize: "1.8rem" }}></i>
-    </div>
+            {/* Social Icons */}
+            <div className="icons d-flex gap-4">
+              <i className="bi bi-github" style={{ fontSize: "1.8rem" }}></i>
+              <i className="bi bi-twitter-x" style={{ fontSize: "1.8rem" }}></i>
+              <i className="bi bi-discord" style={{ fontSize: "1.8rem" }}></i>
+            </div>
 
-    {/* Footer Links */}
-    <div
-      className="small-links text-center text-md-start d-flex flex-wrap justify-content-center gap-3"
-      style={{ fontSize: "0.95rem", fontWeight: "500" }}
-    >
-      <span>About us</span>
-      <span>Brand assets</span>
-      <span>Jobs</span>
-      <span>Privacy policy</span>
-      <span>Terms of use</span>
-      <span>Cookie policy</span>
-      <span>Press</span>
-    </div>
+            {/* Footer Links */}
+            <div
+              className="small-links text-center text-md-start d-flex flex-wrap justify-content-center gap-3"
+              style={{ fontSize: "0.95rem", fontWeight: "500" }}
+            >
+              <span>About us</span>
+              <span>Brand assets</span>
+              <span>Jobs</span>
+              <span>Privacy policy</span>
+              <span>Terms of use</span>
+              <span>Cookie policy</span>
+              <span>Press</span>
+            </div>
 
-  </div>
-</div>
+          </div>
+
+          {/* GO TO TOP BUTTON */}
+          <button
+            className="go-top-btn"
+            onClick={scrollToTop}
+            aria-label="Go to top"
+          >
+            ↑
+          </button>
+
+        </div>
       </div>
     </footer>
   );

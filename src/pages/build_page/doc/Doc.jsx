@@ -18,6 +18,8 @@ import { FaLessThanEqual } from "react-icons/fa6";
 import { TbBrandReact } from "react-icons/tb";
 import  { useContext } from "react";
 import { ThemeContext } from "../../../ThemeContext";
+import { motion } from "framer-motion";
+
 
 
 export default function Docs() {
@@ -109,7 +111,11 @@ export default function Docs() {
     <div className="cards-row">
 
       {/* Card 1 */}
-      <div className="cards-col"
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}
         style={{
           background: theme === "dark" ? "#000000" : "#ffff",
           color: theme === "dark" ? "#ffffff" : "#111111",
@@ -123,10 +129,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 2 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><TbNumber123 /></div>
           <h5 className="card-title">Subnet Listings on our App</h5>
@@ -135,10 +145,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 3 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><VscDesktopDownload /></div>
           <h5 className="card-title">BTCLI Live Coding Playground</h5>
@@ -147,10 +161,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 4 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><IoSchoolSharp /></div>
           <h5 className="card-title">Introduction to Frequency chain</h5>
@@ -159,10 +177,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 5 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><VscDesktopDownload /></div>
           <h5 className="card-title">Guide to Frequency tools</h5>
@@ -171,17 +193,21 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 6 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><MdPermMedia /></div>
           <h5 className="card-title">Frequency chain media assets</h5>
           <p className="card-desc">MEDIA ASSETS</p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </div>
@@ -198,7 +224,11 @@ export default function Docs() {
     <div className="cards-row">
 
       {/* Card 1 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><IoPeopleSharp /></div>
           <h5 className="card-title">Staking and Delegation</h5>
@@ -207,10 +237,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 2 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><SiTicktick /></div>
           <h5 className="card-title">Mining in Frequency chain</h5>
@@ -219,10 +253,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 3 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><BsFillBookFill /></div>
           <h5 className="card-title">Validating in Frequency chain</h5>
@@ -231,10 +269,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 4 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><MdCalculate /></div>
           <h5 className="card-title">Emissions</h5>
@@ -243,10 +285,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 5 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><RiGovernmentFill /></div>
           <h5 className="card-title">Governance</h5>
@@ -255,17 +301,21 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 6 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><LiaGalacticSenate /></div>
           <h5 className="card-title">Senate</h5>
           <p className="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, facilis?</p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </div>
@@ -280,7 +330,11 @@ export default function Docs() {
     <div className="cards-row">
 
       {/* Card 1 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><IoSchoolSharp /></div>
           <h5 className="card-title">Basic subnet tutorials</h5>
@@ -289,10 +343,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 2 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><GiStarFormation /></div>
           <h5 className="card-title">Create a subnet</h5>
@@ -301,10 +359,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 3 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><MdOutlineSchool /></div>
           <h5 className="card-title">OCR subnet tutorial</h5>
@@ -313,10 +375,14 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Card 4 */}
-      <div className="cards-col">
+      <motion.div className="cards-col"
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}>
         <div className="doc-card">
           <div className="card-icon"><TbTextSize /></div>
           <h5 className="card-title">Subnet hyperparameters</h5>
@@ -325,7 +391,7 @@ export default function Docs() {
           </p>
           <a href="#" className="read-more">READ MORE</a>
         </div>
-      </div>
+      </motion.div>
     </div>
   </div>
 </div>
@@ -370,34 +436,54 @@ export default function Docs() {
         {/* Card 1 */}
         <div className="col-md-5 mb-4"
       >
-          <div className="sdk-card">
+          <motion.div
+      initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}
+           className="sdk-card">
             <div className="sdk-icon"><FaLessThanEqual /></div>
             <div className="sdk-title-small">Frequency Chain CLI</div>
-          </div>
+          </ motion.div>
         </div>
 
         {/* Card 2 */}
-        <div className="col-md-5 mb-4">
+        <motion.div
+        initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}
+         className="col-md-5 mb-4">
           <div className="sdk-card">
             <div className="sdk-icon"><TbBrandReact /></div>
             <div className="sdk-title-small">Frequency Chain SDK</div>
           </div>
-        </div>
+        </motion.div>
   
       </div>
+
+
+
 
       {/* CARDS ROW 2 */}
       <div className="row justify-content-start">
 
-        {/* Card 3 */}
-        <div className="col-md-5 mb-4">
-          <div className="sdk-card">
-            <div className="sdk-icon"><TbBrandReact /></div>
-            <div className="sdk-title-small">WALLET SDK</div>
-          </div>
-        </div>
+  {/* Card 3 */}
+  <motion.div
+    className="col-md-5 mb-4"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
+    <div className="sdk-card">
+      <div className="sdk-icon"><TbBrandReact /></div>
+      <div className="sdk-title-small">WALLET SDK</div>
+    </div>
+  </motion.div>
 
-      </div>
+</div>
+
 
     </div>                    
 

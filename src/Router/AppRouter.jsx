@@ -14,6 +14,7 @@ import Roadmap from '../pages/research/Roadmap';
 import Footer from '../component/footer/Footer';
 import Faq from '../pages/learn/Faq';
 import Blog from '../pages/blog/Blog';
+import AllEvents from '../pages/allevents/AllEvents'
 const AppRouter = () => {
   return (
     <>
@@ -31,6 +32,7 @@ const AppRouter = () => {
        <Route path= '/roadmap' element={<Roadmap />} />
        <Route path= '/faq' element={<Faq />} />
        <Route path= '/blog' element={<Blog />} />
+       <Route path= '/all-events' element={<AllEvents />} />
        
       </Routes>
       <Footer />

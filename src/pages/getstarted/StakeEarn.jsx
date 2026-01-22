@@ -1,15 +1,62 @@
 import React from "react";
 import './StakeEarn.css';
-import Img1 from '../../assets/images/ourproduct/img1.jpg'
+// import Img1 from '../../assets/images/ourproduct/img1.jpg'
 import { Coins, Gift } from "lucide-react";
 import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
+import { motion } from "framer-motion";
+import StakeBanner from '../../assets/images/stake/stakebanner2.png';
+import StakeBanner2 from '../../assets/images/stake/stakeBanner.png';
+import Vector1 from '../../assets/images/stake/vector1.png';
 
 
 
 const StakeEarn = () => {
 
   const {theme} = useContext(ThemeContext);
+
+  // Timeline framer motion animation
+
+  const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2, // timeline delay between cards
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+
+// Framer left and right animation
+
+const leftFade = {
+  hidden: { opacity: 0, x: -60 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.2, ease: "easeOut" },
+  },
+};
+
+const rightFade = {
+  hidden: { opacity: 0, x: 60 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.2, ease: "easeOut" },
+  },
+};
+
+
   return (
     <>
       <section
@@ -21,7 +68,11 @@ const StakeEarn = () => {
         <div className="row align-items-center">
 
           {/* LEFT */}
-          <div className="col-lg-6">
+          <motion.div className="col-lg-6"
+            variants={leftFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
 
             <h1
               className="fw-semibold mb-4"
@@ -70,12 +121,16 @@ const StakeEarn = () => {
                 Learn More
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="col-lg-6 text-center mt-5 mt-lg-0">
+          <motion.div className="col-lg-6 text-center mt-5 mt-lg-0"
+          variants={rightFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <img
-              src="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg"
+              src={StakeBanner}
               alt="stake"
               className="img-fluid"
               style={{
@@ -84,7 +139,7 @@ const StakeEarn = () => {
                 maxWidth: "520px",
               }}
             />
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -94,17 +149,21 @@ const StakeEarn = () => {
 
 
 
-                                         <section className="py-5">
+        <section className="py-5">
       <div className="container text-center mt-5">
 
         {/* TITLE */}
         <h2 className="fw-bold mb-5 text-start">Staking Stats</h2>
 
         {/* ROW */}
-        <div className="row g-4 justify-content-center">
+        <motion.div className="row g-4 justify-content-center" 
+        variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
 
           {/* CARD 1 */}
-          <div className="col-md-4">
+          <motion.div className="col-md-4" variants={cardVariants}>
             <div
               className="p-4 rounded-4 h-100"
               style={{
@@ -121,10 +180,11 @@ const StakeEarn = () => {
                 <span style={{ fontSize: "1rem", marginLeft: "6px" }}>Lorem</span>
               </h1>
             </div>
-          </div>
+          </motion.div>
 
           {/* CARD 2 */}
-          <div className="col-md-4">
+          <motion.div className="col-md-4"
+          variants={cardVariants}>
             <div
               className="p-4 rounded-4 h-100"
               style={{
@@ -140,10 +200,11 @@ const StakeEarn = () => {
                 15500+
               </h1>
             </div>
-          </div>
+          </motion.div>
 
           {/* CARD 3 */}
-          <div className="col-md-4">
+          <motion.div className="col-md-4"
+          variants={cardVariants}>
             <div
               className="p-4 rounded-4 h-100"
               style={{
@@ -160,9 +221,9 @@ const StakeEarn = () => {
                 <span style={{ fontSize: "1rem", marginLeft: "6px" }}>Lorem</span>
               </h1>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
 
@@ -175,16 +236,24 @@ const StakeEarn = () => {
         <div className="row align-items-center">
 
           {/* LEFT IMAGE */}
-          <div className="col-lg-6 text-center">
+          <motion.div className="col-lg-6 text-center"
+          variants={leftFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <img
-              src={Img1} 
+              src={StakeBanner2} 
               alt="coins"
               className="img-fluid stake-img"
             />
-          </div>
+          </motion.div>
 
           {/* RIGHT TEXT */}
-          <div className="col-lg-6">
+          <motion.div className="col-lg-6"
+          variants={rightFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>Why Stake?</h2>
 
             <div className="stake-line mb-4"></div>
@@ -203,7 +272,7 @@ const StakeEarn = () => {
             <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam harum labore culpa! Deserunt, quibusdam quasi!
             </p>
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -258,16 +327,24 @@ const StakeEarn = () => {
         <div className="row align-items-center">
 
           {/* LEFT IMAGE */}
-          <div className="col-lg-6 text-center">
+          <motion.div className="col-lg-6 text-center"
+          variants={leftFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <img
-              src='https://images.pexels.com/photos/8386431/pexels-photo-8386431.jpeg' 
+              src={Vector1} 
               alt="coins"
               className="img-fluid round-corner stake-img rounded-top-end rounded-bottom-start shadow"
             />
-          </div>
+          </motion.div>
 
           {/* RIGHT TEXT */}
-          <div className="col-lg-6">
+          <motion.div className="col-lg-6"
+          variants={rightFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <h2 className="fw-bold mb-4" style={{color: theme === "dark" ? "#ffff" : "#111111",}}>How to Get Started</h2>
 
             <div className="stake-line mb-4"></div>
@@ -296,7 +373,7 @@ const StakeEarn = () => {
           Learn More
         </button>
            </div>
-          </div>
+          </motion.div>
            
            
         </div>
@@ -308,10 +385,14 @@ const StakeEarn = () => {
    <section style={{paddingTop:"100px"}}>
       <div className="container">
 
-        <div className="row text-center justify-content-between">
+        <motion.div className="row text-center justify-content-between" 
+        variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
 
           {/* 1 — Choose NFT */}
-          <div className="col-lg-3 col-md-6 mb-4">
+          <motion.div className="col-lg-3 col-md-6 mb-4" variants={cardVariants}>
             <div className="icon-circle mb-3" style={{ background: "#E5F5D9" }}>
               <i className="bi bi-camera" />
             </div>
@@ -319,10 +400,10 @@ const StakeEarn = () => {
             <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
-          </div>
+          </motion.div>
 
           {/* 2 — Earn rewards */}
-          <div className="col-lg-3 col-md-6 mb-4">
+          <motion.div className="col-lg-3 col-md-6 mb-4" variants={cardVariants}>
             <div className="icon-circle mb-3" style={{ background: "#EFEAFF" }}>
               <i className="bi bi-gift" />
             </div>
@@ -330,10 +411,10 @@ const StakeEarn = () => {
             <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
-          </div>
+          </motion.div>
 
           {/* 3 — Ecosystem */}
-          <div className="col-lg-3 col-md-6 mb-4">
+          <motion.div className="col-lg-3 col-md-6 mb-4" variants={cardVariants}>
             <div className="icon-circle mb-3" style={{ background: "#DFF6E4" }}>
               <i className="bi bi-arrow-left-right" />
             </div>
@@ -341,10 +422,10 @@ const StakeEarn = () => {
             <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
-          </div>
+          </motion.div>
 
           {/* 4 — Governance */}
-          <div className="col-lg-3 col-md-6 mb-4">
+          <motion.div className="col-lg-3 col-md-6 mb-4" variants={cardVariants}>
             <div className="icon-circle mb-3" style={{ background: "#E0FAF9" }}>
               <i className="bi bi-diagram-3" />
             </div>
@@ -352,9 +433,9 @@ const StakeEarn = () => {
             <p style={{color: theme === "dark" ? "#969696ff" : "#6c6363ff",}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, commodi.
             </p>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>
@@ -370,7 +451,11 @@ const StakeEarn = () => {
         <div className="earn-card mx-auto p-5 d-flex justify-content-between align-items-center">
           
           {/* LEFT TEXT */}
-          <div className="content-area">
+          <motion.div className="content-area"
+          variants={leftFade}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}>
             <h2 className="earn-title mb-4">
               Start earning by securing the FrequencyChain blockchain
             </h2>
@@ -379,7 +464,7 @@ const StakeEarn = () => {
               <button className="btn btn-primary stake-btn">Stake FrecX</button>
               <button className="btn btn-dark buy-btn">Buy FrecX</button>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT DECORATION */}
           <div className="decor-area">
