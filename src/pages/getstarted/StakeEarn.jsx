@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import { motion } from "framer-motion";
 import StakeBanner from '../../assets/images/stake/stakebanner2.png';
-import StakeBanner2 from '../../assets/images/stake/stakeBanner.png';
+import StakeBanner2 from '../../assets/images/stake/reward.png';
 import Vector1 from '../../assets/images/stake/vector1.png';
 
 

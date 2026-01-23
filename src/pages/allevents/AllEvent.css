@@ -1,5 +1,36 @@
+/* ---------- HERO ---------- */
+.breadcrumb-text {
+  color: #8b8b8b;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
 
-/* Conference Cards */
+.breadcrumb-text span {
+  margin: 0 6px;
+}
+
+.breadcrumb-text .active {
+  color: #b58cff;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+  color: #cfcfcf;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-img {
+  max-height: 520px;
+}
+
+/* ---------- CONFERENCE CARDS ---------- */
 .conference-card {
   transition: transform 0.35s ease;
 }
@@ -8,7 +39,6 @@
   transform: translateY(-6px);
 }
 
-/* Banner image */
 .conference-image {
   height: 220px;
   border-radius: 20px;
@@ -16,16 +46,11 @@
 }
 
 .conference-image img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
-.conference-card:hover .conference-image img {
-  transform: scale(1.06);
-}
-
-/* Logo box */
 .logo-box {
   width: 52px;
   height: 52px;
@@ -39,46 +64,39 @@
 .logo-box img {
   width: 32px;
   height: 32px;
-  object-fit: contain;
-}
-
-/* Muted text */
-.text-muted {
-  color: #9a9a9a !important;
 }
 
 
-/* SECTION   ------- 3 css */
-
-
-/* Horizontal scroll container */
+ /* SECTION ---- 3 */
+/* ===== Horizontal scroll ===== */
 .hub-scroll {
+  display: flex;
+  gap: 22px;                 /* slightly tighter gap */
   overflow-x: auto;
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   scroll-snap-type: x mandatory;
 }
 
 .hub-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 8px;
 }
 
 .hub-scroll::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #777;
   border-radius: 10px;
 }
 
-/* Card base */
+/* ===== Card base (REDUCED SIZE) ===== */
 .hub-card {
-  min-width: 320px;
-  max-width: 320px;
-  height: 460px;
-  padding: 28px;
-  border-radius: 28px;
-  scroll-snap-align: start;
+  min-width: 300px;          /* ↓ reduced from 340px */
+  height: 440px;             /* ↓ reduced from 520px */
+  padding: 26px 22px;        /* ↓ reduced padding */
+  border-radius: 26px;
+  color: #e5e5e5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #cfcfcf;
+  scroll-snap-align: start;
+  position: relative;
   transition: transform 0.35s ease;
 }
 
@@ -86,85 +104,108 @@
   transform: translateY(-6px);
 }
 
-/* Card themes */
-.hub-card.london {
-  background: radial-gradient(circle at top, #1b2435, #0f1523);
+/* ===== Card gradients (unchanged) ===== */
+/* .hub-card.london {
+  background: radial-gradient(circle at top, #2b3550, #0e1423);
+} */
+
+/* ===== LONDON CARD ===== */
+
+/* DARK THEME */
+.hub-card.london.dark {
+  background: radial-gradient(circle at top, #2b3550, #0e1423);
 }
 
-.hub-card.berlin {
-  background: radial-gradient(circle at top, #2a1337, #140818);
+/* LIGHT THEME */
+.hub-card.london.light {
+  background: #EFF2F8;
 }
 
-.hub-card.dubai {
-  background: radial-gradient(circle at top, #3a2a08, #181102);
+/* .hub-card.berlin {
+  background: radial-gradient(circle at top, #4a1f5c, #16071e);
+} */
+
+/* DARK THEME */
+.hub-card.berlin.dark {
+  background: radial-gradient(circle at top, #4a1f5c, #16071e);
 }
 
-.hub-card.lagos {
-  background: radial-gradient(circle at top, #052735, #02131b);
+/* LIGHT THEME */
+.hub-card.berlin.light {
+  background: #F0EAF1;
 }
 
-/* Logo circle */
+/* .hub-card.dubai {
+  background: radial-gradient(circle at top, #5a3f10, #1a1204);
+} */
+
+/* DARK THEME */
+.hub-card.dubai.dark {
+  background: radial-gradient(circle at top, #5a3f10, #1a1204);
+}
+
+/* LIGHT THEME */
+.hub-card.dubai.light {
+  background: #F7F2E7;
+}
+
+/* .hub-card.lagos {
+  background: radial-gradient(circle at top, #0b3b4f, #03161e);
+} */
+
+/* DARK THEME */
+.hub-card.lagos.dark {
+  background: radial-gradient(circle at top, #0b3b4f, #03161e);
+}
+
+/* LIGHT THEME */
+.hub-card.lagos.light {
+  background: #E6EEF2;
+}
+
+/* ===== Logo badge (slightly smaller) ===== */
 .hub-logo {
-  width: 80px;
-  height: 80px;
+  width: 64px;               /* ↓ reduced */
+  height: 64px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  overflow: hidden;
+  margin-bottom: 18px;       /* ↓ reduced */
+  background: rgba(255,255,255,0.08);
+}
+
+.hub-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Text (slightly compact) ===== */
+.hub-card h4 {
+  font-size: 1.35rem;        /* ↓ reduced */
   font-weight: 600;
-  color: #ff9c8c;
-  line-height: 1.1;
+  margin-bottom: 12px;
 }
 
-.hub-logo span {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-/* Text */
 .hub-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;         /* ↓ reduced */
+  line-height: 1.55;
+  color: #d0d0d0;
+  margin-bottom: 12px;
 }
 
-/* Links */
+/* ===== Links at bottom ===== */
 .hub-links {
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
 }
 
 .hub-links a {
   color: #b58cff;
-  font-weight: 500;
+  font-size: 0.85rem;        /* ↓ reduced */
   text-decoration: none;
 }
 
 .hub-links a:hover {
   text-decoration: underline;
-}
-
-/* Muted override */
-.text-muted {
-  color: #9a9a9a !important;
-}
-
-
-.hub-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hub-logo-img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  border-radius: 50%;
 }
