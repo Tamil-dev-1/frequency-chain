@@ -54,7 +54,7 @@ export default function FAQPage() {
       </section>
 
       {/* STATS */}
-      <section className="stats-section">
+      <section className="stats-section ">
         {[
           ["10k+", "Developers"],
           ["99.99%", "Uptime"],

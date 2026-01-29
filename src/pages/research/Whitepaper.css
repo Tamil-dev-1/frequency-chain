@@ -25,7 +25,7 @@
 
 /* DARK THEME */
 [data-theme="dark"] {
-  --bg-whitepaper: linear-gradient(360deg,#111111 , #321B29);
+  --bg-whitepaper: linear-gradient(360deg,#111111 , #5B23FF);
 }
            
 .bg-paper {

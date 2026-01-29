@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './Whitepaper.css';
+import BoxImg1 from '../../assets/images/whitepaper/boxImg1.jpg'
+import BoxImg2 from '../../assets/images/whitepaper/boxImg2.jpg'
+import BoxImg3 from '../../assets/images/whitepaper/boxImg3.jpg'
+import BoxImg4 from '../../assets/images/whitepaper/boxImg4.jpg'
+import BoxImg6 from '../../assets/images/whitepaper/boxImg6.jpg'
 
 import  { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
@@ -89,7 +94,7 @@ export default function Whitepaper() {
         .whitepaper-app { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #222; }
         .hero-gradient { background: linear-gradient(135deg, #0b1226 0%, #0d6efd 40%, #6f42c1 100%); color: white; }
         .sidebar { position: sticky; top: 90px; }
-        .nav-link.active { background: rgba(13,110,253,0.08); border-radius: 8px; }
+        .nav-link.active { background: #5B23FF; border-radius: 8px; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 700ms cubic-bezier(.2,.9,.3,1); }
         .reveal-visible { opacity: 1; transform: translateY(0); }
         .section-card { border-radius: 12px; box-shadow: 0 10px 24px rgba(15,23,42,0.06); padding: 28px; }
@@ -166,9 +171,11 @@ export default function Whitepaper() {
           {/* LEFT SIDEBAR */}
           <aside className="col-lg-3 d-none d-lg-block">
             <div className="sidebar p-3">
-              <h5 className="fw-bold mb-2">On this page</h5>
+              <h5 className="fw-bold mb-2"
+              style={{color: theme === "dark" ? "#ffffff" : "#111111",transition: "0.3s",}}
+              >On this page</h5>
               <p className="muted small mb-2">Jump to section</p>
-              <div className="list-group">
+              <div className="list-group" >
                 {["intro","problem","architecture","consensus","tokenomics","governance","roadmap","team","conclusion"].map((s) => (
                   <a
                     key={s}
@@ -176,7 +183,13 @@ export default function Whitepaper() {
                     onClick={handleNavClick(s)}
                     className={`list-group-item list-group-item-action border-0 nav-link ${activeId===s?'active':''}`}>
                     <i className="bi bi-chevron-right small me-2"></i>
-                    {s.charAt(0).toUpperCase()+s.slice(1)}
+                    <span
+            //           style={{
+            
+            //   color: theme === "dark" ? "#000" : "#fff",
+            //   transition: "0.3s",
+            // }}
+                    >{s.charAt(0).toUpperCase()+s.slice(1)}</span>
                   </a>
                 ))}
               </div>
@@ -200,7 +213,11 @@ export default function Whitepaper() {
 
 <section id="pdf-viewer" className="mb-5 section-card p-4">
   <div className="d-flex justify-content-between align-items-center mb-3">
-    <h3 className="mb-0">Whitepaper PDF</h3>
+    <h3 className="mb-0"
+     style={{
+              color: theme === "dark" ? "#ffffff" : "#111111",
+              transition: "0.3s",
+            }}>Whitepaper PDF</h3>
     <div className="text-muted small">Embedded viewer</div>
   </div>
 
@@ -274,15 +291,20 @@ export default function Whitepaper() {
 
             {/* MANUAL SECTIONS */}
             {/* INTRODUCTION */}
-            <section id="intro" className="mb-5 reveal section-card p-4">
+            <section id="intro" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">1. Introduction</h3>
+                <h3 className="mb-0" 
+                 style={{color: theme === "dark" ? "#ffffff" : "#111111",transition: "0.3s",}}>1. Introduction</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">Introduction section with detailed explanation of the project purpose and technical overview.</p>
-                  <ul>
+                  <ul  style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>Key concepts and motivation.</li>
                     <li>High-level architecture overview.</li>
                     <li>Intended audience and use cases.</li>
@@ -290,10 +312,10 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Overview and context for Introduction.</div>
                     <div className="mt-3">
-                      <img src="https://images.pexels.com/photos/7567606/pexels-photo-7567606.jpeg" alt="illustration" className="img-fluid rounded" />
+                      <img src={BoxImg1} alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
@@ -301,15 +323,19 @@ export default function Whitepaper() {
             </section>
 
             {/* PROBLEM */}
-            <section id="problem" className="mb-5 reveal section-card p-4">
+            <section id="problem" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">2. Problem</h3>
+                <h3 className="mb-0" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>2. Problem</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">Describe the problem your blockchain solves. Include context, pain points, and motivation for your solution.</p>
-                  <ul>
+                  <ul style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>Problem statement and analysis.</li>
                     <li>Technical challenges to overcome.</li>
                     <li>Examples from real use cases.</li>
@@ -317,10 +343,10 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Key takeaways of the problem section.</div>
                     <div className="mt-3">
-                      <img src="https://dummyimage.com/280x160/eff2ff/0d6efd.png&text=Problem" alt="illustration" className="img-fluid rounded" />
+                      <img src={BoxImg2} alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
@@ -328,15 +354,19 @@ export default function Whitepaper() {
             </section>
 
             {/* ARCHITECTURE */}
-            <section id="architecture" className="mb-5 reveal section-card p-4">
+            <section id="architecture" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">3. Architecture</h3>
+                <h3 className="mb-0" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>3. Architecture</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">Details of blockchain architecture, consensus layers, modules, and network components.</p>
-                  <ul>
+                  <ul style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>Node types and roles</li>
                     <li>Communication and data flow</li>
                     <li>Security considerations</li>
@@ -344,10 +374,10 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Architecture diagram & summary.</div>
                     <div className="mt-3">
-                      <img src="https://dummyimage.com/280x160/eff2ff/0d6efd.png&text=Architecture" alt="illustration" className="img-fluid rounded" />
+                      <img src={BoxImg3}alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
@@ -355,15 +385,19 @@ export default function Whitepaper() {
             </section>
 
             {/* CONSENSUS */}
-            <section id="consensus" className="mb-5 reveal section-card p-4">
+            <section id="consensus" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">4. Consensus</h3>
+                <h3 className="mb-0" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>4. Consensus</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">Consensus mechanism details and security guarantees.</p>
-                  <ul>
+                  <ul style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>Algorithm description</li>
                     <li>Fault tolerance and finality</li>
                     <li>Validator incentives</li>
@@ -371,10 +405,10 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Consensus overview and key benefits.</div>
                     <div className="mt-3">
-                      <img src="https://dummyimage.com/280x160/eff2ff/0d6efd.png&text=Consensus" alt="illustration" className="img-fluid rounded" />
+                      <img src={BoxImg4} alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
@@ -382,15 +416,19 @@ export default function Whitepaper() {
             </section>
 
             {/* TOKENOMICS */}
-            <section id="tokenomics" className="mb-5 reveal section-card p-4">
+            <section id="tokenomics" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">5. Tokenomics</h3>
+                <h3 className="mb-0" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>5. Tokenomics</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">Detailed explanation of token distribution, utility, and incentives.</p>
-                  <ul>
+                  <ul style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>Staking incentives</li>
                     <li>Team & foundation allocation</li>
                     <li>Public sale and reserve tokens</li>
@@ -398,7 +436,7 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Tokenomics visual summary</div>
                     <div className="mt-3 d-flex justify-content-center">
                       <TokenomicsPie />
@@ -409,15 +447,19 @@ export default function Whitepaper() {
             </section>
 
             {/* GOVERNANCE */}
-            <section id="governance" className="mb-5 reveal section-card p-4">
+            <section id="governance" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
-                <h3 className="mb-0">6. Governance</h3>
+                <h3 className="mb-0" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>6. Governance</h3>
                 <div className="muted" style={{fontSize:13}}>Last updated: Nov 20, 2025</div>
               </div>
               <div className="row">
                 <div className="col-md-8">
                   <p className="muted">How decisions are made, voting mechanisms, and community involvement.</p>
-                  <ul>
+                  <ul style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>
                     <li>DAO and proposal workflow</li>
                     <li>Voting & quorum rules</li>
                     <li>On-chain governance benefits</li>
@@ -425,10 +467,10 @@ export default function Whitepaper() {
                 </div>
                 <div className="col-md-4 mt-3 mt-md-0 text-center">
                   <div className="p-3 border rounded">
-                    <div className="mb-2"><strong>Highlights</strong></div>
+                    <div className="mb-2" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}><strong>Highlights</strong></div>
                     <div className="muted small">Governance model overview.</div>
                     <div className="mt-3">
-                      <img src="https://dummyimage.com/280x160/eff2ff/0d6efd.png&text=Governance" alt="illustration" className="img-fluid rounded" />
+                      <img src={BoxImg6}alt="illustration" className="img-fluid rounded" />
                     </div>
                   </div>
                 </div>
@@ -436,26 +478,30 @@ export default function Whitepaper() {
             </section>
 
             {/* ROADMAP */}
-            <section id="roadmap" className="mb-5 reveal section-card p-4">
-              <h3 className="mb-3">7. Roadmap</h3>
+            <section id="roadmap" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
+              <h3 className="mb-3" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>7. Roadmap</h3>
               <div className="row">
                 <div className="col-md-6">
                   <div className="timeline-item mb-3">
-                    <h6 className="mb-1">Q1 - Core Chain</h6>
+                    <h6 className="mb-1" style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>Q1 - Core Chain</h6>
                     <small className="muted">Node setup, explorer, testnet</small>
                   </div>
                   <div className="timeline-item mb-3">
-                    <h6 className="mb-1">Q2 - Smart Contract Layer</h6>
+                    <h6 className="mb-1" style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>Q2 - Smart Contract Layer</h6>
                     <small className="muted">EVM compatibility & SDKs</small>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="timeline-item mb-3">
-                    <h6 className="mb-1">Q3 - Mainnet</h6>
+                    <h6 className="mb-1" style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>Q3 - Mainnet</h6>
                     <small className="muted">Launch, token distribution</small>
                   </div>
                   <div className="timeline-item mb-3">
-                    <h6 className="mb-1">Q4 - DAO</h6>
+                    <h6 className="mb-1" style={{color: theme === "dark" ? "#F9DFDF" : "#111111",transition: "0.3s",}}>Q4 - DAO</h6>
                     <small className="muted">Full governance tools</small>
                   </div>
                 </div>
@@ -463,8 +509,12 @@ export default function Whitepaper() {
             </section>
 
             {/* TEAM */}
-            <section id="team" className="mb-5 reveal section-card p-4">
-              <h3 className="mb-3">8. Team & Advisors</h3>
+            <section id="team" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
+              <h3 className="mb-3" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>8. Team & Advisors</h3>
               <div className="row g-3">
                 {[1,2,3,4].map((i)=> (
                   <div className="col-6 col-md-3" key={i}>
@@ -479,8 +529,12 @@ export default function Whitepaper() {
             </section>
 
             {/* CONCLUSION */}
-            <section id="conclusion" className="mb-5 reveal section-card p-4">
-              <h3 className="mb-3">9. Conclusion</h3>
+            <section id="conclusion" className="mb-5 reveal section-card p-4"
+            style={{
+              background: theme === "dark" ? "#001F3D" : "#ffff",
+              transition: "0.3s",
+            }}>
+              <h3 className="mb-3" style={{color: theme === "dark" ? "#fff" : "#111111",transition: "0.3s",}}>9. Conclusion</h3>
               <p className="muted">Summarize the whitepaper and call to action: join the community, audit reports, links to SDK and docs.</p>
               <div className="d-flex gap-2 mt-3">
                 <a href="#" onClick={(e)=>e.preventDefault()} className="btn btn-primary">Join Community</a>

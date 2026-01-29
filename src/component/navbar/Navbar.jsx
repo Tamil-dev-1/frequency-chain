@@ -15,7 +15,6 @@ const NavbarComponent = () => {
     ecosystem: false,
   });
 
-  // SCROLL SHADOW EFFECT
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
@@ -23,48 +22,37 @@ const NavbarComponent = () => {
   }, []);
 
   const toggleMenu = (key) => {
-    setOpen((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+    setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
     <nav
-      className={`navbar navbar-expand-lg py-3 sticky-navbar navbar-${theme} ${
-        scrolled ? "scrolled" : ""
+      className={`navbar navbar-expand-lg sticky-top modern-navbar navbar-${theme} ${
+        scrolled ? "nav-scrolled" : ""
       }`}
     >
       <div className="container">
 
         {/* LOGO */}
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
           <img src="/logo.svg" width="32" height="32" alt="logo" />
+          <span className="fw-bold brand-text">FreC</span>
         </Link>
 
-        {/* MOBILE RIGHT ICONS */}
+        {/* MOBILE ICONS */}
         <div className="d-flex d-lg-none align-items-center gap-3">
-          <i className="bi bi-search fs-5"></i>
-
-          {/* THEME TOGGLE ICON */}
-          {/* <i
+          <i className="bi bi-search fs-5 nav-icon"></i>
+          <i
+            key={theme}
             className={`bi ${
               theme === "light" ? "bi-sun" : "bi-moon"
-            } fs-4 theme-icon`}
+            } fs-5 nav-icon`}
             onClick={toggleTheme}
-          /> */}
-                      <i
-  key={theme}
-  className={`bi ${
-    theme === "light" ? "bi-sun" : "bi-moon"
-  } fs-4 theme-icon`}
-  onClick={toggleTheme}
-/>
+          />
         </div>
 
-        {/* MOBILE TOGGLE */}
         <button
-          className="navbar-toggler ms-2"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNavbar"
@@ -74,8 +62,8 @@ const NavbarComponent = () => {
 
         <div className="collapse navbar-collapse" id="mainNavbar">
 
-          {/* MOBILE ACCORDION MENU */}
-          <ul className="navbar-nav d-lg-none w-100 mt-3">
+          {/* MOBILE MENU */}
+          <ul className="navbar-nav d-lg-none mt-4 gap-2">
             {[
               {
                 key: "learn",
@@ -116,13 +104,12 @@ const NavbarComponent = () => {
                 ],
               },
             ].map((item) => (
-              <li key={item.key} className="w-100">
+              <li key={item.key} className="mobile-accordion">
                 <div
-                  className="d-flex justify-content-between py-2 px-1"
+                  className="accordion-header"
                   onClick={() => toggleMenu(item.key)}
-                  style={{ cursor: "pointer" }}
                 >
-                  <span className="fw-semibold">{item.title}</span>
+                  <span>{item.title}</span>
                   <i
                     className={`bi bi-chevron-${
                       open[item.key] ? "up" : "down"
@@ -131,13 +118,9 @@ const NavbarComponent = () => {
                 </div>
 
                 {open[item.key] && (
-                  <div className="ps-3 pb-2">
+                  <div className="accordion-body">
                     {item.links.map((link) => (
-                      <Link
-                        key={link.label}
-                        to={link.to}
-                        className="dropdown-item"
-                      >
+                      <Link key={link.label} to={link.to}>
                         {link.label}
                       </Link>
                     ))}
@@ -148,7 +131,7 @@ const NavbarComponent = () => {
           </ul>
 
           {/* DESKTOP MENU */}
-          <ul className="navbar-nav mx-lg-auto gap-lg-4 d-none d-lg-flex">
+          <ul className="navbar-nav mx-auto gap-4 d-none d-lg-flex">
             {[
               {
                 title: "Learn",
@@ -185,10 +168,10 @@ const NavbarComponent = () => {
               },
             ].map((menu) => (
               <li className="nav-item dropdown" key={menu.title}>
-                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <a className="nav-link nav-link-modern" data-bs-toggle="dropdown">
                   {menu.title}
                 </a>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu modern-dropdown">
                   {menu.links.map((link) => (
                     <li key={link.label}>
                       <Link to={link.to} className="dropdown-item">
@@ -201,17 +184,16 @@ const NavbarComponent = () => {
             ))}
           </ul>
 
-          {/* DESKTOP RIGHT ICONS */}
+          {/* DESKTOP RIGHT */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            <i className="bi bi-search fs-5"></i>
+            <i className="bi bi-search fs-5 nav-icon"></i>
             <i
-  key={theme}
-  className={`bi ${
-    theme === "light" ? "bi-sun" : "bi-moon"
-  } fs-4 theme-icon`}
-  onClick={toggleTheme}
-/>
-
+              key={theme}
+              className={`bi ${
+                theme === "light" ? "bi-sun" : "bi-moon"
+              } fs-5 nav-icon`}
+              onClick={toggleTheme}
+            />
           </div>
         </div>
       </div>

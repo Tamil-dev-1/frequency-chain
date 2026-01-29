@@ -3,6 +3,7 @@ import  { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import { HiSpeakerphone } from "react-icons/hi";
+import './Governance.css';
 
 const GovernanceSection = () => {
    const {theme} = useContext(ThemeContext);
@@ -26,7 +27,7 @@ const GovernanceSection = () => {
       <div className="col-lg-6 col-md-7 text-white mb-5 mb-lg-0">
         <h1 className="fw-bold mb-3" style={{ fontSize: "3rem",color: theme === "dark" ? "#ffffff" : "#111111", }}>
           <span className="hero-title">Have your say</span>{" "}
-          <span className=" mx-1 text-info"><BsFillRocketTakeoffFill /></span>{" "}
+          <span className=" mx-1 text-info" ><BsFillRocketTakeoffFill /></span>{" "}
           <span className="hero-title">on the future</span>{" "}
           <span className="mx-1 text-danger"><HiSpeakerphone /></span>{" "}
           

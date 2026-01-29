@@ -8,15 +8,24 @@ export default function Events() {
 
   const events = [
     {
-      banner: "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg",
+      banner: "https://images.pexels.com/photos/3689547/pexels-photo-3689547.jpeg",
       title: "Frec Riyadh",
       date: "February 1–28, 2026",
       location: "RIYADH, KSA",
-      badge: "View on YouTube →",
-      bigText: "Lorem ipsum dolor sit amet",
+      badge: "View on YouTube →", 
+      bigText: "Lorem ",
     },
     {
-      banner: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+      banner: "https://images.pexels.com/photos/3052360/pexels-photo-3052360.jpeg",
+      title: "FrecConf",
+      date: "June 8–10, 2026",
+      location: "NEW YORK, USA",
+      badge: "Get Tickets",
+      bigText: "Lorem",
+    },
+
+    {
+      banner: "https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg",
       title: "FrecConf",
       date: "June 8–10, 2026",
       location: "NEW YORK, USA",
@@ -79,7 +88,7 @@ export default function Events() {
         >
           {events.map((item, i) => (
             <motion.div
-              className="col-lg-6"
+              className="col-lg-4"
               key={i}
               variants={card}
             >

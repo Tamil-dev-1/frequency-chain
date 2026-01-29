@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Ecosysytem = () => {
+const BlockchainParticles = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Ecosysytem = () => {
   )
 }
 
-export default Ecosysytem
+export default BlockchainParticles

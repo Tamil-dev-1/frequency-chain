@@ -32,7 +32,7 @@ export default function Home() {
     <>
 
     
-    {/* <Hero /> */}
+    <Hero />
 
 
       
@@ -114,7 +114,7 @@ export default function Home() {
           },
         }}
       >
-        <motion.button
+        {/* <motion.button
           className=" events-cta mt-4"
           style={{
             background: theme === "dark" ? "#fff" : "#000",
@@ -125,7 +125,7 @@ export default function Home() {
           whileTap={{ scale: 0.95 }}
         >
           Learn More
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </motion.div>
   </div>
@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* 1. Pick a wallet */}
       <motion.div
-        className="col-12 col-sm-6 col-md-3 mb-4"
+        className="col-12 col-sm-6 col-lg-3 mb-4"
         variants={{
           hidden: { opacity: 0, y: 40 },
           show: {
@@ -186,7 +186,7 @@ export default function Home() {
 
       {/* 2. Get ETH */}
       <motion.div
-        className="col-12 col-sm-6 col-md-3 mb-4"
+        className="col-12 col-sm-6 col-lg-3 mb-4"
         variants={{
           hidden: { opacity: 0, y: 40 },
           show: {
@@ -220,7 +220,7 @@ export default function Home() {
 
       {/* 3. Try apps */}
       <motion.div
-        className="col-12 col-sm-6 col-md-3 mb-4"
+        className="col-12 col-sm-6 col-lg-3 mb-4"
         variants={{
           hidden: { opacity: 0, y: 40 },
           show: {
@@ -252,9 +252,9 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* 4. Start building */}
+      {/* 4. Start Building */}
       <motion.div
-        className="col-12 col-sm-6 col-md-3 mb-4"
+        className="col-12 col-sm-6 col-lg-3 mb-4"
         variants={{
           hidden: { opacity: 0, y: 40 },
           show: {

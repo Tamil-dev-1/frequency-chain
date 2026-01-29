@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Individuals from '../../component/aboutFrecX/Individuals';
 import { ThemeContext } from "../../ThemeContext";
 import { motion } from "framer-motion";
+import { PiPlantFill } from "react-icons/pi";
 
 
 
@@ -145,13 +146,13 @@ const Aboutfrec = () => {
           Lorem, ipsum.{" "}
           <span
             style={{
-              background: theme === "dark" ? "#1a2033" : "#1f1f1f",
-              padding: "6px 12px",
-              borderRadius: "50px",
-              fontSize: "22px",
+              // background: theme === "dark" ? "#1a2033" : "#1f1f1f",
+              // padding: "6px 12px",
+              // borderRadius: "50px",
+              // fontSize: "22px",
             }}
           >
-            🌱
+            {/* 🌱 */}<PiPlantFill className="text-success" size={43} />
           </span>
         </h1>
 
