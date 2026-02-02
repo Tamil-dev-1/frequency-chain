@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import './Blog.css';
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const containerVariants = {
   hidden: {},
@@ -39,11 +40,8 @@ const sideVariants = {
 
 export default function Blog() {
 
- 
-
-
-
   const {theme} = useContext(ThemeContext);
+
   return (
     <>
                            {/* section --------- 1 */}
@@ -126,11 +124,13 @@ export default function Blog() {
   <div className="row mb-5">
 
     {/* LEFT FEATURED CARD */}
+    
     <motion.div className="col-lg-7 mb-5"
    initial={{ opacity: 0, x: -50 }}
    whileInView={{ opacity: 1, x: 0 }}
    transition={{ duration: 1.2, ease: "easeOut" }}
    viewport={{ once: true }}>
+      <Link to="/blog-1">
       <div className="position-relative">
 
         {/* Main Image */}
@@ -174,7 +174,9 @@ export default function Blog() {
         </div>
 
       </div>
+      </Link>
     </motion.div>
+    
 
     {/* RIGHT TRENDING LIST */}
     <motion.div className="col-lg-5"
@@ -193,39 +195,47 @@ export default function Blog() {
           title:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
           tag: "Announcements",
-          time: "29 min read"
+          time: "29 min read",
+          path: "/blog-2"
         },
         {
           title:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
           tag: "Announcements",
-          time: "17 min read"
+          time: "17 min read",
+          path: "/blog-3"
         },
         {
           title:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
           tag: "Announcements",
-          time: "11 min read"
+          time: "11 min read",
+          path: "/blog-4"
         },
         {
           title:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
           tag: "Vision",
-          time: "39 min read"
+          time: "39 min read",
+          path: "/blog-5"
         },
         {
           title:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
           tag: "Announcements",
-          time: "41 min read"
+          time: "41 min read",
+          path: "/blog-6"
         }
       ].map((item, i) => (
-        <div key={i} className="mb-4">
+        <Link to={item.path || "#"} style={{ textDecoration: "none", color: "inherit" }}>
+          <div key={i} className="mb-4">
           <h6 className="fw-semibold" style={{color: theme === "dark" ? "#6C24E0" : "#001F82"}}>{item.title}</h6>
           <span className="badge text-dark me-2" style={{backgroundColor:'#DFE7FB'}}>{item.tag}</span>
           <span className="text-muted small">{item.time}</span>
           <div className="flex-grow-1" style={{ height: "1px", background: "#E5E7EB", marginTop:'10px' }}></div>
         </div>
+        </Link>
+        
       ))}
     </motion.div>
   </div>
@@ -253,6 +263,7 @@ export default function Blog() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
         tag: "Vision",
         time: "9 min read",
+        path:"/blog-7"
       },
       {
         img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
@@ -260,6 +271,7 @@ export default function Blog() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
         tag: "Announcements",
         time: "12 min read",
+        path:"/blog-8"
       },
       {
         img: "https://images.pexels.com/photos/3944460/pexels-photo-3944460.jpeg",
@@ -267,6 +279,7 @@ export default function Blog() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
         tag: "Vision",
         time: "12 min read",
+        path:"/blog-9"
       },
       {
         img: "https://images.pexels.com/photos/3095621/pexels-photo-3095621.jpeg",
@@ -274,6 +287,7 @@ export default function Blog() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea inventore omnis et rem maiores.",
         tag: "Vision",
         time: "22 min read",
+        path:"/blog-10"
       },
     ].map((item, i) => (
       <motion.div
@@ -281,7 +295,9 @@ export default function Blog() {
         className="d-flex mb-4"
         variants={fadeUpVariants}
       >
-        <img
+         <Link to={item.path || "#"} style={{ textDecoration: "none", color: "inherit" }}>
+         <div className="d-flex">
+           <img
           src={item.img}
           className="rounded me-3"
           width="180"
@@ -303,6 +319,10 @@ export default function Blog() {
           </span>
           <span className="text-muted small">{item.time}</span>
         </div>
+
+         </div>
+       
+        </Link>
       </motion.div>
     ))}
   </motion.div>

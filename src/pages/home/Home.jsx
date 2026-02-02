@@ -9,12 +9,13 @@ import Demo2 from '../../assets/images/home/demo2.png'
 import Demo3 from '../../assets/images/home/demo3.png'
 import Demo4 from '../../assets/images/home/demo4.png'
 import Demo5 from '../../assets/images/home/demo5.png'
-import X from '..//..//assets/images/home/x.png'
+import X from '..//..//assets/images/home/x.webp'
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import Activity from '../../component/Activity/Activity';
 import VectorImg1 from '../../assets/images/home/vector2.jpeg';
 import VectorImg2 from '../../assets/images/home/vector3.jpeg';
+import { Link} from 'react-router-dom';
 
 import { motion } from "framer-motion";
 // import ScrollBoxes from "../../component/ScrollBoxes/ScrollBoxes";
@@ -589,7 +590,9 @@ export default function Home() {
 
         <div className="row g-4 mt-2">
 
+        
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
+             
             <div
               className="topic-icons"
               style={{
@@ -600,10 +603,12 @@ export default function Home() {
             >
               <i className="bi bi-gear-fill"></i>
             </div>
-            <span className="topic-text hover-underline">
-              What is FrecX?
+            <span >
+              <Link className="topic-text hover-underline" to="/frecx">What is FrecX?</Link>
             </span>
+            
           </div>
+        
 
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 topic-item p-3">
             <div
@@ -649,7 +654,7 @@ export default function Home() {
               <i className="bi bi-file-earmark-text-fill"></i>
             </div>
             <span className="topic-text hover-underline">
-              FrecX Whitepaper
+             <Link to="/whitepaper">FrecX Whitepaper</Link>
             </span>
           </div>
 
@@ -664,14 +669,15 @@ export default function Home() {
             >
               <i className="bi bi-signpost-split"></i>
             </div>
-            <span className="topic-text hover-underline">
-              FrecX roadmap
+            <span className="topic-text hover-underline ">
+              <Link to="/roadmap" style={{color: theme === "dark" ? "#ffffff" : "#111111",
+    transition: "0.3s",}}>FrecX roadmap</Link>
             </span>
           </div>
 
         </div>
 
-        <button
+        {/* <button
           className="btn btn-outline-dark mt-4 px-4 py-2"
           style={{
             background: theme === "dark" ? "#000000" : "#ffff",
@@ -680,7 +686,7 @@ export default function Home() {
           }}
         >
           Other topics →
-        </button>
+        </button> */}
       </motion.div>
 
       {/* RIGHT IMAGE (fade + slide from RIGHT) */}
@@ -1051,6 +1057,7 @@ export default function Home() {
               <div className="d-flex justify-content-center align-items-center topic-icon">
                 <img
                   src={X}
+                  loading="lazy" decoding="async" 
                   alt="x"
                   width="38"
                 />

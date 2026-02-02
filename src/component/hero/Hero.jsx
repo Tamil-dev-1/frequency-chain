@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import FcLogoCoin from "../../assets/images/herocoin/fcCoin.png";
+import FcLogoCoin from "../../assets/images/herocoin/fcCoin.webp";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
@@ -113,6 +113,8 @@ const HeroSection = () => {
               <motion.img
                 src={FcLogoCoin}
                 alt="FrequencyChain Coin"
+                 loading="lazy"
+                decoding="async"
                 animate={{ y: [0, -12, 0] }}
                 transition={{
                   duration: 4,
