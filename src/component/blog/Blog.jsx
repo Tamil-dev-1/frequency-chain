@@ -64,8 +64,8 @@ export default function BlogCarousel() {
           {blogs.map((item, i) => (
             <SwiperSlide key={i}>
   <Link to={item.path || "#"} style={{ textDecoration: "none", color: "inherit" }}>
-    <div className="card h-100 border-0">
-      <img src={item.img} alt="blog" className="w-100" />
+    <div className="card h-100 border-0 rounded-5">
+      <img src={item.img} alt="blog" className="w-100 rounded-top-5" />
 
       <div className="p-4">
         <small

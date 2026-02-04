@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../../ThemeContext";
-import { error } from "three";
+
 
 const Blog7 = () => {
      const {theme} = useContext(ThemeContext);
@@ -63,13 +63,14 @@ const Blog7 = () => {
 
       {/* Hero Image — reduced height */}
       <img
-        src="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg"
+        src="https://images.pexels.com/photos/5052851/pexels-photo-5052851.jpeg"
         alt="Article Hero"
-        className="img-fluid rounded shadow-sm"
+        className="img-fluid rounded-5 shadow-sm mx-auto"
         style={{
-          width: "100%",
+          width: "600px",
           maxHeight: "420px",
-          objectFit: "contain"
+          objectFit: "contain",
+          display:"block",
         }}
       />
 

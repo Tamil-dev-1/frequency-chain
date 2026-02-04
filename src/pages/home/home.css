@@ -474,7 +474,7 @@
 
 /* Image styling */
 .learn-img {
-  border-radius: 25px;
+  border-radius: 50px;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -522,4 +522,6 @@
 
              /* section ------- 6 */
 
-             
+      .community-img{
+        border-radius: 50px;
+      }       

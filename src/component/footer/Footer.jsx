@@ -1,8 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./footer.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 
 const Footer = () => {
+
+   const {theme} = useContext(ThemeContext);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -12,7 +16,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer"
+     style={{
+    background: theme === "dark" ? "#000000" : "#ffff",
+    color: theme === "dark" ? "#ffffff" : "#111111",
+    transition: "0.3s",
+  }}
+    >
       <div className="container">
         <p className="last-updated">Website last updated: December 8, 2025</p>
 
@@ -100,7 +110,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="bottom-bar py-4 position-relative">
+        <div className="bottom-bar py-4 position-relative"
+           style={{
+    background: theme === "dark" ? "#280A3E" : "#E9DEFD",
+    color: theme === "dark" ? "#ffffff" : "#111111",
+    transition: "0.3s",
+  }}
+        >
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
 
             {/* Social Icons */}

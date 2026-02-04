@@ -65,11 +65,12 @@ const Blog10 = () => {
       <img
         src="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg"
         alt="Article Hero"
-        className="img-fluid rounded shadow-sm"
+        className="img-fluid rounded shadow-sm mx-auto"
         style={{
-          width: "100%",
+          width: "600px",
           maxHeight: "420px",
-          objectFit: "contain"
+          objectFit: "contain",
+          display:"block",
         }}
       />
 

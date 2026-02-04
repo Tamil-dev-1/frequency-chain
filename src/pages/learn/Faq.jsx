@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Faq.css";
+import { Link } from 'react-router-dom'
 import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
@@ -128,7 +129,9 @@ export default function FAQPage() {
             transition: "0.3s",
           }}>Build on Frequency</h2>
           <p>Start building secure, scalable Web3 applications today.</p>
+          <Link to='/doc'>
           <button>View Documentation →</button>
+          </Link>
         </motion.div>
       </section>
 

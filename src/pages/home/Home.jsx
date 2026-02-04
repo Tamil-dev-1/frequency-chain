@@ -928,7 +928,7 @@ export default function Home() {
         <img
           src={VectorImg2}
           alt="Community illustration"
-          className="img-fluid rounded-4 shadow-sm community-img"
+          className="img-fluid shadow-sm learn-img"
           style={{
             width: "100%",
             maxWidth: "500px",

@@ -3,19 +3,94 @@ import  { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import { HiSpeakerphone } from "react-icons/hi";
+import { motion } from "framer-motion";
+import Dummy from '../../component/dummy/Dummy'
+
 import './Governance.css';
+
+
+
+// Framer motion Timeline Stagger
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
+
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55 }
+  }
+};
+
+
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.25 }
+  }
+};
+
+const fadeUpVariant = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8 }
+  }
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8 }
+  }
+};
+
+
+
+
+
 
 const GovernanceSection = () => {
    const {theme} = useContext(ThemeContext);
   return (
     <>
-    <section
+ {/* <section
   className="py-5"
   style={{
     background: theme === "dark" ? "#000000" : "#ffff",
     color: theme === "dark" ? "#ffffff" : "#111111",
     transition: "0.3s",
-    // minHeight: "70vh",
     display: "flex",
     alignItems: "center",
   }}
@@ -23,24 +98,35 @@ const GovernanceSection = () => {
   <div className="container">
     <div className="row align-items-center justify-content-between">
 
-      {/* LEFT CONTENT */}
-      <div className="col-lg-6 col-md-7 text-white mb-5 mb-lg-0">
-        <h1 className="fw-bold mb-3" style={{ fontSize: "3rem",color: theme === "dark" ? "#ffffff" : "#111111", }}>
+      
+      <motion.div
+        className="col-lg-6 col-md-7 text-white mb-5 mb-lg-0"
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="fw-bold mb-3" style={{ fontSize: "3rem", color: theme === "dark" ? "#ffffff" : "#111111" }}>
           <span className="hero-title">Have your say</span>{" "}
-          <span className=" mx-1 text-info" ><BsFillRocketTakeoffFill /></span>{" "}
+          <span className="mx-1 text-info"><BsFillRocketTakeoffFill /></span>{" "}
           <span className="hero-title">on the future</span>{" "}
           <span className="mx-1 text-danger"><HiSpeakerphone /></span>{" "}
-          
           <span className="hero-title">of FrequencyChain</span>
         </h1>
 
         <p className="text-secondary fs-5 mt-4" style={{ maxWidth: "520px" }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur vitae possimus animi tempore voluptas ullam labore placeat perspiciatis alias libero.
         </p>
-      </div>
+      </motion.div>
 
-      {/* RIGHT CARD */}
-      <div className="col-lg-5 col-md-5">
+      
+      <motion.div
+        className="col-lg-5 col-md-5"
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
         <div
           className="position-relative rounded-4 overflow-hidden"
           style={{
@@ -51,7 +137,7 @@ const GovernanceSection = () => {
             backgroundPosition: "center",
           }}
         >
-          {/* Overlay */}
+         
           <div
             className="position-absolute bottom-0 w-100 p-4"
             style={{
@@ -63,7 +149,6 @@ const GovernanceSection = () => {
               📊 <span className="fw-semibold">Voting results</span>
             </div>
 
-            {/* Progress Bar */}
             <div className="progress mb-3" style={{ height: "6px" }}>
               <div
                 className="progress-bar"
@@ -71,29 +156,28 @@ const GovernanceSection = () => {
               />
             </div>
 
-            {/* Stats */}
             <div className="d-flex justify-content-between text-white small mb-3">
               <span>👍 79%</span>
               <span>🚫 8%</span>
               <span>👎 13%</span>
             </div>
 
-            {/* Button */}
             <button className="btn btn-light w-100 fw-semibold rounded-pill">
               Vote for project
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </div>
-</section>
+</section> */}
 
+<Dummy theme={theme} />
 
     {/* SECTION ----- 2 */}
 
-<section className="py-5"
+<section id="#secondSection" className="py-5"
 style={{ background: theme === "dark" ? "#000000" : "#ffff",
     color: theme === "dark" ? "#ffffff" : "#111111",
     transition: "0.3s",}}>
@@ -112,29 +196,26 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
     </div>
 
     {/* CARDS */}
-    <div className="row g-4">
+    <motion.div
+      className="row g-4"
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
 
       {/* CARD 1 */}
-      <div className="col-lg-4 col-md-6" >
+      <motion.div className="col-lg-4 col-md-6" variants={cardVariant}>
         <div
           className="h-100 p-4 rounded-4"
           style={{
             background: theme === "dark" ? "#001F3D" : "#F5F5F5",
-            // background: "#f6f7f9",
             boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
           }}
         >
           <div className="mb-4">
-            <div
-              className="rounded-circle d-flex align-items-center justify-content-center"
-              style={{
-                width: "48px",
-                height: "48px",
-                background: "#0b0e14",
-                color: "#b7f36b",
-                fontSize: "20px",
-              }}
-            >
+            <div className="rounded-circle d-flex align-items-center justify-content-center"
+              style={{ width: "48px", height: "48px", background: "#0b0e14", color: "#b7f36b", fontSize: "20px" }}>
               ✳
             </div>
           </div>
@@ -144,32 +225,21 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
           </h5>
 
           <p className="text-secondary mb-0" style={{ lineHeight: "1.7" }}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam mollitia hic doloribus rerum dolores eos exercitationem sunt ea! Aut repellat autem exercitationem. Voluptas, ea consectetur!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit...
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* CARD 2 */}
-      <div className="col-lg-4 col-md-6">
-        <div
-          className="h-100 p-4 rounded-4"
+      <motion.div className="col-lg-4 col-md-6" variants={cardVariant}>
+        <div className="h-100 p-4 rounded-4"
           style={{
-             background: theme === "dark" ? "#001F3D" : "#F5F5F5",
-            // background: "#f6f7f9",
+            background: theme === "dark" ? "#001F3D" : "#F5F5F5",
             boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
-          }}
-        >
+          }}>
           <div className="mb-4">
-            <div
-              className="rounded-circle d-flex align-items-center justify-content-center"
-              style={{
-                width: "48px",
-                height: "48px",
-                background: "#0b0e14",
-                color: "#b7f36b",
-                fontSize: "20px",
-              }}
-            >
+            <div className="rounded-circle d-flex align-items-center justify-content-center"
+              style={{ width: "48px", height: "48px", background: "#0b0e14", color: "#b7f36b", fontSize: "20px" }}>
               ◐
             </div>
           </div>
@@ -179,32 +249,21 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
           </h5>
 
           <p className="text-secondary mb-0" style={{ lineHeight: "1.7" }}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae ex impedit, enim natus consectetur vero ducimus!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit...
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* CARD 3 */}
-      <div className="col-lg-4 col-md-12">
-        <div
-          className="h-100 p-4 rounded-4"
+      <motion.div className="col-lg-4 col-md-12" variants={cardVariant}>
+        <div className="h-100 p-4 rounded-4"
           style={{
-             background: theme === "dark" ? "#001F3D" : "#F5F5F5",
-            // background: "#f6f7f9",
+            background: theme === "dark" ? "#001F3D" : "#F5F5F5",
             boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
-          }}
-        >
+          }}>
           <div className="mb-4">
-            <div
-              className="rounded-circle d-flex align-items-center justify-content-center"
-              style={{
-                width: "48px",
-                height: "48px",
-                background: "#0b0e14",
-                color: "#b7f36b",
-                fontSize: "20px",
-              }}
-            >
+            <div className="rounded-circle d-flex align-items-center justify-content-center"
+              style={{ width: "48px", height: "48px", background: "#0b0e14", color: "#b7f36b", fontSize: "20px" }}>
               ⬣
             </div>
           </div>
@@ -214,127 +273,95 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
           </h5>
 
           <p className="text-secondary mb-0" style={{ lineHeight: "1.7" }}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla quibusdam error, velit tempore delectus inventore, deleniti molestias iure non aspernatur impedit, quia ipsa dolore mollitia blanditiis?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit...
           </p>
         </div>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   </div>
 </section>
+
   
 
       {/* SECTION ------ 3 */}
 
 
-    <section className="py-5" style={{
+<section className="py-5" style={{
       background: theme === "dark" ? "#000000" : "#ffff",
-    color: theme === "dark" ? "#ffffff" : "#111111",
-    transition: "0.3s",
-    }}>
+      color: theme === "dark" ? "#ffffff" : "#111111",
+      transition: "0.3s",
+}}>
   <div className="container">
 
-    <div className="row text-center gy-5">
+    <motion.div
+      className="row text-center gy-5"
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
 
       {/* ITEM 1 */}
-      <div className="col-lg-3 col-md-6">
+      <motion.div className="col-lg-3 col-md-6" variants={itemVariant}>
         <div className="d-flex flex-column align-items-center px-3">
-          <div
-            className="d-flex align-items-center justify-content-center rounded-circle mb-3"
-            style={{
-              width: "56px",
-              height: "56px",
-              background: "#e9fbf7",
-              color: "#0b0e14",
-              fontSize: "22px",
-            }}
-          >
+          <div className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+            style={{ width: "56px", height: "56px", background: "#e9fbf7", color: "#0b0e14", fontSize: "22px" }}>
             ⦿
           </div>
-
           <h6 className="fw-semibold mb-2">Decentralization</h6>
-
           <p className="text-secondary small mb-0" style={{ lineHeight: "1.6" }}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, nam odio.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* ITEM 2 */}
-      <div className="col-lg-3 col-md-6">
+      <motion.div className="col-lg-3 col-md-6" variants={itemVariant}>
         <div className="d-flex flex-column align-items-center px-3">
-          <div
-            className="d-flex align-items-center justify-content-center rounded-circle mb-3"
-            style={{
-              width: "56px",
-              height: "56px",
-              background: "#eef9dc",
-              color: "#0b0e14",
-              fontSize: "22px",
-            }}
-          >
+          <div className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+            style={{ width: "56px", height: "56px", background: "#eef9dc", color: "#0b0e14", fontSize: "22px" }}>
             👁
           </div>
-
           <h6 className="fw-semibold mb-2">Transparency</h6>
-
           <p className="text-secondary small mb-0" style={{ lineHeight: "1.6" }}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, aliquam?
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* ITEM 3 */}
-      <div className="col-lg-3 col-md-6">
+      <motion.div className="col-lg-3 col-md-6" variants={itemVariant}>
         <div className="d-flex flex-column align-items-center px-3">
-          <div
-            className="d-flex align-items-center justify-content-center rounded-circle mb-3"
-            style={{
-              width: "56px",
-              height: "56px",
-              background: "#f2f1ff",
-              color: "#0b0e14",
-              fontSize: "22px",
-            }}
-          >
+          <div className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+            style={{ width: "56px", height: "56px", background: "#f2f1ff", color: "#0b0e14", fontSize: "22px" }}>
             ↗
           </div>
-
           <h6 className="fw-semibold mb-2">Upgrades</h6>
-
           <p className="text-secondary small mb-0" style={{ lineHeight: "1.6" }}>
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, animi!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, animi!
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* ITEM 4 */}
-      <div className="col-lg-3 col-md-6">
+      <motion.div className="col-lg-3 col-md-6" variants={itemVariant}>
         <div className="d-flex flex-column align-items-center px-3">
-          <div
-            className="d-flex align-items-center justify-content-center rounded-circle mb-3"
-            style={{
-              width: "56px",
-              height: "56px",
-              background: "#eaf9ef",
-              color: "#0b0e14",
-              fontSize: "22px",
-            }}
-          >
+          <div className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+            style={{ width: "56px", height: "56px", background: "#eaf9ef", color: "#0b0e14", fontSize: "22px" }}>
             ⛓
           </div>
-
           <h6 className="fw-semibold mb-2">Alignment</h6>
-
           <p className="text-secondary small mb-0" style={{ lineHeight: "1.6" }}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, rerum.
           </p>
         </div>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   </div>
 </section>
+
 
 
      {/* SECTION ------ 4 */}
@@ -359,79 +386,89 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
       </div>
     </div>
 
-    {/* GRID */}
-    <div className="row g-4">
+   {/* GRID */}
+<div className="row g-4">
 
-      {/* STEP 01 */}
-      <div className="col-lg-4">
-        <div className="h-100 p-4 rounded-4 step-card">
-          <span className="step-badge">01</span>
+  {/* FIRST 3 — STAGGER TIMELINE */}
+  <motion.div
+    className="row g-4 p-0 m-0"
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
 
-          <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff",}}>Support phase</h5>
-          <p className="text-secondary mb-0">
-            An idea is shared on Discourse, ideally evolving into a VIP.
-            At this stage, the proposal needs to gather support from the
-            community.
-          </p>
-        </div>
+    {/* STEP 01 */}
+    <motion.div className="col-lg-4" variants={fadeUpVariant}>
+      <div className="h-100 p-4 rounded-4 step-card">
+        <span className="step-badge">01</span>
+        <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff"}}>Support phase</h5>
+        <p className="text-secondary mb-0">
+          An idea is shared on Discourse, ideally evolving into a VIP...
+        </p>
       </div>
+    </motion.div>
 
-      {/* STEP 02 */}
-      <div className="col-lg-4">
-        <div className="h-100 p-4 rounded-4 step-card">
-          <span className="step-badge">02</span>
-
-          <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff",}}>Proposal creation</h5>
-          <p className="text-secondary mb-0">
-            A new proposal is created, linking the relevant Discourse
-            discussion and related VIPs. Only whitelisted accounts can
-            create proposals to protect on-chain governance.
-          </p>
-        </div>
+    {/* STEP 02 */}
+    <motion.div className="col-lg-4" variants={fadeUpVariant}>
+      <div className="h-100 p-4 rounded-4 step-card">
+        <span className="step-badge">02</span>
+        <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff"}}>Proposal creation</h5>
+        <p className="text-secondary mb-0">
+          A new proposal is created, linking the relevant Discourse...
+        </p>
       </div>
+    </motion.div>
 
-      {/* STEP 03 */}
-      <div className="col-lg-4">
-        <div className="h-100 p-4 rounded-4 step-card">
-          <span className="step-badge">03</span>
-
-          <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff",}}>Promotion phase</h5>
-          <p className="text-secondary mb-0">
-            The new proposal is announced and promoted on social media
-            through VeChain’s official channels.
-          </p>
-        </div>
+    {/* STEP 03 */}
+    <motion.div className="col-lg-4" variants={fadeUpVariant}>
+      <div className="h-100 p-4 rounded-4 step-card">
+        <span className="step-badge">03</span>
+        <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff"}}>Promotion phase</h5>
+        <p className="text-secondary mb-0">
+          The new proposal is announced and promoted...
+        </p>
       </div>
+    </motion.div>
 
-      {/* STEP 04 */}
-      <div className="col-lg-6">
-        <div className="h-100 p-4 rounded-4 step-card">
-          <span className="step-badge">04</span>
+  </motion.div>
 
-          <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff",}}>Approval phase</h5>
-          <p className="text-secondary mb-0">
-            Community members vote on the proposal. If quorum is reached
-            and the majority votes in favor, the proposal is approved and
-            publicly announced.
-          </p>
-        </div>
-      </div>
-
-      {/* STEP 05 */}
-      <div className="col-lg-6">
-        <div className="h-100 p-4 rounded-4 step-card">
-          <span className="step-badge">05</span>
-
-          <h5 className="fw-semibold mt-4 mb-2">Execution phase</h5>
-          <p className="text-secondary mb-0">
-            VeChain or designated entities execute the proposal. Once
-            completed, it is marked as Executed with proof such as a
-            transaction or block explorer link.
-          </p>
-        </div>
-      </div>
-
+  {/* STEP 04 — LEFT FADE */}
+  <motion.div
+    className="col-lg-6"
+    variants={fadeLeft}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+    <div className="h-100 p-4 rounded-4 step-card">
+      <span className="step-badge">04</span>
+      <h5 className="fw-semibold mt-4 mb-2" style={{color: theme === "dark" ? "#ffffff" : "#ffffff"}}>Approval phase</h5>
+      <p className="text-secondary mb-0">
+        Community members vote on the proposal...
+      </p>
     </div>
+  </motion.div>
+
+  {/* STEP 05 — RIGHT FADE */}
+  <motion.div
+    className="col-lg-6"
+    variants={fadeRight}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+    <div className="h-100 p-4 rounded-4 step-card">
+      <span className="step-badge">05</span>
+      <h5 className="fw-semibold mt-4 mb-2">Execution phase</h5>
+      <p className="text-secondary mb-0">
+        VeChain or designated entities execute the proposal...
+      </p>
+    </div>
+  </motion.div>
+
+</div>
+
   </div>
 
   {/* INLINE PREMIUM STYLES */}
@@ -625,6 +662,7 @@ style={{ background: theme === "dark" ? "#000000" : "#ffff",
    {/* SECTION ------ END */}
 
    
+
 
     
     </>

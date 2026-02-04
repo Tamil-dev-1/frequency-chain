@@ -49,14 +49,14 @@ const AppRouter = () => {
        <Route path= '/frecx' element={<Frecx />} />
         <Route path="/blog-1" element={<Blog1 />} />
         <Route path="/blog-2" element={<Blog2 />} />
-        <Route path="/blog-3" element={<Blog2 />} />
-        <Route path="/blog-4" element={<Blog2 />} />
-        <Route path="/blog-5" element={<Blog2 />} />
-        <Route path="/blog-6" element={<Blog2 />} />
-        <Route path="/blog-7" element={<Blog2 />} />
-        <Route path="/blog-8" element={<Blog2 />} />
-        <Route path="/blog-9" element={<Blog2 />} />
-        <Route path="/blog-10" element={<Blog2 />} />
+        <Route path="/blog-3" element={<Blog3 />} />
+        <Route path="/blog-4" element={<Blog4 />} />
+        <Route path="/blog-5" element={<Blog5 />} />
+        <Route path="/blog-6" element={<Blog6 />} />
+        <Route path="/blog-7" element={<Blog7 />} />
+        <Route path="/blog-8" element={<Blog8 />} />
+        <Route path="/blog-9" element={<Blog9 />} />
+        <Route path="/blog-10" element={<Blog10 />} />
        
       </Routes>
       <Footer />

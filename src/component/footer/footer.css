@@ -55,7 +55,7 @@
 .bottom-bar {
   margin-top: 36px;
   padding: 20px;
-  background: #E9DEFD;
+  /* background: #E9DEFD; */
   border-radius: 4px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }

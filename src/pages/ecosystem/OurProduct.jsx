@@ -14,7 +14,7 @@ const Ourbrand = () => {
   return (
     <div>
        <section
-      className="py-5 round"
+      className="py-5"
       style={{ background: "#0d0f16" }}
     >
       <div className="container">
